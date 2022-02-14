@@ -11,7 +11,6 @@ const AdBanner = () => {
     useEffect(() => {
         let adsbygoogle = window.adsbygoogle
         if (adsbygoogle) {
-
             try {
                 (adsbygoogle = adsbygoogle || []).push({});
             } catch (err) {

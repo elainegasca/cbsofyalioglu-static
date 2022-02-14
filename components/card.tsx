@@ -17,7 +17,7 @@ type CardProps = {
 }
 export function CardEnlarge(props: CardProps) {
     return <div key={props.link} className="card-enlarge grid grid-cols-1 mt-4">
-        <div className="glass-card-card flex flex-col sm:flex-row items-stretch rounded-lg overflow-hidden !min-h-[160px] border border-solid border-[rgba(255,255,255,0.2)]">
+        <div className="glass-card-card flex flex-col sm:flex-row p-[2px] items-stretch rounded-lg overflow-hidden !min-h-[160px] border border-solid border-[rgba(255,255,255,0.2)]">
 
 
             <a
