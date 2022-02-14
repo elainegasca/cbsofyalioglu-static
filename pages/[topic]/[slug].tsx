@@ -22,6 +22,7 @@ import {
 import { useScript } from "../../lib/hooks"
 import { ArticleSeo, MetaTags, RichData, ListItemCard, ScrollTopSimpleButton } from "../../components"
 import { site } from "../../settings"
+import AdBanner from "../../components/adbanner"
 
 const MdxProvider = dynamic(() => import('../../components/mdx/mdx-provider'))
 const ScrollTopButton = dynamic(() => import("../../components/button"))
@@ -83,6 +84,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
             </div>
         </header>
     ))
+
     return (
         <>
             <Head>
@@ -115,12 +117,14 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
                     monetize={frontMatter.monetize}
                     frontMatter={frontMatter}
                 />
+
             </Head>
             <ArticleHead />
             <article className="relative pt-8 pb-32 flex flex-col items-center px-4">
 
-                <main className="markdown-content relative z-10 post-page min-h-screen w-full max-w-[700px] h-auto pt-4 ml-auto mr-auto relative flex flex-col !z-10">
+                <main className="markdown-content relative post-page min-h-screen w-full max-w-[700px] h-auto pt-4 ml-auto mr-auto flex flex-col !z-10">
                     <hr />
+                    <AdBanner />
                     <MdxProvider source={mdxSource} />
 
                 </main>

@@ -29,6 +29,10 @@ class MyDocument extends Document {
                         crossOrigin=""
                         type="font/woff2"
                     />
+                    <script
+                        async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+                    ></script>
                 </Head>
                 <body className="bg-gray-50 dark:bg-gray-900">
                     <Main />
