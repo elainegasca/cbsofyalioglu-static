@@ -68,3 +68,4 @@ export const site = {
   },
   credits: 'Crafted by Can Burak Sofyalıoğlu with ❤️ ',
 }
+
