@@ -16,7 +16,7 @@ module.exports = {
     '/design',
     '/how-to',
     '/post/adonisjs-solidjs',
-    'post/adonisjs-solidjs',
+    '/post/adonisjs-solidjs',
     '/post/adonisjs5-tailwind',
     '/post/canva-pro-ucretsiz',
     '/post/canva-pro-ucretsiz',
@@ -46,9 +46,10 @@ module.exports = {
     '/post/yetenekli-dijital-not-tutma-uygulamasi-tiddlywiki',
     '/bookmarks/design-tools',
     '/bookmarks/dev-tools',
-    'code/django-and-modern-js-libraries-backend/',
-    'code/django-and-modern-js-libraries-react/',
-    'code/django-and-modern-js-libraries-svelte/',
+    '/code/django-and-modern-js-libraries-backend/',
+    '/code/django-and-modern-js-libraries-react/',
+    '/code/django-and-modern-js-libraries-svelte/',
+    "/archive/video-archive/"
   ],
   // Default transformation function
   transform: async (config, path) => {
