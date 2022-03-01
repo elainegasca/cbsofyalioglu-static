@@ -23,6 +23,7 @@ import { useScript } from "../../lib/hooks"
 import { ArticleSeo, MetaTags, RichData, ListItemCard, ScrollTopSimpleButton } from "../../components"
 import { site } from "../../settings"
 import AdBanner from "../../components/adbanner"
+import { PostHeader } from "../../components/styled"
 
 const MdxProvider = dynamic(() => import('../../components/mdx/mdx-provider'))
 const ScrollTopButton = dynamic(() => import("../../components/button"))
@@ -41,20 +42,17 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
     //console.log("categories", "rendered")
     const ArticleHead = React.memo(() => (
         <header className="w-full max-w-[760px] h-auto pt-20 ml-auto mr-auto relative flex flex-col items-center">
-            <h1 className="text-gray-800 animate-text-md text-5xl lg:text-7xl  text-center mb-4 md:mb-2 mt-8 sm:mt-0">{frontMatter.title}</h1>
+            {/*<h1 className="text-gray-800 animate-text-md text-5xl lg:text-7xl  text-center mb-4 md:mb-2 mt-8 sm:mt-0">{frontMatter.title}</h1>
             <span className="my-2 text-xs  animate-text-lg !dark:text-gray-200 !text-gray-500">UPDATED: <time dateTime={frontMatter.modified}>{frontMatter.modified}</time></span>
-            <div className="flex w-full justify-center mt-2 sm:mt-4">
-                {categoriesWoutPost?.map((cat, index) =>
-                    <a href={`/${cat}/`}
-                        title={`See ${cat} posts`}
-                        key={"article-header-category-" + cat}
-                        className={`animate-text-lg inline-flex mx-2 items-center px-3 py-0.5 rounded-full text-sm font-bold ${colors[index]} `}
-                    >
-                        <em>{cat}</em>
-                    </a>
-                )}
-            </div>
-            <p className="animate-text-xl max-w-screen-md text-gray-500 md:text-lg text-center mx-auto mt-20 sm:mt-8 mb-40 sm:mb-4">{frontMatter.description}</p>
+    */}
+            <PostHeader
+                title={frontMatter.title}
+                description={frontMatter.description}
+                topics={categoriesWoutPost}
+                modified={frontMatter.modified}
+            />
+
+            {/*<p className="animate-text-xl max-w-screen-md text-gray-500 md:text-lg text-center mx-auto mt-20 sm:mt-8 mb-40 sm:mb-4">{frontMatter.description}</p>*/}
             <div className="relative h-auto min-h-[250px] sm:min-h-[300px] md:min-h-[400px] w-full overflow-hidden rounded-lg mt-12 mb-4 flex flex-col justify-end">
 
                 <Image

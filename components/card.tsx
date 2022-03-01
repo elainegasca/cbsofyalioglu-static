@@ -104,7 +104,7 @@ export function ListItemCard(props: CardProps){
         <li
 
             title={props.title}
-            className="group h-48 md:h-64 xl:h-64 flex flex-col  rounded-lg shadow-lg overflow-hidden relative border border-solid border-[rgba(255,255,255,0.2)]"
+            className="group h-40 md:h-64 xl:h-52 flex flex-col  rounded-lg shadow-lg overflow-hidden relative"
         >
             <Image
                 layout="fill"
@@ -115,11 +115,11 @@ export function ListItemCard(props: CardProps){
                 className="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-700 z-0"
             />
 
-            <div className="bg-gradient-to-t from-gray-800 md:via-transparent to-transparent absolute inset-0 pointer-events-none"></div>
+            <div className="bg-gradient-to-t from-black/40 md:via-black/20 to-black/10 absolute inset-0 pointer-events-none"></div>
 
             <div className="relative p-4 mt-auto">
                 {props.date && <span className="block !text-gray-200 text-sm">{props.date}</span>}
-                <h2 className="!text-white text-xl font-semibold transition duration-100 mb-2 relative">
+                <h3 className="!text-white text-lg font-semibold transition duration-100 mb-2 z-10 relative">
                     <a
                         title={props.title}
                         href={`/${props.topic}/${props.slug}/`}
@@ -127,7 +127,7 @@ export function ListItemCard(props: CardProps){
                     >
                         {props.title}
                     </a>
-                </h2>
+                </h3>
             </div>
             <a
                 title={props.title}
