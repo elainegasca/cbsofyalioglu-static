@@ -47,7 +47,7 @@ export const PostHeader = ({ title, description, topics, modified }) => (
                         <a href={`/${cat}/`}
                             title={`See ${cat} posts`}
                             key={"article-header-category-" + cat}
-                            className={`text-lg uppercase inline-flex items-center py-0.5 rounded-full text-white animate-text-xl`}
+                            className={`text-lg uppercase inline-flex items-center py-0.5 rounded-full text-white animate-text-lg`}
                         >
                             {cat}
                         </a>
