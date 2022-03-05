@@ -95,7 +95,7 @@ const StyledChevron = styled(ChevronDownIcon, {
 // Exports
 export const Accordion = StyledAccordion;
 export const AccordionItem = StyledItem;
-export const AccordionTrigger = React.forwardRef(({ children, ...props }, forwardedRef) => (
+export const AccordionTrigger = React.forwardRef(({ children, ...props }: { children: any, props?: any }, forwardedRef: any) => (
     <StyledHeader>
         <StyledTrigger {...props} ref={forwardedRef}>
             {children}
@@ -103,13 +103,14 @@ export const AccordionTrigger = React.forwardRef(({ children, ...props }, forwar
         </StyledTrigger>
     </StyledHeader>
 ));
-export const AccordionContent = React.forwardRef(({ children, ...props }, forwardedRef) => (
+export const AccordionContent = React.forwardRef(({ children, ...props }: { children: any, props?: any }, forwardedRef: any) => (
     <StyledContent {...props} ref={forwardedRef}>
         <StyledContentText>{children}</StyledContentText>
     </StyledContent>
 ));
 
 // Your app...
+/*
 export const AccordionDemo = () => (
     <Accordion type="single" defaultValue="item-1" collapsible>
         <AccordionItem value="item-1">
@@ -134,3 +135,4 @@ export const AccordionDemo = () => (
 );
 
 export default AccordionDemo;
+*/
