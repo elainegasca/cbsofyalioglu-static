@@ -22,7 +22,7 @@ const Text = styled('p', {
 });
 const HeaderOne = styled('h1', {
     color: 'white',
-    fontSize: 42,
+    fontSize: 36,
     lineHeight: '52px',
 });
 
@@ -35,11 +35,11 @@ export const TopicHeader = ({ title, description }) => (
 );
 
 export const PostHeader = ({ title, description, topics, modified }) => (
-    <Box css={{ width: '100%', maxWidth: 720, margin: '0 15px' }}>
+    <Box css={{ width: '100%', maxWidth: 720, margin: '0 15px', padding:"0 8px" }}>
         <HeaderOne css={{ fontWeight: 500 }} className="animate-text-md">{title}</HeaderOne>
-        <Text className="animate-text-lg text-sm mt-4" css={{fontSize:16, opacity:0.7}}>UPDATED: <time dateTime={modified}>{modified}</time></Text>
+        <Text className="animate-text-lg text-sm mt-4 opacity-70" css={{fontSize:16}}>UPDATED: <time dateTime={modified}>{modified}</time></Text>
         <Separator css={{ margin: '24px 0' }} className="animate-text-xl" />
-        <Text className="animate-text-xl">{description}</Text>
+        <Text className="animate-text-xl opacity-70">{description}</Text>
         <Flex css={{ height: 20, alignItems: 'center', marginTop:32 }}>
             {topics.map((cat, index) => (
                 <>
@@ -47,12 +47,12 @@ export const PostHeader = ({ title, description, topics, modified }) => (
                         <a href={`/${cat}/`}
                             title={`See ${cat} posts`}
                             key={"article-header-category-" + cat}
-                            className={`text-lg uppercase inline-flex items-center py-0.5 rounded-full text-white animate-text-lg`}
+                            className={`text-lg opacity-70 uppercase inline-flex items-center py-0.5 rounded-full text-white animate-text-lg`}
                         >
                             {cat}
                         </a>
                     </Box>
-                    <Separator className="animate-text-xl" decorative orientation="vertical" css={{ margin: '0 15px' }} />
+                    {topics.length > 1 && <Separator className="animate-text-xl" decorative orientation="vertical" css={{ margin: '0 15px' }} />}
                 </>
             ))}
         </Flex>

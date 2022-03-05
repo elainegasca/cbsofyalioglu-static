@@ -17,6 +17,7 @@ import { useRouter } from 'next/router'
 import { navLinks, footerLinks } from "../settings"
 import { site } from "../settings"
 import { useHasMounted, useDebounce } from "../lib/hooks"
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "../components/styled/accordion"
 
 const userNavigation = [
     { name: 'Your Profile', href: '#' },
@@ -67,6 +68,7 @@ export default function Layout({ children }) {
                 <ThreeColorsBlob />
                 <TealBlob />
                 <TealPinkBlob />
+
 
             </div>
             {/* SIDEBAR MOBILE */}
@@ -123,64 +125,42 @@ export default function Layout({ children }) {
                             </div>
                             <div className="mt-5 flex-1 h-0 overflow-y-auto ">
                                 <nav className="px-2 space-y-1">
-                                    {navigation.map((item) => !item.children ? (
-                                        <a
-                                            key={item.name}
-                                            href={item.href}
-                                            className={classNames(
-                                                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                'group flex items-center px-2 py-2 text-base font-medium rounded-md'
-                                            )}
-                                        >
-                                            {/*<item.icon
-                                                className={classNames(
-                                                    item.current ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-300',
-                                                    'mr-4 flex-shrink-0 h-6 w-6'
-                                                )}
-                                                aria-hidden="true"
-                                                />*/}
-                                            {item.name}
-                                        </a>
-                                    ) :
-                                        (
-                                            <Disclosure as="div" key={item.name} className="space-y-1">
-                                                {({ open }) => (
-                                                    <>
-                                                        <Disclosure.Button
-                                                            className={classNames(
-                                                                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                                'group flex items-center px-2 py-2 text-sm font-medium rounded-md w-full'
-                                                            )}
-                                                        >
-                                                            {item.name}
-                                                            <svg
-                                                                className={classNames(
-                                                                    open ? 'text-gray-400 rotate-90' : 'text-gray-300',
-                                                                    'mr-2 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150'
-                                                                )}
-                                                                viewBox="0 0 20 20"
-                                                                aria-hidden="true"
-                                                            >
-                                                                <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
-                                                            </svg>
-                                                        </Disclosure.Button>
-                                                        <Disclosure.Panel className="space-y-1">
-                                                            {item.children.map((subItem) => (
+                                    <Accordion type="single" collapsible>
+                                        {navigation.map((item, i) => (
+                                            item.children
+                                                ? (
+                                                    <AccordionItem value={`item-${i}`} key={`acc-${i}`}>
+                                                        <AccordionTrigger>{item.name}</AccordionTrigger>
+                                                        <AccordionContent>
+                                                            {item.children.map(subItem => (
                                                                 <a
                                                                     key={subItem.name}
                                                                     href={subItem.href}
-                                                                    className="group w-full flex items-center pl-10 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-600"
+                                                                    title={subItem.name}
+                                                                    className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 "
                                                                 >
                                                                     {subItem.name}
                                                                 </a>
                                                             ))}
-                                                        </Disclosure.Panel>
-                                                    </>
-                                                )}
-                                            </Disclosure>
-                                        )
+                                                        </AccordionContent>
+                                                    </AccordionItem>
 
-                                    )}
+
+                                                )
+                                                : (
+                                                    <a
+                                                        key={item.name}
+                                                        href={item.href}
+                                                        title={item.name}
+                                                        className="group w-full flex items-center pl-5 pr-2 py-2 text-sm  text-gray-300 rounded-md hover:text-white"
+                                                    >
+                                                        {item.name}
+                                                    </a>
+
+                                                )
+                                        ))}
+                                    </Accordion>
+
                                 </nav>
                             </div>
                             <div className="ml-4 mb-4">
@@ -219,7 +199,43 @@ export default function Layout({ children }) {
                         {/* SIDEBAR MAIN */}
                         <div className="flex-1 fixed pl-4 flex-grow top-16 flex flex-col justify-between overflow-y-auto w-60 h-[90vh]">
                             <nav className="flex-1 px-2 py-4 bg-transparent flex-grow h-full space-y-1">
-                                {navigation.map((item) => !item.children ? (
+                                <Accordion type="single"  collapsible>
+                                    {navigation.map((item,i) => (
+                                        item.children
+                                            ? (
+                                                <AccordionItem value={`item-${i}`} key={`acc-${i}`}>
+                                                    <AccordionTrigger>{item.name}</AccordionTrigger>
+                                                    <AccordionContent>
+                                                        {item.children.map(subItem => (
+                                                            <a
+                                                                key={subItem.name}
+                                                                href={subItem.href}
+                                                                title={subItem.name}
+                                                                className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 "
+                                                            >
+                                                                {subItem.name}
+                                                            </a>
+                                                        ))}
+                                                    </AccordionContent>
+                                                </AccordionItem>
+
+
+                                            )
+                                            : (
+                                                <a
+                                                    key={item.name}
+                                                    href={item.href}
+                                                    title={item.name}
+                                                    className="group w-full flex items-center pl-5 pr-2 py-2 text-sm  text-gray-300 rounded-md hover:text-white"
+                                                >
+                                                    {item.name}
+                                                </a>
+
+                                            )
+                                    ))}
+                                </Accordion>
+
+                                {/*navigation.map((item) => !item.children ? (
                                     <a
                                         key={item.name}
                                         href={item.href}
@@ -248,60 +264,60 @@ export default function Layout({ children }) {
                                                             'mr-3 flex-shrink-0 h-6 w-6'
                                                         )}
                                                         aria-hidden="true"
-                                                        />*/}
-                                                    {item.name}
-                                                    <svg
-                                                        className={classNames(
-                                                            open ? 'text-gray-200 dark:text-gray-300 rotate-90' : 'text-gray-300 dark:text-gray-300 ',
-                                                            'mr-2 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-300 transition-colors ease-in-out duration-150'
-                                                        )}
-                                                        viewBox="0 0 20 20"
-                                                        aria-hidden="true"
-                                                    >
-                                                        <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
-                                                    </svg>
+                                                        />
+                                {item.name}
+                                <svg
+                                    className={classNames(
+                                        open ? 'text-gray-200 dark:text-gray-300 rotate-90' : 'text-gray-300 dark:text-gray-300 ',
+                                        'mr-2 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-300 transition-colors ease-in-out duration-150'
+                                    )}
+                                    viewBox="0 0 20 20"
+                                    aria-hidden="true"
+                                >
+                                    <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
+                                </svg>
 
                                                 </Disclosure.Button>
-                                                <Disclosure.Panel className="space-y-1">
-                                                    {item.children.map((subItem) => (
-                                                        <a
-                                                            key={subItem.name}
-                                                            href={subItem.href}
-                                                            className="group w-full flex items-center pl-10 pr-2 py-2 text-sm font-medium text-gray-300 rounded-md hover:text-gray-300 hover:bg-gray-900"
-                                                        >
-                                                            {subItem.name}
-                                                        </a>
-                                                    ))}
-                                                </Disclosure.Panel>
+                            <Disclosure.Panel className="space-y-1">
+                                {item.children.map((subItem) => (
+                                    <a
+                                        key={subItem.name}
+                                        href={subItem.href}
+                                        className="group w-full flex items-center pl-10 pr-2 py-2 text-sm font-medium text-gray-300 rounded-md hover:text-gray-300 hover:bg-gray-900"
+                                    >
+                                        {subItem.name}
+                                    </a>
+                                ))}
+                            </Disclosure.Panel>
                                             </>
                                         )}
                                     </Disclosure>
-                                )
+                    )
 
-                                )}
+                                )*/}
                             </nav>
-                            <a
-                                title="Professional Works: Company websites, Wix e-commerce and Shopify e-commerce"
-                                href={"https://webmeister.org"}
-                                className={classNames(
-                                    'text-gray-700 mx-2 dark:text-gray-300 hover:bg-gray-900 hover:text-white',
-                                    'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
-                                )}
-                            >
-                                Portfolio ↗
-                            </a>
-                        </div>
-
-
-                    </div>
-                </div>
+                <a
+                    title="Professional Works: Company websites, Wix e-commerce and Shopify e-commerce"
+                    href={"https://webmeister.org"}
+                    className={classNames(
+                        'text-gray-700 mx-2 dark:text-gray-300 hover:bg-gray-900 hover:text-white',
+                        'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
+                    )}
+                >
+                    Portfolio ↗
+                </a>
             </div>
 
-            {/* MAIN CONTENT */}
-            <div className="flex flex-col w-0 flex-1 overflow-hidden relative !z-10 shadow-xl">
 
-                {/* HEADER */}
-                <div className="relative flex-shrink-0 flex h-16  shadow z-50">
+        </div>
+                </div >
+            </div >
+
+        {/* MAIN CONTENT */ }
+        < div className = "flex flex-col w-0 flex-1 overflow-hidden relative !z-10 shadow-xl" >
+
+            {/* HEADER */ }
+            < div className = "relative flex-shrink-0 flex h-16  shadow z-50" >
                     <button
                         className="px-4 border-r border-gray-200 text-gray-500 bg-gray-800 relative z-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden"
                         onClick={() => setSidebarOpen(true)}
@@ -383,27 +399,27 @@ export default function Layout({ children }) {
                             </Menu>
                         </div>
                     </div>
-                </div>
+                </div >
 
-                {/* MAIN */}
-                <main className="flex-1 relative overflow-y-auto overflow-x-hidden focus:outline-none mt-4 sm:-mt-16 z-10 flex-col items-center pt-12 w-full">
-                    <div className="py-0 z-50 mx-auto max-w-[1200px]">
-                        {children}
-                    </div>
-                </main>
-
-                {/* FOOTER */}
-                <div className="block md:hidden">
-
-                    <Footer
-                        title={site.name}
-                        credits={site.credits}
-                        links={footerLinks}
-                        social={site.socialMediaLinks}
-                    />
-                </div>
+        {/* MAIN */ }
+        < main className = "flex-1 relative overflow-y-auto overflow-x-hidden focus:outline-none mt-4 sm:-mt-16 z-10 flex-col items-center pt-12 w-full" >
+            <div className="py-0 z-50 mx-auto max-w-[1200px]">
+                {children}
             </div>
-        </div>
+                </main >
+
+        {/* FOOTER */ }
+        < div className = "block md:hidden" >
+
+            <Footer
+                title={site.name}
+                credits={site.credits}
+                links={footerLinks}
+                social={site.socialMediaLinks}
+            />
+                </div >
+            </div >
+        </div >
     )
 }
 

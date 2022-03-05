@@ -104,7 +104,7 @@ export function ListItemCard(props: CardProps){
         <li
 
             title={props.title}
-            className="group h-40 md:h-64 xl:h-52 flex flex-col  rounded-lg shadow-lg overflow-hidden relative"
+            className="group h-40 md:h-64 xl:h-52 flex flex-col  rounded-lg shadow-lg overflow-hidden relative mt-4"
         >
             <Image
                 layout="fill"
