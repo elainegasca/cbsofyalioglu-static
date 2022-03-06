@@ -14,13 +14,14 @@ import { Prism } from '@mantine/prism';
 import { Badge, Mark } from '@mantine/core';
 import { CardEnlarge, Video, Marker } from '../index'
 import { Hr, Anchor, string_to_slug } from "./index"
+import { Separator, CardPost } from '../styled'
 
 const CodeHighlighter = dynamic(() => import("./code"))
 const ImageZoom = dynamic(() => import("./image"))
 
 export default function MdxProvider({ source, components, className, ...props }) {
     const comp = {
-        h1: props => <span className="dark:text-gray-300 text-gray-800 text-4xl lg:text-5xl font-bold text-center mt-20 mb-4 md:mb-6">{props.children}</span>,
+        h1: props => <span className="dark:text-gray-300 text-gray-800 text-4xl lg:text-5xl text-center mt-20 mb-4 md:mb-6">{props.children}</span>,
         h2: props => <h2 id={string_to_slug(props.children)}>{props.children}</h2>,
         h3: props => <h3 id={string_to_slug(props.children)}>{props.children}</h3>,
         h4: props => <h4 id={string_to_slug(props.children)}>{props.children}</h4>,
@@ -44,6 +45,7 @@ export default function MdxProvider({ source, components, className, ...props })
         Hr: () => <Hr />,
 
         CardEnlarge: props => <CardEnlarge {...props} />,
+        CardPost: props => <CardPost {...props} />,
         Marker: props => <Marker {...props} />,
         Mark: props => <Mark {...props} />,
         Badge: props => <Badge {...props} />,

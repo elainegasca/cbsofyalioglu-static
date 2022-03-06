@@ -11,6 +11,7 @@ import matter from 'gray-matter'
 import { MetaTags } from '../../components'
 import { site } from '../../settings'
 import { TopicHeader } from "../../components/styled"
+import { ListItemCard } from "../../components"
 
 function CategoryPage({ posts, topic, slug, language }) {
     console.log("Category posts: ", topic, slug, language)
@@ -46,37 +47,15 @@ function CategoryPage({ posts, topic, slug, language }) {
                         </div>
                         {/* Article */}
                         <ul className="grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6 xl:gap-8">
-                            {posts.map(post => (
-                                <li
-                                    key={post.slug}
+                            {posts.map((post, index) => (
+                                <ListItemCard
                                     title={post.frontMatter.title}
-                                    className="group h-40 md:h-64 xl:h-52 flex flex-col  rounded-lg shadow-lg overflow-hidden relative"
-                                >
-                                    <Image
-                                        layout="fill"
-                                        loading="lazy"
-                                        src={post.frontMatter.thumbnail || post.frontMatter.cover || "/img/placeholder.webp"}
-                                        alt={(post.frontMatter.keywords && post.frontMatter.keywords[0]) || post.frontMatter.title}
-                                        className="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-500 z-0"
-                                    />
-
-                                    <div className="bg-gradient-to-t from-black/50 md:via-transparent to-transparent absolute inset-0 pointer-events-none"></div>
-
-                                    <div className="relative p-4 mt-auto">
-                                        {/*<span className="block !text-gray-200 text-sm">{post.frontMatter.date}</span>*/}
-                                        <h2 className="!text-white text-lg font-semibold transition duration-100 mb-2 relative">
-                                            <a
-                                                title={post.frontMatter.title}
-                                                href={`/${post.topic}/${post.slug}/`}
-                                                className="group"
-                                            >
-                                                {post.frontMatter.title}
-                                            </a>
-                                        </h2>
-                                        <p>{post.frontMatter.e}</p>
-                                        <a className="!text-indigo-300 " href={`/${post.topic}`} title={`See ${post.topic} articles`}>{post.category}</a>
-                                    </div>
-                                </li>
+                                    cover={post.frontMatter.cover}
+                                    keywords={post.frontMatter.keywords}
+                                    slug={post.frontMatter.slug}
+                                    topic={post.frontMatter.topic}
+                                    key={"home-featured-" + post.frontMatter.slug}
+                                />
                             ))}
                         </ul>
 

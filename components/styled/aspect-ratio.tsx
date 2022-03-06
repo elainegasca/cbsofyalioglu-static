@@ -1,7 +1,7 @@
 import React from 'react';
-import { styled } from '@stitches/react';
-import { blackA } from '@radix-ui/colors';
+import { styled, violet, blackA, indigo } from "../../styles/stitches.config"
 import * as AspectRatioPrimitive from '@radix-ui/react-aspect-ratio';
+//import { indigo } from '@radix-ui/colors/types/dark/indigo';
 
 // Exports
 export const AspectRatio = AspectRatioPrimitive;
@@ -28,7 +28,7 @@ export const AspectRatioBox = ({ children, ratio = 16 / 9, style }) => (
         </AspectRatio.Root>
     </Box>
 );
-export const AspectRatioImage = ({ src, alt, ratio=16/9, style }) => (
+export const AspectRatioImage = ({ src, alt, ratio = 16 / 9, style }) => (
     <Box
         css={{
             width: "100%",
@@ -47,10 +47,10 @@ export const AspectRatioImage = ({ src, alt, ratio=16/9, style }) => (
     </Box>
 );
 
-const AspectRatioDemo = () => (
+const AspectRatioDemo = (props: { src: string, alt: string }) => (
     <Box
         css={{
-            width: 300,
+            width: 200,
             borderRadius: 6,
             overflow: 'hidden',
             boxShadow: `0 2px 10px ${blackA.blackA7}`,
@@ -58,11 +58,45 @@ const AspectRatioDemo = () => (
     >
         <AspectRatio.Root ratio={16 / 9}>
             <Img
-                src="https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80"
-                alt="Landscape photo by Tobias Tullius"
+                src={props.src}
+                alt={props.alt}
             />
         </AspectRatio.Root>
     </Box>
 );
+
+const GradBox = styled('div', {
+    position:"relative",
+    borderRadius: 6,
+    display: "flex",
+    padding: "16px 5%",
+    margin:"32px 0",
+    backgroundImage: `linear-gradient(330deg, ${violet.violet9} 0%, ${indigo.indigo9} 100%)`
+});
+const CardPostTitle = styled('h4', {
+    color: 'white',
+    fontSize: 24,
+    fontWeight: "bold",
+    lineHeight: '36px',
+});
+const CardPostDescription = styled('span', {
+    color: 'white',
+    fontSize: 18,
+    lineHeight: '24px',
+    margin:0
+});
+export const CardPost = (props: { link: string, title: string, cover: string, alt: string, description: string }) => (
+    <GradBox>
+            <AspectRatioDemo
+                src={props.cover}
+                alt={props.alt}
+            />
+        <Box css={{ marginLeft: 32, flexDirection:"column", justifyContent: "center" }}>
+            <CardPostTitle>{props.title}</CardPostTitle>
+            <CardPostDescription>{props.description}</CardPostDescription>
+        </Box>
+        <a href={props.link} className="no-underline !absolute top-0 bottom-0 left-0 right-0"></a>
+    </GradBox>
+)
 
 export default AspectRatioDemo;

@@ -17,7 +17,7 @@ import { useRouter } from 'next/router'
 import { navLinks, footerLinks } from "../settings"
 import { site } from "../settings"
 import { useHasMounted, useDebounce } from "../lib/hooks"
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "../components/styled/accordion"
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent, Tooltip } from "../components/styled"
 
 const userNavigation = [
     { name: 'Your Profile', href: '#' },
