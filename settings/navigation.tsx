@@ -20,6 +20,7 @@ export const navLinks = [
         icon: BookmarkIcon,
         current: false,
         children: [
+            { name: 'All Posts', href: '/en/' },
             { name: 'NestJS I: Basics, Modules, Controllers', href: '/code/nestjs-tutorial-I/' },
             { name: 'NestJS II: Dependency Injection, IoC, Providers', href: '/code/nestjs-tutorial-II/' },
             { name: 'SolidJS: Reactive Primitives', href: '/code/solidjs-and-reactive-primitives/' },
@@ -33,7 +34,6 @@ export const navLinks = [
             { name: 'Content Creation Tools', href: '/productivity/content-creation-tools/' },
             { name: 'Design Resources & Tools', href: '/design/free-design-resources/' },
 
-            { name: 'All Posts', href: '/en/' },
             //{ name: 'Design Tools', href: '/bookmarks/design-tools' },
         ],
     },
@@ -46,6 +46,7 @@ export const navLinks = [
         icon: BookmarkIcon,
         current: false,
         children: [
+            { name: 'Tüm yazılar', href: '/tr/' },
             { name: 'Python vs JavaScript?', href: '/programlama/python-vs-javascript/' },
             { name: 'Zettelkasten not alma', href: '/not-alma/not-tutma-teknikleri-zettelkasten-metodu/' },
             { name: 'Jamstack nedir?', href: '/programlama/wordpress-vs-jamstack/' },
@@ -53,7 +54,6 @@ export const navLinks = [
             { name: 'Not alma uygulamaları listesi', href: '/not-alma/not-alma-uygulamasi-ve-teknikleri/' },
             { name: 'En iyi blog yazma siteleri listesi', href: '/blog-acmak/en-iyi-blog-siteleri/' },
             { name: 'Proje yönetim ve görev takip uygulamaları listesi', href: '/uretkenlik/proje-yonetim-uygulamalari/' },
-            { name: 'Tüm Türkçe yazılar', href: '/tr/' },
             //{ name: 'Design Tools', href: '/bookmarks/design-tools' },
         ],
     },
