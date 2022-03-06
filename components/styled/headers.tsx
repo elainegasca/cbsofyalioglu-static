@@ -48,10 +48,9 @@ export const PostHeader = ({ title, description, topics, modified }) => (
 
                             className={`text-lg opacity-70 uppercase inline-flex items-center py-0.5 rounded-full text-white animate-text-lg`}
                         >
-                            {cat}
+                            {` `}{cat}{` `}
                         </a>
                     </Box>
-                    {topics.length > 1 && <Separator className="animate-text-xl" decorative orientation="vertical" css={{ margin: '0 15px' }} />}
                 </Box>
             ))}
         </Flex>
