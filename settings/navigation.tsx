@@ -66,6 +66,7 @@ export const navLinks = [
             //{ name: 'Design Tools', href: '/bookmarks/design-tools' },
         ],
     },
+    { name: 'Video Archive', href: '/archive/video-archive/', current: false },
 ]
 
 export const footerLinks = [

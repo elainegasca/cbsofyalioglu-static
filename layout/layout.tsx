@@ -18,6 +18,7 @@ import { navLinks, footerLinks } from "../settings"
 import { site } from "../settings"
 import { useHasMounted, useDebounce } from "../lib/hooks"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent, Tooltip } from "../components/styled"
+import { Commander } from "../components"
 
 const userNavigation = [
     { name: 'Your Profile', href: '#' },
@@ -186,6 +187,7 @@ export default function Layout({ children }) {
 
             {/* SIDEBAR DESKTOP */}
             <div className="hidden relative md:flex md:flex-shrink-0 dark:bg-[rgba(0,0,0,0.6)] bg-[rgba(255,255,255,0.1)]  z-10 border-r-2 border-solid border-gray-900">
+
                 <div className="flex flex-col w-64">
                     {/* Sidebar component, swap this element with another sidebar if you like */}
                     <div className="flex flex-col h-0 flex-1 fixed top-0 left-0 w-64 bottom-0 max-h-screen">

@@ -14,7 +14,6 @@ import decorativePatterns from '../public/img/decorative/background-patterns.png
 import { WebmeisterGradientLogo } from "../components/logo"
 import { LinkIcon } from "../components"
 
-
 function Home({ featuredPosts, turkishPosts, englishPosts }) {
 
     return (
