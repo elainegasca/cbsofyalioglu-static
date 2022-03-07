@@ -1,6 +1,5 @@
 import React from 'react';
-import { styled, keyframes } from '@stitches/react';
-import { violet, blackA, mauve } from '@radix-ui/colors';
+import { styled, keyframes, violet, blackA, mauve  } from "../../styles/stitches.config"
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 

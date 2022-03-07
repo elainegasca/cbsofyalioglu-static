@@ -15,4 +15,4 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
             marginX: (value) => ({ marginLeft: value, marginRight: value }),
         },
     })
-export { violet, indigo, purple, blackA } from '@radix-ui/colors'
+export { violet, indigo, purple, blackA, mauve } from '@radix-ui/colors'
