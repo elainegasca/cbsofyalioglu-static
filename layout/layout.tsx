@@ -130,7 +130,7 @@ export default function Layout({ children }) {
                                         {navigation.map((item, i) => (
                                             item.children
                                                 ? (
-                                                    <AccordionItem value={`item-${i}`} key={`acc-${i}`}>
+                                                    <AccordionItem value={`item-${i}`} key={`acc-mob-${i}`}>
                                                         <AccordionTrigger>{item.name}</AccordionTrigger>
                                                         <AccordionContent>
                                                             {item.children.map(subItem => (

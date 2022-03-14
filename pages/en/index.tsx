@@ -10,8 +10,9 @@ import { BlogPosts } from '../../components/blog-posts'
 import { WebmeisterLogo } from '../../components/Svg'
 import { MetaTags, ListItemCard } from '../../components'
 import { site } from '../../settings'
+import { TealBlob } from "../../components/Svg.js"
 
-export default function Blog({ posts }) {
+export default function BlogTr({ posts }) {
     //console.log("Blog posts: ", posts)
     const sortedPosts = posts.sort((a, b) => {
         const ad = new Date(a.frontMatter.date)
@@ -26,7 +27,11 @@ export default function Blog({ posts }) {
             <Head>
                 <title key="h-title-tag">{site.title}</title>
                 <meta name="title" content={title} key="h-title" />
-                <meta name="description" content={description} key="h-description" />
+                <meta
+                    name="description"
+                    content={description}
+                    key="h-description"
+                />
                 <link rel="canonical" href={canonical} key="h-canonical" />
                 <MetaTags
                     type="website"
@@ -37,14 +42,18 @@ export default function Blog({ posts }) {
                 />
             </Head>
             <div className="min-h-screen">
-
                 <div className=" py-6 sm:py-8 lg:py-12">
                     <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
                         {/* Text */}
                         <div className="mt-20 mb-10 md:mb-16">
-                            <h2 className="text-gray-800 text-4xl lg:text-5xl font-bold text-center mb-4 md:mb-6">Blog</h2>
+                            <h2 className="text-gray-800 text-4xl lg:text-5xl font-bold text-center mb-4 md:mb-6">
+                                Blog
+                            </h2>
 
-                            <p className="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">Welcome to my blog. I'm planning to publish my articles and notes mostly about the web.</p>
+                            <p className="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">
+                                Welcome to my blog. I'm planning to publish my
+                                articles and notes mostly about the web.
+                            </p>
                         </div>
 
                         {/* Article */}
@@ -64,7 +73,7 @@ export default function Blog({ posts }) {
                 </div>
             </div>
         </>
-    )
+    );
 }
 
 

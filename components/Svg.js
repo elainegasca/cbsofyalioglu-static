@@ -19,7 +19,7 @@ export function LinkIcon() {
   )
 }
 
-export function TealBlob() {
+export function TealBlob({className=""}) {
   return (
     <svg
       width="1538"
@@ -27,7 +27,7 @@ export function TealBlob() {
       viewBox="0 0 1538 877"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="blur-blob blur-teal"
+      className={`blur-blob blur-teal ${className}`}
     >
       <g clipPath="url(#clip0_65_6)" opacity="0.1">
         <g filter="url(#filter0_f_65_6)">
