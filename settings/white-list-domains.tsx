@@ -24,3 +24,5 @@ export const whitelist: Array<string> = [
     "learninglab.si.edu",
     "app.capacities.io"
 ]
+
+export const affiliate: Array<string> = ["webflow.grsm.io"];
