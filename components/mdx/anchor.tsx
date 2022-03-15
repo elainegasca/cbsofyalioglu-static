@@ -62,7 +62,7 @@ export function Anchor(props) {
             attr.rel = "noopener";
         } else {
             isSponsored = sponsoredsites.includes(urlObject.host);
-            console.log("sponsored: ", isSponsored, urlObject.host);
+            // console.log("sponsored: ", isSponsored, urlObject.host);
             if (isSponsored) {
                 attr.rel = "noopener sponsored";
             } else {
