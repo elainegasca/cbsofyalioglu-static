@@ -25,4 +25,4 @@ export const whitelist: Array<string> = [
     "app.capacities.io"
 ]
 
-export const affiliate: Array<string> = ["webflow.grsm.io"];
+export const affiliate: Array<string> = ["webflow.grsm.io", "frstre.com", "pixpa.com"];
