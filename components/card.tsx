@@ -132,7 +132,7 @@ export function ListItemCard(props: CardProps){
                     </a>
                 </h3>
                 {props.description && (
-                    <p className="!text-white text-base font-regular transition duration-100 mb-2 z-10 relative">
+                    <p className="!text-white text-base font-regular transition duration-100 mb-2 relative">
                         {props.description}
                     </p>
                 )}

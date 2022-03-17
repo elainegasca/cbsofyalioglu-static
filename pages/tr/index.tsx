@@ -10,6 +10,8 @@ import { WebmeisterLogo } from "../../components/Svg";
 import { MetaTags, ListItemCard } from "../../components";
 import { site } from "../../settings";
 import { ProfilePageJsonLd } from "next-seo";
+import lax from "lax.js";
+import { useEffect } from "react";
 
 const descriptionLong = `
 Merhaba, Ben Can. Bir mühendis ve dijital ürünler geliştiren biriyim.
@@ -50,7 +52,7 @@ export default function Blog({ posts }) {
                     />
                 </Head>
             </Head>
-            <div className=" py-6 sm:py-8 lg:py-12">
+            <div className=" py-6 sm:py-8 lg:py-12 lax lax_preset_fadeIn:300:0">
                 <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
                     {/* Text */}
                     <div className="mt-20 mb-10 md:mb-16">
@@ -80,9 +82,12 @@ export default function Blog({ posts }) {
                                 "notion-sablonlari-ve-ucretsiz-site-olusturmak/"
                             }
                             topic={"blog-acmak"}
-                            description={"Notion uygulaması ile yapabileceklerinizin sınırlarını zorlayan araçlar, ve bir çok kullanım için hazırlanmış şablonların listesi."}
+                            description={
+                                "Notion uygulaması ile yapabileceklerinizin sınırlarını zorlayan araçlar, ve bir çok kullanım için hazırlanmış şablonların listesi."
+                            }
                         />
                     </ul>
+                    <hr/>
                     {/* Article */}
                     <ul className="grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6 xl:gap-8">
                         {sortedPosts.map((post) => (
