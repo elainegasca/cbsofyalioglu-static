@@ -21,7 +21,11 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
             <Head>
                 <title key="h-title-tag">{site.title}</title>
                 <meta name="title" content={site.title} key="h-title" />
-                <meta name="description" content={site.description} key="h-description" />
+                <meta
+                    name="description"
+                    content={site.description}
+                    key="h-description"
+                />
                 <link rel="canonical" href={site.website} key="h-canonical" />
                 <MetaTags
                     type="website"
@@ -42,9 +46,33 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                                 Featured posts
                             </h2>
 
-                            <p className="max-w-screen-md text-gray-500 md:text-lg text-left">Some of the blog posts that are written in Turkish and English.</p>
+                            <p className="max-w-screen-md text-gray-500 md:text-lg text-left">
+                                Some of the blog posts that are written in
+                                Turkish and English.
+                            </p>
                         </div>
-
+                        <ul className="grid sm:grid-cols-1 lg:grid-cols-2  gap-4 md:gap-6 xl:gap-8">
+                            <ListItemCard
+                                title={"Blog Siteleri"}
+                                cover={"/posts/covers/blog-yazma-siteleri.webp"}
+                                slug={"en-iyi-blog-siteleri/"}
+                                topic={"blog-acmak"}
+                                description={
+                                    "50'den fazla blog yazma sitesini barındıran bir liste. Ayrıca çeşitli amaçlarla blog açma isteyenlere tavsiyeler barındırır."
+                                }
+                            />
+                            <ListItemCard
+                                title={"Notion Kaynakları"}
+                                cover={"/posts/notion/notion.jpg"}
+                                slug={
+                                    "notion-sablonlari-ve-ucretsiz-site-olusturmak/"
+                                }
+                                topic={"blog-acmak"}
+                                description={
+                                    "Notion uygulaması ile yapabileceklerinizin sınırlarını zorlayan araçlar, ve bir çok kullanım için hazırlanmış şablonların listesi."
+                                }
+                            />
+                        </ul>
 
                         <ul className="grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6 xl:gap-8">
                             {featuredPosts.map((post, index) => (
@@ -54,37 +82,40 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                                     keywords={post.frontMatter.keywords}
                                     slug={post.frontMatter.slug}
                                     topic={post.frontMatter.topic}
-                                    key={"home-featured-" + post.frontMatter.slug}
+                                    key={
+                                        "home-featured-" + post.frontMatter.slug
+                                    }
                                 />
-
                             ))}
                         </ul>
-
 
                         {/* ENGLISH */}
                         <div className="mt-16 md:mt-40 mb-8">
                             <h2 className="text-gray-800 text-4xl lg:text-5xl text-left mb-4 md:mb-6">
-                                <a href="/en/">Articles in English <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-6 w-6 inline-block"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                                    />
-                                </svg></a>
+                                <a href="/en/">
+                                    Articles in English{" "}
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-6 w-6 inline-block"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                                        />
+                                    </svg>
+                                </a>
                             </h2>
 
                             <p className="max-w-screen-md text-gray-500 md:text-lg text-left"></p>
                         </div>
 
                         <ul className="grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6 xl:gap-8">
-                            {englishPosts.map(post => (
+                            {englishPosts.map((post) => (
                                 <ListItemCard
                                     title={post.frontMatter.title}
                                     cover={post.frontMatter.cover}
@@ -99,28 +130,30 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                         {/* TURKISH */}
                         <div className="mt-16 md:mt-40 mb-8">
                             <h2 className="text-gray-800 text-4xl lg:text-5xl text-left mb-4 md:mb-6">
-                                <a href="/tr/">Articles in Turkish <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-6 w-6 inline-block"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                                    />
-                                </svg></a>
+                                <a href="/tr/">
+                                    Articles in Turkish{" "}
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-6 w-6 inline-block"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                                        />
+                                    </svg>
+                                </a>
                             </h2>
 
                             <p className="max-w-screen-md text-gray-500 md:text-lg text-left"></p>
                         </div>
 
-
                         <ul className="grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6 xl:gap-8">
-                            {turkishPosts.map(post => (
+                            {turkishPosts.map((post) => (
                                 <ListItemCard
                                     title={post.frontMatter.title}
                                     cover={post.frontMatter.cover}
@@ -131,12 +164,11 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                                 />
                             ))}
                         </ul>
-
                     </div>
                 </div>
             </main>
         </>
-    )
+    );
 }
 
 export function HeroDark() {

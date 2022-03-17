@@ -102,7 +102,6 @@ export function CardCover(props: CardProps) {
 export function ListItemCard(props: CardProps){
     return (
         <li
-
             title={props.title}
             className="group h-40 md:h-64 xl:h-52 flex flex-col  rounded-lg shadow-lg overflow-hidden relative mt-4"
         >
@@ -118,7 +117,11 @@ export function ListItemCard(props: CardProps){
             <div className="bg-gradient-to-t from-black/40 md:via-black/20 to-black/10 absolute inset-0 pointer-events-none"></div>
 
             <div className="relative p-4 mt-auto">
-                {props.date && <span className="block !text-gray-200 text-sm">{props.date}</span>}
+                {props.date && (
+                    <span className="block !text-gray-200 text-sm">
+                        {props.date}
+                    </span>
+                )}
                 <h3 className="!text-white text-lg font-semibold transition duration-100 mb-2 z-10 relative">
                     <a
                         title={props.title}
@@ -128,13 +131,17 @@ export function ListItemCard(props: CardProps){
                         {props.title}
                     </a>
                 </h3>
+                {props.description && (
+                    <p className="!text-white text-base font-regular transition duration-100 mb-2 z-10 relative">
+                        {props.description}
+                    </p>
+                )}
             </div>
             <a
                 title={props.title}
                 href={`/${props.topic}/${props.slug}/`}
                 className="group absolute top-0 left-0 right-0 bottom-0"
             />
-
         </li>
-    )
+    );
 }
