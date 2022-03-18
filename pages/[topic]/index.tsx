@@ -16,7 +16,7 @@ import { ListItemCard } from "../../components"
 function CategoryPage({ posts, topic, slug, language }) {
     console.log("Category posts: ", topic, slug, language)
     const isTurkish = language === "tr"
-    const canonical = `https://www.cbsofyalioglu.com/${topic}`
+    const canonical = `https://www.cbsofyalioglu.com/${topic}/`
     const title = isTurkish ? `Design &amp; Development | ${topic.toUpperCase()} etiketli yazılar` : `Design &amp; Development | ${topic.toUpperCase()} articles`
     const description = isTurkish ? `Şu anda ${topic} etiketine sahip makaleleri görüntülüyorsunuz.` : `You are currently viewing articles with the ${topic} tag.`
 
