@@ -43,7 +43,7 @@ export const PostHeader = ({ title, description, topics, modified }) => (
             {topics.map((cat, index) => (
                 <Box key={"article-header-category-" + cat}>
                     <Box key={index}>
-                        <a href={`/${cat}/`}
+                        <a href={`/${cat}`}
                             title={`See ${cat} posts`}
 
                             className={`text-lg opacity-70 uppercase inline-flex items-center py-0.5 rounded-full text-white animate-text-lg`}
