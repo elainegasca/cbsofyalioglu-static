@@ -89,9 +89,20 @@
     list-style-position: inside;
   }
 
-  .post-page a {
-  }
+  .post-page h2 {
+      font-size: 36px;
+      line-height: 1.5em;
+    }
+    .post-page h3 {
+        font-size: 28px;
+        line-height: 1.5em;
+    }
+    .post-page h4 {
+        font-size: 24px;
+        line-height: 1.5em;
+    }
 }
+
 /* --- INTERNAL LINKS ---  */
 .post-page a.internal:not(.no-underline)::before {
   position: absolute;
@@ -317,4 +328,47 @@ html.dark .fl-table td {
     display: block;
     text-align: center;
   }
+}
+.post-page details summary {
+  cursor: pointer;
+  color: red;
+
+}
+
+.post-page details summary > * {
+  display: inline;
+}
+summary {list-style: none}
+summary::-webkit-details-marker {display: none; }
+details summary::after {
+  color:green;
+  font-size: 28px;
+  margin-left:16px;
+  /* you can style it however you want, use background-image for example */
+}
+details[open] summary::after {
+  font-size: 28px;
+  margin-left:16px;
+  /* you can style it however you want, use background-image for example */
+}
+details {
+    margin-top: 32px;
+    margin-bottom:48px;
+    transition: all 350ms ease;
+}
+@media only screen and (max-width: 640px) {
+    details summary::after {
+        content:url(../public/svg/details-down-mobile.svg);
+    }
+    details[open] summary::after {
+        content:url(../public/svg/details-up-mobile.svg);
+    }
+}
+@media only screen and (min-width: 641px) {
+    details summary::after {
+        content:url(../public/svg/details-down.svg);
+    }
+    details[open] summary::after {
+        content:url(../public/svg/details-up.svg);
+    }
 }

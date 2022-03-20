@@ -24,7 +24,11 @@ const HeaderOne = styled('h1', {
     fontSize: 36,
     lineHeight: '52px',
 });
-
+export const HeaderThree = styled("h3", {
+    color: "white",
+    fontSize: 36,
+    lineHeight: "52px"
+});
 export const TopicHeader = ({ title, description }) => (
     <Box css={{ width: '100%', maxWidth: 720, margin: '0 15px' }}>
         <HeaderOne css={{ fontWeight: 500 }}>{title}</HeaderOne>
@@ -45,7 +49,6 @@ export const PostHeader = ({ title, description, topics, modified }) => (
                     <Box key={index}>
                         <a href={`/${cat}/`}
                             title={`See ${cat} posts`}
-
                             className={`text-lg opacity-70 uppercase inline-flex items-center py-0.5 rounded-full text-white animate-text-lg`}
                         >
                             {` `}{cat}{` `}
