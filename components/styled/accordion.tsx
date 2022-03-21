@@ -25,7 +25,6 @@ const StyledAccordion = styled(AccordionPrimitive.Root, {
     backgroundColor: "transparent",
 });
 const StyledPostAccordion = styled(AccordionPrimitive.Root, {
-    borderRadius: 6,
     width: "100%",
     backgroundColor: "transparent",
     borderRadius: 20,
