@@ -14,8 +14,8 @@ h2 {
   font-family: 'Satoshi-Regular';
   font-style: normal;
   font-weight: 400;
-  font-size: 48px;
-  line-height: 64px;
+  font-size: 44px;
+  line-height: 60px;
   letter-spacing: -0.03em;
   text-indent: 0px;
   text-rendering: geometricPrecision;
@@ -25,8 +25,8 @@ h3 {
   font-family: 'Satoshi-Regular';
   font-style: normal;
   font-weight: 400;
-  font-size: 38px;
-  line-height: 54px;
+  font-size: 32px;
+  line-height: 44px;
   letter-spacing: -0.03em;
   text-indent: 0px;
   text-rendering: geometricPrecision;
@@ -36,8 +36,8 @@ h4 {
   font-family: 'Satoshi-Regular';
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
-  line-height: 48px;
+  font-size: 28px;
+  line-height: 40px;
   letter-spacing: -0.03em;
   text-indent: 0px;
   text-rendering: geometricPrecision;
