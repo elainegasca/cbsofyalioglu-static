@@ -31,7 +31,7 @@
         "dayjs": "^1.10.7",
         "jotai": "^1.4.8",
         "lax.js": "^2.0.3",
-        "link-preview-js": "^2.1.8",
+        "link-preview-js": "^2.1.13",
         "luxy.js": "^0.1.0",
         "next": "12.0.3",
         "next-seo": "^4.28.1",

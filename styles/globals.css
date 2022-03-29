@@ -303,3 +303,20 @@ hr {
     background-repeat: no-repeat;
     background-image: radial-gradient(circle 800px at 700px 200px, var(--colors-purple2), var(---transparent)), radial-gradient(circle 600px at calc(100% - 300px) 300px, var(--colors-mint4), var(---transparent)), radial-gradient(circle 800px at right center, var(--colors-sky3), var(---transparent)), radial-gradient(circle 800px at right bottom, var(--colors-sky1), var(---transparent)), radial-gradient(circle 800px at calc(50% - 600px) calc(100% - 100px), var(--colors-pink3), var(--colors-pink1), var(---transparent)) !important;
 }
+
+
+div.svg-wrap {
+    position: relative;
+    height:32px;
+    width:100%;
+    overflow: visible !important;
+}
+
+div.svg-wrap > svg {
+    position: absolute;
+    width: 100% !important;
+    height: 400px;
+    overflow: visible !important;
+    z-index: -1 !important;
+
+}
