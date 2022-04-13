@@ -22,7 +22,8 @@ export const whitelist: Array<string> = [
     "desygner.com",
     "wakelet.com",
     "learninglab.si.edu",
-    "app.capacities.io"
+    "app.capacities.io",
+    "trends.google.com"
 ]
 
 export const affiliate: Array<string> = ["webflow.grsm.io", "frstre.com", "pixpa.com"];
