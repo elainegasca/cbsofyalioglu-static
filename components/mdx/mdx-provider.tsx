@@ -12,7 +12,7 @@ import matter from "gray-matter";
 import { Code } from "@mantine/core";
 import { Prism } from "@mantine/prism";
 import { Badge, Mark } from "@mantine/core";
-import { CardEnlarge, Video, Marker } from "../index";
+import { CardEnlarge, Video, Marker, ProductCard } from "../index";
 import { Hr, Anchor, string_to_slug } from "./index";
 import { Separator, CardPost } from "../styled";
 import {
@@ -36,30 +36,20 @@ export default function MdxProvider({
     ...props
 }) {
     const comp = {
-        p: (props) => (
-            <p>
-                {props.children}
-            </p>
-        ),
+        p: (props) => <p>{props.children}</p>,
         h1: (props) => (
             <span className="dark:text-gray-300 text-gray-800 text-4xl lg:text-5xl text-center mt-20 mb-4 md:mb-6">
                 {props.children}
             </span>
         ),
-        h2: (props) => (
-            <h2 id={string_to_slug(props.children)}>{props.children}</h2>
-        ),
-        h3: (props) => (
-            <h3 id={string_to_slug(props.children)}>{props.children}</h3>
-        ),
-        h4: (props) => (
-            <h4 id={string_to_slug(props.children)}>{props.children}</h4>
-        ),
+        h2: (props) => <h2 id={string_to_slug(props.children)}>{props.children}</h2>,
+        h3: (props) => <h3 id={string_to_slug(props.children)}>{props.children}</h3>,
+        h4: (props) => <h4 id={string_to_slug(props.children)}>{props.children}</h4>,
 
         code: (props) => <CodeHighlighter {...props} />,
         pre: (props) => {
             //console.log("peops", props)
-            return <pre className="mdx-pre">{props.children}</pre>;
+            return <pre className="mdx-pre">{props.children}</pre>
         },
         Video: (props) => <Video {...props} />,
         //Sandpack: props => <Sandpacker {...props} />,
@@ -72,13 +62,7 @@ export default function MdxProvider({
             </div>
         ),
         img: (props) => (
-            <Image
-                {...props}
-                loading="lazy"
-                layout="responsive"
-                width="1400"
-                height="700"
-            />
+            <Image {...props} loading="lazy" layout="responsive" width="1400" height="700" />
         ),
         ImageZoom: (props) => <ImageZoom {...props} />,
         Image: (props) => <Image {...props} />,
@@ -97,8 +81,9 @@ export default function MdxProvider({
         HeaderThree: (props) => <HeaderThree {...props} />,
         StyledAccordionTrigger: (props) =>
             React.forwardRef((props) => <StyledAccordionTrigger {...props} />),
-        AccordionSection: (props) => <AccordionSection {...props} />
-    };
+        AccordionSection: (props) => <AccordionSection {...props} />,
+        ProductCard: (props) => <ProductCard {...props} />,
+    }
 
     return <MDXRemote {...source} components={comp} />;
 }

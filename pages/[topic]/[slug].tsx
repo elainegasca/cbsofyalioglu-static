@@ -1,5 +1,6 @@
 // @ts-nocheck
 import Image from 'next/image'
+import Script from 'next/script'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import React, { useEffect } from 'react'
@@ -116,19 +117,15 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
                     monetize={frontMatter.monetize}
                     frontMatter={frontMatter}
                 />
-
             </Head>
             <ArticleHead />
-            <article className="relative pt-8 pb-32 flex flex-col items-center px-4" >
-
-                <main className="markdown-content relative post-page min-h-screen w-full max-w-[700px] h-auto pt-4 ml-auto mr-auto flex flex-col !z-10" >
+            <article className="relative pt-8 pb-32 flex flex-col items-center px-4">
+                <main className="markdown-content relative post-page min-h-screen w-full max-w-[700px] h-auto pt-4 ml-auto mr-auto flex flex-col !z-10">
                     <hr />
                     <AdBanner />
                     <MdxProvider source={mdxSource} />
-
                 </main>
                 <div className="fixed top-40 w-full h-auto hidden">
-
                     <svg
                         width="1775"
                         height="844"
@@ -168,8 +165,16 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
                                 colorInterpolationFilters="sRGB"
                             >
                                 <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                                <feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_15:2" />
+                                <feBlend
+                                    mode="normal"
+                                    in="SourceGraphic"
+                                    in2="BackgroundImageFix"
+                                    result="shape"
+                                />
+                                <feGaussianBlur
+                                    stdDeviation="175"
+                                    result="effect1_foregroundBlur_15:2"
+                                />
                             </filter>
                             <clipPath id="clip0_15:2">
                                 <rect width="1775" height="844" fill="white" />
@@ -178,36 +183,50 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
                     </svg>
                 </div>
 
-
-
                 <div className="flex flex-wrap justify-center !max-w-6xl  mt-4 pt-8">
-                    {keywords?.map((tag) =>
+                    {keywords?.map((tag) => (
                         <strong
-
-                            key={"article-footer-keywords-" + tag}
+                            key={'article-footer-keywords-' + tag}
                             className="inline-flex mx-2 mt-2 justify-center items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 !text-gray-800"
                         >
                             {tag}
                         </strong>
-                    )}
+                    ))}
                 </div>
             </article>
             <hr className="border-gray-100" />
 
             {/* RELATED POSTS */}
             <aside className="relative pt-20 pb-60 flex flex-col items-center px-12">
-                <h2 className="w-full max-w-[760px] mb-6 !text-left">{frontMatter.language === "tr" ? "İlginizi çekebilir" : "Other posts you may be interested"}</h2>
+                <h2 className="w-full max-w-[760px] mb-6 !text-left">
+                    {frontMatter.language === 'tr'
+                        ? 'İlginizi çekebilir'
+                        : 'Other posts you may be interested'}
+                </h2>
                 <ul className="grid sm:grid-cols-2 lg:grid-cols-2  gap-4 md:gap-6 xl:gap-8 w-full max-w-[760px]">
-                    {relatedPosts.map((rp) => <ListItemCard
-                        key={"article-featured-post-" + rp.slug}
-                        title={rp.title}
-                        topic={rp.topic}
-                        slug={rp.slug}
-                        cover={rp.cover}
-                    />
-                    )}
+                    {relatedPosts.map((rp) => (
+                        <ListItemCard
+                            key={'article-featured-post-' + rp.slug}
+                            title={rp.title}
+                            topic={rp.topic}
+                            slug={rp.slug}
+                            cover={rp.cover}
+                        />
+                    ))}
                 </ul>
+            </aside>
 
+            <aside className="relative pt-20 pb-60 flex flex-col items-center px-12">
+                <Script
+                    id="utteranc"
+                    src="https://utteranc.es/client.js"
+                    repo="canburaks/cbsofyalioglu-static"
+                    issue-term="pathname"
+                    label="comment"
+                    theme="github-dark"
+                    crossorigin="anonymous"
+                    async
+                />
             </aside>
 
             <ScrollTopSimpleButton />
