@@ -193,10 +193,11 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
                     ))}
                 </div>
             </article>
+
             <hr className="border-gray-100" />
 
             {/* RELATED POSTS */}
-            <aside className="relative pt-20 pb-10 flex flex-col items-center px-12">
+            <aside className="relative pt-20 pb-10 flex flex-col items-center px-12 overflow-x-hidden">
                 <h2 className="w-full max-w-[760px] mb-6 !text-left">
                     {frontMatter.language === 'tr'
                         ? 'İlginizi çekebilir'
@@ -213,19 +214,6 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
                         />
                     ))}
                 </ul>
-            </aside>
-
-            <aside className="relative pt-6 pb-60 flex flex-col items-center px-12">
-                <Script
-                    id="utterances"
-                    src="https://utteranc.es/client.js"
-                    repo="canburaks/cbsofyalioglu-static"
-                    issue-term="pathname"
-                    label="comment"
-                    theme="github-dark"
-                    crossorigin="anonymous"
-                    async
-                />
             </aside>
 
             <ScrollTopSimpleButton />
