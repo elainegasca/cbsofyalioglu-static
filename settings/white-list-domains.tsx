@@ -21,7 +21,6 @@ export const whitelist: Array<string> = [
     'monograph.notesnook.com',
     "desygner.com",
     "wakelet.com",
-    "learninglab.si.edu",
     "app.capacities.io",
     "trends.google.com"
 ]
