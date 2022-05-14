@@ -99,11 +99,11 @@ html:not(.dark) .bg-trans {
 
 /* This is a layer above the gradients and below the content*/
 #main-layout {
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  z-index: 200;
   /*
-  background-color: rgba(0, 0, 0, 0.3) !important;
   */
+  background-color: rgba(0, 0, 0, 0.5) !important;
   height: 100%;
   backdrop-filter: blur(50px) !important;
   margin: 0 !important;
