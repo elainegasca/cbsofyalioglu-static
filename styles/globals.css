@@ -105,7 +105,6 @@ html:not(.dark) .bg-trans {
   */
   background-color: rgba(0, 0, 0, 0.5) !important;
   height: 100%;
-  backdrop-filter: blur(50px) !important;
   margin: 0 !important;
   top: 0;
   bottom: 0;
