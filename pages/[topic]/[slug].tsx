@@ -54,7 +54,6 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
 
             {/*<p className="animate-text-xl max-w-screen-md text-gray-500 md:text-lg text-center mx-auto mt-20 sm:mt-8 mb-40 sm:mb-4">{frontMatter.description}</p>*/}
             <div className="relative h-auto min-h-[250px] sm:min-h-[300px] md:min-h-[400px] w-full overflow-hidden rounded-lg mt-12 mb-4 flex flex-col justify-end">
-
                 <Image
                     id="primary-image"
                     layout="intrinsic"
@@ -64,21 +63,20 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
                     //loading="lazy"
                     placeholder="blur"
                     blurDataURL="/img/placeholder.webp"
-                    src={frontMatter.thumbnail || frontMatter.cover || "/img/placeholder.webp"}
+                    src={frontMatter.thumbnail || frontMatter.cover || '/img/placeholder.webp'}
                     alt={(frontMatter.keywords && frontMatter.keywords[0]) || frontMatter.name}
                     className="animate-text-2xl w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-200 z-0"
                 />
             </div>
-            <div className="flex flex-wrap justify-center !max-w-6xl  mb-4 relative z-10">
-                {tags?.map((tag) =>
+            <div className="flex flex-wrap justify-center !max-w-6xl  mb-4 relative z-10 frontmatter-section-tags">
+                {tags?.map((tag) => (
                     <span
-
-                        key={"article-header-tag-" + tag}
+                        key={'article-header-tag-' + tag}
                         className="animate-text-4xl inline-flex mx-1 mt-2 justify-center items-center  rounded-md border-gray-50 border px-2 py-1 text-xs font-medium dark:text-gray-300 text-gray-800"
                     >
                         #{tag}
                     </span>
-                )}
+                ))}
             </div>
         </header>
     ))

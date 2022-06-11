@@ -11,11 +11,6 @@
     z-index: 10;
 }
 
-.post-page > h2,
-.post-page > h3,
-.post-page > h4,
-.post-page > h5 {
-}
 
 .post-page > h1 {
     margin-top: 64px;
@@ -85,19 +80,23 @@
     .post-page li {
         font-size: 16px;
         list-style-position: inside;
+        width: fit-content;
     }
 
     .post-page h2 {
-        font-size: 36px;
+        font-size: 32px;
         line-height: 1.5em;
     }
     .post-page h3 {
-        font-size: 28px;
-        line-height: 1.5em;
-    }
-    .post-page h4 {
         font-size: 24px;
         line-height: 1.5em;
+        width: fit-content;
+    }
+    .post-page h4 {
+        font-size: 20px;
+        line-height: 1.5em;
+        width: fit-content;
+
     }
 }
 
@@ -338,39 +337,41 @@ html.dark .fl-table td {
 }
 summary {
     list-style: none;
+    top:8px;
 }
 summary::-webkit-details-marker {
     display: none;
 }
-details summary::after {
+details summary::before {
     color: green;
-    font-size: 28px;
-    margin-left: 16px;
+    font-size: 24px;
+    margin-right: 16px;
     /* you can style it however you want, use background-image for example */
 }
-details[open] summary::after {
-    font-size: 28px;
-    margin-left: 16px;
+details[open] summary::before {
+    font-size: 24px;
+    margin-right: 16px;
+    top:16px;
     /* you can style it however you want, use background-image for example */
 }
 details {
-    margin-top: 32px;
-    margin-bottom: 48px;
+    margin-top: 24px;
+    margin-bottom: 16px;
     transition: all 350ms ease;
 }
 @media only screen and (max-width: 640px) {
-    details summary::after {
+    details summary::before {
         content: url(../public/svg/details-down-mobile.svg);
     }
-    details[open] summary::after {
+    details[open] summary::before {
         content: url(../public/svg/details-up-mobile.svg);
     }
 }
 @media only screen and (min-width: 641px) {
-    details summary::after {
+    details summary::before {
         content: url(../public/svg/details-down.svg);
     }
-    details[open] summary::after {
+    details[open] summary::before {
         content: url(../public/svg/details-up.svg);
     }
 }
@@ -388,4 +389,92 @@ details {
     background-color: rgba(230, 245, 255, 0.15);
     font-weight: 800;
     border:1px solid rgba(230, 245, 255, 0.85)
+}
+
+.frontmatter-section-tags a.tag {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+.frontmatter-section-tags span.tag {
+    margin:8px;
+    padding: 4px 8px;
+}
+
+a.tag, span.tag {
+    background-image: none;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    margin-right: 8px !important;
+    line-height: 15px;
+    vertical-align: baseline;
+    letter-spacing: normal;
+    word-spacing: 0px;
+    margin: 0px;
+    padding: 1px 15px;
+    border-radius: 6px !important;
+}
+@media only screen and (max-width: 640px) {
+    a.tag, span.tag {
+        background-image: none;
+        width: fit-content;
+        font-weight: 500 !important;
+        font-size: 12px !important;
+        text-transform: uppercase !important;
+        margin-right: 4px !important;
+        line-height: 15px;
+        vertical-align: baseline;
+        letter-spacing: normal;
+        margin: 0px;
+        padding: 1px 4px;
+        border-radius: 6px !important;
+    }
+}
+a.tag:hover {
+    background-image: none;
+    text-decoration: none;
+    filter: saturate(140%);
+}
+.frontmatter-section-tags .tag-box:nth-child(1) a,
+.frontmatter-section-tag span.tag:nth-child(1) {
+    color: #f66290;
+    border: 1px solid #f66290;
+    background-color: #471a2e;
+}
+.frontmatter-section-tags .tag-box:nth-child(2) a,
+.frontmatter-section-tags span.tag:nth-child(2) {
+    color: #f65cb6;
+    border: 1px solid #f65cb6;
+    background-color: #451b37;
+}
+.frontmatter-section-tags .tag-box:nth-child(3) a,
+.frontmatter-section-tags span.tag:nth-child(3) {
+    color: #bf7af0;
+    border: 1px solid #bf7af0;
+    background-color: #3a1e48;
+}
+.frontmatter-section-tags .tag-box:nth-child(4) a,
+.frontmatter-section-tags span.tag:nth-child(4) {
+    color: #9e8cfc;
+    border: 1px solid #9e8cfc;
+    background-color: #2c2150;
+}
+.frontmatter-section-tags .tag-box:nth-child(5) a,
+.frontmatter-section-tags span.tag:nth-child(5) {
+    color: #00c1d7;
+    border: 1px solid #00c1d7;
+    background-color: #08303b;
+}
+
+.frontmatter-section-tags .tag-box:nth-child(6) a,
+.frontmatter-section-tags span.tag:nth-child(6) {
+    color: #efc001;
+    border: 1px solid #efc001;
+    background-color: #352900;
+}
+.frontmatter-section-tags .tag-box:nth-child(7) a,
+.frontmatter-section-tags span.tag:nth-child(7) {
+    color: #ff8b3e;
+    border: 1px solid #ff8b3e;
+    background-color: #441f04;
 }

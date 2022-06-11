@@ -40,7 +40,10 @@ export default function Layout({ children }) {
     const [sidebarOpen, setSidebarOpen] = useState(false)
     const navigation = navLinks.map(navlink => navlink.href === router.asPath ? { ...navlink, current: true } : navlink)
     return (
-        <div className="h-auto min-h-screen flex !overflow-x-hidden relative z-10 !bg-transparent !max-w-[100vw]" id="layout">
+        <div
+            className="h-auto min-h-screen flex !overflow-x-hidden relative z-10 !bg-transparent !max-w-[100vw]"
+            id="layout"
+        >
             {/*shouldLoadScripts && <>
                 <Script strategy="lazyOnload" key="scripts-cbs-gtag" src="https://www.googletagmanager.com/gtag/js?id=UA-141617385-4" />
                 <Script strategy="lazyOnload"
@@ -64,13 +67,11 @@ export default function Layout({ children }) {
             crossOrigin="anonymous" />*/}
 
             <div className="absolute top-0 left-0 right-0 bottom-0 z-0 overflow-hidden">
-                <div id="main-layout" ></div>
+                <div id="main-layout"></div>
                 <PurplePinkBlob />
                 <ThreeColorsBlob />
                 <TealBlob />
                 <TealPinkBlob />
-
-
             </div>
             {/* SIDEBAR MOBILE */}
             <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -127,88 +128,15 @@ export default function Layout({ children }) {
                             <div className="mt-5 flex-1 h-0 overflow-y-auto ">
                                 <nav className="px-2 space-y-1">
                                     <Accordion type="single" collapsible>
-                                        {navigation.map((item, i) => (
-                                            item.children
-                                                ? (
-                                                    <AccordionItem value={`item-${i}`} key={`acc-mob-${i}`}>
-                                                        <AccordionTrigger>{item.name}</AccordionTrigger>
-                                                        <AccordionContent>
-                                                            {item.children.map(subItem => (
-                                                                <a
-                                                                    key={subItem.name}
-                                                                    href={subItem.href}
-                                                                    title={subItem.name}
-                                                                    className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 "
-                                                                >
-                                                                    {subItem.name}
-                                                                </a>
-                                                            ))}
-                                                        </AccordionContent>
-                                                    </AccordionItem>
-
-
-                                                )
-                                                : (
-                                                    <a
-                                                        key={item.name}
-                                                        href={item.href}
-                                                        title={item.name}
-                                                        className="group w-full flex items-center pl-5 pr-2 py-2 text-sm  text-gray-300 rounded-md hover:text-white"
-                                                    >
-                                                        {item.name}
-                                                    </a>
-
-                                                )
-                                        ))}
-                                    </Accordion>
-
-                                </nav>
-                            </div>
-                            <div className="ml-4 mb-4">
-                                <a
-                                    title="Professional Works: Company websites, Wix e-commerce and Shopify e-commerce"
-                                    href={"https://webmeister.org"}
-                                    className={classNames(
-                                        'text-gray-700 mx-2 dark:text-gray-300 hover:bg-gray-900 hover:text-white',
-                                        'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
-                                    )}
-                                >
-                                    Portfolio ↗
-                                </a>
-                            </div>
-                        </div>
-
-                    </Transition.Child>
-                    <div className="flex-shrink-0 w-14" aria-hidden="true">
-                        {/* Dummy element to force sidebar to shrink to fit close icon */}
-                    </div>
-                </Dialog>
-            </Transition.Root>
-
-            {/* SIDEBAR DESKTOP */}
-            <div className="hidden relative md:flex md:flex-shrink-0 dark:bg-[rgba(0,0,0,0.6)] bg-[rgba(255,255,255,0.1)]  z-10 border-r-2 border-solid border-gray-900">
-
-                <div className="flex flex-col w-64">
-                    {/* Sidebar component, swap this element with another sidebar if you like */}
-                    <div className="flex flex-col h-0 flex-1 fixed top-0 left-0 w-64 bottom-0 max-h-screen">
-
-                        {/* SIDEBAR TOP BANNER*/}
-                        <div className="flex items-center h-16 flex-shrink-0 px-4 bg-transparent justify-between">
-                            <a href="/" className="ml-4 relative top-1" title="homepage"><WebmeisterGradientLogo className="" /></a>
-                            {/* <Toggle /> */}
-                        </div>
-
-                        {/* SIDEBAR MAIN */}
-                        <div className="flex-1 fixed pl-4 flex-grow top-16 flex flex-col justify-between overflow-y-auto w-60 h-[90vh]">
-                            <nav className="flex-1 px-2 py-4 bg-transparent flex-grow h-full space-y-1">
-                                <Accordion type="single"  collapsible>
-                                    {navigation.map((item,i) => (
-                                        item.children
-                                            ? (
-                                                <AccordionItem value={`item-${i}`} key={`acc-${i}`}>
+                                        {navigation.map((item, i) =>
+                                            item.children ? (
+                                                <AccordionItem
+                                                    value={`item-${i}`}
+                                                    key={`acc-mob-${i}`}
+                                                >
                                                     <AccordionTrigger>{item.name}</AccordionTrigger>
                                                     <AccordionContent>
-                                                        {item.children.map(subItem => (
+                                                        {item.children.map((subItem) => (
                                                             <a
                                                                 key={subItem.name}
                                                                 href={subItem.href}
@@ -220,10 +148,7 @@ export default function Layout({ children }) {
                                                         ))}
                                                     </AccordionContent>
                                                 </AccordionItem>
-
-
-                                            )
-                                            : (
+                                            ) : (
                                                 <a
                                                     key={item.name}
                                                     href={item.href}
@@ -232,9 +157,76 @@ export default function Layout({ children }) {
                                                 >
                                                     {item.name}
                                                 </a>
-
                                             )
-                                    ))}
+                                        )}
+                                    </Accordion>
+                                </nav>
+                            </div>
+                            <div className="ml-4 mb-4">
+                                <a
+                                    title="Professional Works: Company websites, Wix e-commerce and Shopify e-commerce"
+                                    href={'https://webmeister.org'}
+                                    className={classNames(
+                                        'text-gray-700 mx-2 dark:text-gray-300 hover:bg-gray-900 hover:text-white',
+                                        'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
+                                    )}
+                                >
+                                    Portfolio ↗
+                                </a>
+                            </div>
+                        </div>
+                    </Transition.Child>
+                    <div className="flex-shrink-0 w-14" aria-hidden="true">
+                        {/* Dummy element to force sidebar to shrink to fit close icon */}
+                    </div>
+                </Dialog>
+            </Transition.Root>
+
+            {/* SIDEBAR DESKTOP */}
+            <div className="hidden relative md:flex md:flex-shrink-0 dark:bg-[rgba(0,0,0,0.6)] bg-[rgba(255,255,255,0.1)]  z-10 border-r-2 border-solid border-gray-900">
+                <div className="flex flex-col w-64">
+                    {/* Sidebar component, swap this element with another sidebar if you like */}
+                    <div className="flex flex-col h-0 flex-1 fixed top-0 left-0 w-64 bottom-0 max-h-screen">
+                        {/* SIDEBAR TOP BANNER*/}
+                        <div className="flex items-center h-16 flex-shrink-0 px-4 bg-transparent justify-between">
+                            <a href="/" className="ml-4 relative top-1" title="homepage">
+                                <WebmeisterGradientLogo className="" />
+                            </a>
+                            {/* <Toggle /> */}
+                        </div>
+
+                        {/* SIDEBAR MAIN */}
+                        <div className="flex-1 fixed pl-4 flex-grow top-16 flex flex-col justify-between overflow-y-auto w-60 h-[90vh]">
+                            <nav className="flex-1 px-2 py-4 bg-transparent flex-grow h-full space-y-1">
+                                <Accordion type="single" collapsible>
+                                    {navigation.map((item, i) =>
+                                        item.children ? (
+                                            <AccordionItem value={`item-${i}`} key={`acc-${i}`}>
+                                                <AccordionTrigger>{item.name}</AccordionTrigger>
+                                                <AccordionContent>
+                                                    {item.children.map((subItem) => (
+                                                        <a
+                                                            key={subItem.name}
+                                                            href={subItem.href}
+                                                            title={subItem.name}
+                                                            className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 "
+                                                        >
+                                                            {subItem.name}
+                                                        </a>
+                                                    ))}
+                                                </AccordionContent>
+                                            </AccordionItem>
+                                        ) : (
+                                            <a
+                                                key={item.name}
+                                                href={item.href}
+                                                title={item.name}
+                                                className="group w-full flex items-center pl-5 pr-2 py-2 text-sm  text-gray-300 rounded-md hover:text-white"
+                                            >
+                                                {item.name}
+                                            </a>
+                                        )
+                                    )}
                                 </Accordion>
 
                                 {/*navigation.map((item) => !item.children ? (
@@ -298,28 +290,25 @@ export default function Layout({ children }) {
 
                                 )*/}
                             </nav>
-                <a
-                    title="Professional Works: Company websites, Wix e-commerce and Shopify e-commerce"
-                    href={"https://webmeister.org"}
-                    className={classNames(
-                        'text-gray-700 mx-2 dark:text-gray-300 hover:bg-gray-900 hover:text-white',
-                        'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
-                    )}
-                >
-                    Portfolio ↗
-                </a>
+                            <a
+                                title="Professional Works: Company websites, Wix e-commerce and Shopify e-commerce"
+                                href={'https://webmeister.org'}
+                                className={classNames(
+                                    'text-gray-700 mx-2 dark:text-gray-300 hover:bg-gray-900 hover:text-white',
+                                    'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
+                                )}
+                            >
+                                Portfolio ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-
-        </div>
-                </div >
-            </div >
-
-        {/* MAIN CONTENT */ }
-        < div className = "flex flex-col w-0 flex-1 overflow-hidden relative !z-10 shadow-xl" >
-
-            {/* HEADER */ }
-            < div className = "relative flex-shrink-0 flex h-16  shadow z-50" >
+            {/* MAIN CONTENT */}
+            <div className="flex flex-col w-0 flex-1 overflow-hidden relative !z-10 shadow-xl">
+                {/* HEADER */}
+                <div className="relative flex-shrink-0 flex h-16  z-50">
                     <button
                         className="px-4 border-r border-gray-200 text-gray-500 bg-gray-800 relative z-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden"
                         onClick={() => setSidebarOpen(true)}
@@ -401,27 +390,24 @@ export default function Layout({ children }) {
                             </Menu>
                         </div>
                     </div>
-                </div >
+                </div>
 
-        {/* MAIN */ }
-        < main className = "flex-1 relative overflow-y-auto overflow-x-hidden focus:outline-none mt-4 sm:-mt-16 z-10 flex-col items-center w-full" >
-            <div className="py-0 z-50 mx-auto max-w-[1200px]">
-                {children}
+                {/* MAIN */}
+                <main className="flex-1 relative overflow-y-auto overflow-x-hidden focus:outline-none mt-4 sm:-mt-16 z-10 flex-col items-center w-full">
+                    <div className="py-0 z-50 mx-auto max-w-[1200px]">{children}</div>
+                </main>
+
+                {/* FOOTER */}
+                <div className="block md:hidden">
+                    <Footer
+                        title={site.name}
+                        credits={site.credits}
+                        links={footerLinks}
+                        social={site.socialMediaLinks}
+                    />
+                </div>
             </div>
-                </main >
-
-        {/* FOOTER */ }
-        < div className = "block md:hidden" >
-
-            <Footer
-                title={site.name}
-                credits={site.credits}
-                links={footerLinks}
-                social={site.socialMediaLinks}
-            />
-                </div >
-            </div >
-        </div >
+        </div>
     )
 }
 

@@ -28,6 +28,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     //console.log("loading scripts", hasDebounced)
     return (
         <React.Fragment>
+            <Head>
+                <script
+                    async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6680471386286423"
+                    crossorigin="anonymous"
+                ></script>
+            </Head>
             <Layout>
                 {/*<Head>
                 {hasMounted && <Commander />}
@@ -55,30 +62,24 @@ function MyApp({ Component, pageProps }: AppProps) {
 
                 </Head>*/}
                 <Script
-                    strategy='lazyOnload'
+                    strategy="lazyOnload"
                     src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
                 />
-                <Script id='ga-analytics'>
-                    {
-                        `
+                <Script id="ga-analytics">
+                    {`
                             window.dataLayer = window.dataLayer || [];
                             function gtag(){dataLayer.push(arguments);}
                             gtag('js', new Date());
 
                             gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
-                        `
-                    }
+                        `}
                 </Script>
 
                 <Component {...pageProps} />
-
-
             </Layout>
 
             {/* MESH GRADIENTS */}
         </React.Fragment>
-
-
     )
 }
 export default MyApp
