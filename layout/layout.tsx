@@ -1,8 +1,9 @@
-import { WebmeisterGradientLogo } from "../components/logo"
+import { WebmeisterGradientLogo } from '../components/logo'
 import { Fragment, useState } from 'react'
-import Script from "next/script"
+import Script from 'next/script'
 import { Dialog, Menu, Transition, Disclosure } from '@headlessui/react'
-import Footer from "./footer"
+import Footer from './footer'
+import Link from 'next/link'
 import {
     TealBlob,
     BluePurpleBlob,
@@ -12,20 +13,25 @@ import {
 } from '../components/Svg'
 import { MenuAlt2Icon, XIcon } from '@heroicons/react/outline'
 import { SearchIcon } from '@heroicons/react/solid'
-import { Toggle } from "../components/toggle";
+import { Toggle } from '../components/toggle'
 import { useRouter } from 'next/router'
-import { navLinks, footerLinks } from "../settings"
-import { site } from "../settings"
-import { useHasMounted, useDebounce } from "../lib/hooks"
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent, Tooltip } from "../components/styled"
-import { Commander } from "../components"
+import { navLinks, footerLinks } from '../settings'
+import { site } from '../settings'
+import { useHasMounted, useDebounce } from '../lib/hooks'
+import {
+    Accordion,
+    AccordionItem,
+    AccordionTrigger,
+    AccordionContent,
+    Tooltip,
+} from '../components/styled'
+import { Commander } from '../components'
 
 const userNavigation = [
     { name: 'Your Profile', href: '#' },
     { name: 'Settings', href: '#' },
     { name: 'Sign out', href: '#' },
 ]
-
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -38,7 +44,9 @@ export default function Layout({ children }) {
     const shouldLoadScripts = useDebounce(hasMounted, 5000)
     //console.log("loading scripts", shouldLoadScripts)
     const [sidebarOpen, setSidebarOpen] = useState(false)
-    const navigation = navLinks.map(navlink => navlink.href === router.asPath ? { ...navlink, current: true } : navlink)
+    const navigation = navLinks.map((navlink) =>
+        navlink.href === router.asPath ? { ...navlink, current: true } : navlink
+    )
     return (
         <div
             className="h-auto min-h-screen flex !overflow-x-hidden relative z-10 !bg-transparent !max-w-[100vw]"
@@ -137,26 +145,29 @@ export default function Layout({ children }) {
                                                     <AccordionTrigger>{item.name}</AccordionTrigger>
                                                     <AccordionContent>
                                                         {item.children.map((subItem) => (
-                                                            <a
+                                                            <Link
                                                                 key={subItem.name}
                                                                 href={subItem.href}
-                                                                title={subItem.name}
-                                                                className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 "
                                                             >
-                                                                {subItem.name}
-                                                            </a>
+                                                                <a
+                                                                    title={subItem.name}
+                                                                    className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 "
+                                                                >
+                                                                    {subItem.name}
+                                                                </a>
+                                                            </Link>
                                                         ))}
                                                     </AccordionContent>
                                                 </AccordionItem>
                                             ) : (
-                                                <a
-                                                    key={item.name}
-                                                    href={item.href}
-                                                    title={item.name}
-                                                    className="group w-full flex items-center pl-5 pr-2 py-2 text-sm  text-gray-300 rounded-md hover:text-white"
-                                                >
-                                                    {item.name}
-                                                </a>
+                                                <Link key={item.name} href={item.href}>
+                                                    <a
+                                                        title={item.name}
+                                                        className="group w-full flex items-center pl-5 pr-2 py-2 text-sm  text-gray-300 rounded-md hover:text-white"
+                                                    >
+                                                        {item.name}
+                                                    </a>
+                                                </Link>
                                             )
                                         )}
                                     </Accordion>
@@ -167,9 +178,10 @@ export default function Layout({ children }) {
                                     title="Professional Works: Company websites, Wix e-commerce and Shopify e-commerce"
                                     href={'https://webmeister.org'}
                                     className={classNames(
-                                        'text-gray-700 mx-2 dark:text-gray-300 hover:bg-gray-900 hover:text-white',
+                                        'text-gray-700 mx-2 dark:text-gray-300  hover:text-white portfolio-link',
                                         'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
                                     )}
+                                    rel="me"
                                 >
                                     Portfolio ↗
                                 </a>
@@ -189,9 +201,11 @@ export default function Layout({ children }) {
                     <div className="flex flex-col h-0 flex-1 fixed top-0 left-0 w-64 bottom-0 max-h-screen">
                         {/* SIDEBAR TOP BANNER*/}
                         <div className="flex items-center h-16 flex-shrink-0 px-4 bg-transparent justify-between">
-                            <a href="/" className="ml-4 relative top-1" title="homepage">
-                                <WebmeisterGradientLogo className="" />
-                            </a>
+                            <Link href="/">
+                                <a className="ml-4 relative top-1" title="homepage">
+                                    <WebmeisterGradientLogo className="" />
+                                </a>
+                            </Link>
                             {/* <Toggle /> */}
                         </div>
 
@@ -205,26 +219,29 @@ export default function Layout({ children }) {
                                                 <AccordionTrigger>{item.name}</AccordionTrigger>
                                                 <AccordionContent>
                                                     {item.children.map((subItem) => (
-                                                        <a
+                                                        <Link
                                                             key={subItem.name}
                                                             href={subItem.href}
-                                                            title={subItem.name}
-                                                            className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 "
                                                         >
-                                                            {subItem.name}
-                                                        </a>
+                                                            <a
+                                                                title={subItem.name}
+                                                                className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 "
+                                                            >
+                                                                {subItem.name}
+                                                            </a>
+                                                        </Link>
                                                     ))}
                                                 </AccordionContent>
                                             </AccordionItem>
                                         ) : (
-                                            <a
-                                                key={item.name}
-                                                href={item.href}
-                                                title={item.name}
-                                                className="group w-full flex items-center pl-5 pr-2 py-2 text-sm  text-gray-300 rounded-md hover:text-white"
-                                            >
-                                                {item.name}
-                                            </a>
+                                            <Link key={item.name} href={item.href}>
+                                                <a
+                                                    title={item.name}
+                                                    className="group w-full flex items-center pl-5 pr-2 py-2 text-sm  text-gray-300 rounded-md hover:text-white"
+                                                >
+                                                    {item.name}
+                                                </a>
+                                            </Link>
                                         )
                                     )}
                                 </Accordion>
@@ -295,7 +312,8 @@ export default function Layout({ children }) {
                                 href={'https://webmeister.org'}
                                 className={classNames(
                                     'text-gray-700 mx-2 dark:text-gray-300 hover:bg-gray-900 hover:text-white',
-                                    'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
+                                    'group flex items-center px-2 py-2 text-sm font-medium rounded-md',
+                                    'portfolio-link'
                                 )}
                             >
                                 Portfolio ↗
@@ -410,4 +428,3 @@ export default function Layout({ children }) {
         </div>
     )
 }
-

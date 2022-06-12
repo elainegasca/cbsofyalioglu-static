@@ -31,8 +31,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Head>
                 <script
                     async
-                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6680471386286423"
-                    crossorigin="anonymous"
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9259748524746137"
+                    crossOrigin="anonymous"
                 ></script>
             </Head>
             <Layout>

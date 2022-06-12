@@ -2,6 +2,7 @@ import React from 'react'
 import { styled, violet } from '../../styles/stitches.config'
 import { Separator } from './'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
+import Link from 'next/link'
 
 const StyledSeparator = styled(SeparatorPrimitive.Root, {
     'backgroundColor': violet.violet6,
@@ -54,15 +55,16 @@ export const PostHeader = ({ title, description, topics, modified }) => (
             {topics.map((cat, index) => (
                 <Box key={'article-header-category-' + cat} className="tag-box">
                     <Box key={index}>
-                        <a
-                            href={`/${cat}/`}
-                            title={`See ${cat} posts`}
-                            className={`tag uppercase  animate-text-lg`}
-                        >
-                            {` `}
-                            {cat}
-                            {` `}
-                        </a>
+                        <Link href={`/${cat}/`}>
+                            <a
+                                className={`tag uppercase  animate-text-lg`}
+                                title={`See ${cat} posts`}
+                            >
+                                {` `}
+                                {cat}
+                                {` `}
+                            </a>
+                        </Link>
                     </Box>
                 </Box>
             ))}

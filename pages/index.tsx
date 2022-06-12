@@ -3,29 +3,25 @@ import React from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import Footer from '../layout/footer'
-import { RichData, MetaTags, ListItemCard } from "../components"
-import { site } from "../settings"
+import { RichData, MetaTags, ListItemCard } from '../components'
+import { site } from '../settings'
 import HomepageProjects from '../components/HomepageProjects'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import decorativePatterns from '../public/img/decorative/background-patterns.png'
-import { WebmeisterGradientLogo } from "../components/logo"
-import { LinkIcon } from "../components"
+import { WebmeisterGradientLogo } from '../components/logo'
+import { LinkIcon } from '../components'
 
 function Home({ featuredPosts, turkishPosts, englishPosts }) {
-
     return (
         <>
             <Head>
                 <title key="h-title-tag">{site.title}</title>
                 <meta name="title" content={site.title} key="h-title" />
-                <meta
-                    name="description"
-                    content={site.description}
-                    key="h-description"
-                />
+                <meta name="description" content={site.description} key="h-description" />
                 <link rel="canonical" href={site.website} key="h-canonical" />
                 <MetaTags
                     type="website"
@@ -47,29 +43,26 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                             </h2>
 
                             <p className="max-w-screen-md text-gray-500 md:text-lg text-left">
-                                Some of the blog posts that are written in
-                                Turkish and English.
+                                Some of the blog posts that are written in Turkish and English.
                             </p>
                         </div>
                         <ul className="grid sm:grid-cols-1 lg:grid-cols-2  gap-4 md:gap-6 xl:gap-8 animate-text-3xl">
                             <ListItemCard
-                                title={"Blog Siteleri"}
-                                cover={"/posts/covers/blog-yazma-siteleri.webp"}
-                                slug={"en-iyi-blog-siteleri/"}
-                                topic={"blog-acmak"}
+                                title={'Blog Siteleri'}
+                                cover={'/posts/covers/blog-yazma-siteleri.webp'}
+                                slug={'en-iyi-blog-siteleri/'}
+                                topic={'blog-acmak'}
                                 description={
                                     "50'den fazla blog yazma sitesini barındıran bir liste. Ayrıca çeşitli amaçlarla blog açma isteyenlere tavsiyeler barındırır."
                                 }
                             />
                             <ListItemCard
-                                title={"Notion Kaynakları"}
-                                cover={"/posts/notion/notion.jpg"}
-                                slug={
-                                    "notion-sablonlari-ve-ucretsiz-site-olusturmak/"
-                                }
-                                topic={"blog-acmak"}
+                                title={'Notion Kaynakları'}
+                                cover={'/posts/notion/notion.jpg'}
+                                slug={'notion-sablonlari-ve-ucretsiz-site-olusturmak/'}
+                                topic={'blog-acmak'}
                                 description={
-                                    "Notion uygulaması ile yapabileceklerinizin sınırlarını zorlayan araçlar, ve bir çok kullanım için hazırlanmış şablonların listesi."
+                                    'Notion uygulaması ile yapabileceklerinizin sınırlarını zorlayan araçlar, ve bir çok kullanım için hazırlanmış şablonların listesi.'
                                 }
                             />
                         </ul>
@@ -82,9 +75,7 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                                     keywords={post.frontMatter.keywords}
                                     slug={post.frontMatter.slug}
                                     topic={post.frontMatter.topic}
-                                    key={
-                                        "home-featured-" + post.frontMatter.slug
-                                    }
+                                    key={'home-featured-' + post.frontMatter.slug}
                                 />
                             ))}
                         </ul>
@@ -92,23 +83,25 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                         {/* ENGLISH */}
                         <div className="mt-16 md:mt-40 mb-8">
                             <h2 className="text-gray-800 text-4xl lg:text-5xl text-left mb-4 md:mb-6">
-                                <a href="/en/">
-                                    Articles in English{" "}
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-6 w-6 inline-block"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                                        />
-                                    </svg>
-                                </a>
+                                <Link href="/en/">
+                                    <a>
+                                        Articles in English{' '}
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="h-6 w-6 inline-block"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                                            />
+                                        </svg>
+                                    </a>
+                                </Link>
                             </h2>
 
                             <p className="max-w-screen-md text-gray-500 md:text-lg text-left"></p>
@@ -122,7 +115,7 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                                     keywords={post.frontMatter.keywords}
                                     slug={post.frontMatter.slug}
                                     topic={post.frontMatter.topic}
-                                    key={"home-eng-" + post.frontMatter.slug}
+                                    key={'home-eng-' + post.frontMatter.slug}
                                 />
                             ))}
                         </ul>
@@ -130,23 +123,25 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                         {/* TURKISH */}
                         <div className="mt-16 md:mt-40 mb-8">
                             <h2 className="text-gray-800 text-4xl lg:text-5xl text-left mb-4 md:mb-6">
-                                <a href="/tr/">
-                                    Articles in Turkish{" "}
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-6 w-6 inline-block"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                                        />
-                                    </svg>
-                                </a>
+                                <Link href="/tr/">
+                                    <a title="Articles written in Turkish">
+                                        Articles in Turkish{' '}
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="h-6 w-6 inline-block"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                                            />
+                                        </svg>
+                                    </a>
+                                </Link>
                             </h2>
 
                             <p className="max-w-screen-md text-gray-500 md:text-lg text-left"></p>
@@ -160,7 +155,7 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                                     keywords={post.frontMatter.keywords}
                                     slug={post.frontMatter.slug}
                                     topic={post.frontMatter.topic}
-                                    key={"home-tr-" + post.frontMatter.slug}
+                                    key={'home-tr-' + post.frontMatter.slug}
                                 />
                             ))}
                         </ul>
@@ -168,22 +163,23 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                 </div>
             </main>
         </>
-    );
+    )
 }
 
 export function HeroDark() {
     return (
         <header className="relative w-full overflow-hidden z-20 hero">
             <div className="relative top-0 right-0 bottom-0 left-0 w-full h-auto">
-                <div className="relative max-w-7xl z-10" >
+                <div className="relative max-w-7xl z-10">
                     <div className="absolute top-0 right-0 hidden w-full h-full -ml-32 transform scale-100 translate-x-1/2 translate-y-20  md:block -rotate-12 opacity-90" />
                     <div className="flex flex-col items-center justify-between w-full  relative z-10">
-
                         <div className="flex flex-col items-start justify-center w-full pt-0 pb-10 md:pr-16 z-20">
                             <h1 className="animate-text-xs text-5xl md:text-6xl lg:text-7xl xl:text-7xl max-w-8xl xl:leading-tight dark:text-gray-50 bg-clip-text z-10 ">
                                 <span>Design</span> & <span>Development</span>
                             </h1>
-                            <p className="animate-text-lg text-sm sm:text-xl opacity-80  uppercase mt-4">by Can Burak Sofyalıoğlu</p>
+                            <p className="animate-text-lg text-sm sm:text-xl opacity-80  uppercase mt-4">
+                                by Can Burak Sofyalıoğlu
+                            </p>
                             {/*<p className="animate-text-lg text-xl opacity-80 my-10 ">
                                 Hi, I'm Can. I'm an engineer and focusing on web development and e-commerce.
                                 <br />
@@ -195,8 +191,10 @@ export function HeroDark() {
                         <div className="absolute z-0 md:relative md:z-10 flex items-center justify-center w-full md:pt-0 mt-32 mb-16 md:mt-1 opacity-75 md:opacity-100"></div>
                     </div>
                 </div>
-                <div id="hero-pattern-box" className="absolute top-0 right-0 w-full py-12 opacity-100 flex justify-end z-0 h-64">
-                </div>
+                <div
+                    id="hero-pattern-box"
+                    className="absolute top-0 right-0 w-full py-12 opacity-100 flex justify-end z-0 h-64"
+                ></div>
             </div>
         </header>
     )
@@ -308,52 +306,51 @@ function Features() {
     )
 }
 
-
 export const getStaticProps = async () => {
     const files = fs.readdirSync(path.join('posts'))
     const featuredPosts = []
     const turkishPosts = []
     const englishPosts = []
-    files.forEach(filename => {
+    files.forEach((filename) => {
         const markdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
         const { data: frontMatter } = matter(markdownWithMeta)
 
         // Featured
-        if (frontMatter.categories && frontMatter.categories.includes("featured")) {
+        if (frontMatter.categories && frontMatter.categories.includes('featured')) {
             featuredPosts.push({
                 frontMatter,
                 // The slug will be user defined if exists in the frontmatter
                 // Otherwise use default slug obtained from filename
-                slug: frontMatter.slug || filename.split(".")[0],
+                slug: frontMatter.slug || filename.split('.')[0],
 
                 // If category exists use it,  otherwise use 'posts' directory
-                topic: frontMatter.topic || "featured"
+                topic: frontMatter.topic || 'featured',
             })
         }
 
         // English
-        if (frontMatter.language === "eng" || frontMatter.language === "en") {
+        if (frontMatter.language === 'eng' || frontMatter.language === 'en') {
             englishPosts.push({
                 frontMatter,
                 // The slug will be user defined if exists in the frontmatter
                 // Otherwise use default slug obtained from filename
-                slug: frontMatter.slug || filename.split(".")[0],
+                slug: frontMatter.slug || filename.split('.')[0],
 
                 // If category exists use it,  otherwise use 'posts' directory
-                topic: frontMatter.topic
+                topic: frontMatter.topic,
             })
         }
 
         // Turkish
-        if (frontMatter.language === "tr") {
+        if (frontMatter.language === 'tr') {
             turkishPosts.push({
                 frontMatter,
                 // The slug will be user defined if exists in the frontmatter
                 // Otherwise use default slug obtained from filename
-                slug: frontMatter.slug || filename.split(".")[0],
+                slug: frontMatter.slug || filename.split('.')[0],
 
                 // If category exists use it,  otherwise use 'posts' directory
-                topic: frontMatter.topic
+                topic: frontMatter.topic,
             })
         }
     })
@@ -362,23 +359,27 @@ export const getStaticProps = async () => {
         const bd = new Date(b.frontMatter.date)
         return bd - ad
     })
-    const sortedEnglishPosts = englishPosts.sort((a, b) => {
-        const ad = new Date(a.frontMatter.date)
-        const bd = new Date(b.frontMatter.date)
-        return bd - ad
-    }).slice(0, 6)
-    const sortedTurkishPosts = turkishPosts.sort((a, b) => {
-        const ad = new Date(a.frontMatter.date)
-        const bd = new Date(b.frontMatter.date)
-        return bd - ad
-    }).slice(0, 6)
+    const sortedEnglishPosts = englishPosts
+        .sort((a, b) => {
+            const ad = new Date(a.frontMatter.date)
+            const bd = new Date(b.frontMatter.date)
+            return bd - ad
+        })
+        .slice(0, 6)
+    const sortedTurkishPosts = turkishPosts
+        .sort((a, b) => {
+            const ad = new Date(a.frontMatter.date)
+            const bd = new Date(b.frontMatter.date)
+            return bd - ad
+        })
+        .slice(0, 6)
     ///console.log("posts: ", featuredPosts, turkishPosts, englishPosts)
     return {
         props: {
             featuredPosts: sortedFeaturedPosts,
             turkishPosts: sortedTurkishPosts,
-            englishPosts: sortedEnglishPosts
-        }
+            englishPosts: sortedEnglishPosts,
+        },
     }
 }
 
