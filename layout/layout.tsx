@@ -52,6 +52,28 @@ export default function Layout({ children }) {
             className="h-auto min-h-screen flex !overflow-x-hidden relative z-10 !bg-transparent !max-w-[100vw]"
             id="layout"
         >
+            {/*shouldLoadScripts && <>
+                <Script strategy="lazyOnload" key="scripts-cbs-gtag" src="https://www.googletagmanager.com/gtag/js?id=UA-141617385-4" />
+                <Script strategy="lazyOnload"
+                    key="scripts-cbs-analytics"
+                    id="google-analytics-cbs"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+
+                        gtag('config', 'UA-141617385-4');
+                        gtag('config', 'G-3GKQHRYFHX');
+                    `,
+                    }}
+                />
+                </>*/}
+            {/*<Script strategy="afterInteractive"
+                key="scripts-cbs-adsense"
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9259748524746137"
+            crossOrigin="anonymous" />*/}
+
             <div className="absolute top-0 left-0 right-0 bottom-0 z-0 overflow-hidden">
                 <div id="main-layout"></div>
                 <PurplePinkBlob />
@@ -173,15 +195,17 @@ export default function Layout({ children }) {
             </Transition.Root>
 
             {/* SIDEBAR DESKTOP */}
-            <div className="sidebar-desktop hidden relative md:flex md:flex-shrink-0 dark:bg-[rgba(0,0,0,0.6)] bg-[rgba(255,255,255,0.1)]  z-10 border-r border-solid border-gray-900">
+            <div className="hidden relative md:flex md:flex-shrink-0 dark:bg-[rgba(0,0,0,0.6)] bg-[rgba(255,255,255,0.1)]  z-10 border-r-2 border-solid border-gray-900">
                 <div className="flex flex-col w-64">
                     {/* Sidebar component, swap this element with another sidebar if you like */}
                     <div className="flex flex-col h-0 flex-1 fixed top-0 left-0 w-64 bottom-0 max-h-screen">
                         {/* SIDEBAR TOP BANNER*/}
                         <div className="flex items-center h-16 flex-shrink-0 px-4 bg-transparent justify-between">
-                            <a href="/" className="ml-4 relative top-1" title="homepage">
-                                <WebmeisterGradientLogo className="" />
-                            </a>
+                            <Link href="/">
+                                <a className="ml-4 relative top-1" title="homepage">
+                                    <WebmeisterGradientLogo className="" />
+                                </a>
+                            </Link>
                             {/* <Toggle /> */}
                         </div>
 
@@ -195,31 +219,93 @@ export default function Layout({ children }) {
                                                 <AccordionTrigger>{item.name}</AccordionTrigger>
                                                 <AccordionContent>
                                                     {item.children.map((subItem) => (
-                                                        <a
+                                                        <Link
                                                             key={subItem.name}
                                                             href={subItem.href}
-                                                            title={subItem.name}
-                                                            className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 "
                                                         >
-                                                            {subItem.name}
-                                                        </a>
+                                                            <a
+                                                                title={subItem.name}
+                                                                className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 "
+                                                            >
+                                                                {subItem.name}
+                                                            </a>
+                                                        </Link>
                                                     ))}
                                                 </AccordionContent>
                                             </AccordionItem>
                                         ) : (
-                                            <a
-                                                key={item.name}
-                                                href={item.href}
-                                                title={item.name}
-                                                className="group w-full flex items-center pl-5 pr-2 py-2 text-sm  text-gray-300 rounded-md hover:text-white"
-                                            >
-                                                {item.name}
-                                            </a>
+                                            <Link key={item.name} href={item.href}>
+                                                <a
+                                                    title={item.name}
+                                                    className="group w-full flex items-center pl-5 pr-2 py-2 text-sm  text-gray-300 rounded-md hover:text-white"
+                                                >
+                                                    {item.name}
+                                                </a>
+                                            </Link>
                                         )
                                     )}
                                 </Accordion>
 
+                                {/*navigation.map((item) => !item.children ? (
+                                    <a
+                                        key={item.name}
+                                        href={item.href}
+                                        className={classNames(
+                                            item.current ? 'bg-gray-900 text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-900 hover:text-white',
+                                            'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
+                                        )}
+                                    >
 
+                                        {item.name}
+                                    </a>
+                                ) : (
+                                    <Disclosure as="div" key={item.name} className="space-y-1">
+                                        {({ open }) => (
+                                            <>
+                                                <Disclosure.Button
+                                                    className={classNames(
+                                                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 dark:text-gray-300 hover:bg-gray-900 hover:text-white',
+                                                        'group flex items-center px-2 py-2 text-sm font-medium rounded-md w-full'
+                                                    )}
+                                                >
+
+                                                    {/*<item.icon
+                                                        className={classNames(
+                                                            item.current ? 'text-gray-500 dark:text-gray-200' : 'text-gray-400 dark:text-gray-300 group-hover:text-gray-300',
+                                                            'mr-3 flex-shrink-0 h-6 w-6'
+                                                        )}
+                                                        aria-hidden="true"
+                                                        />
+                                {item.name}
+                                <svg
+                                    className={classNames(
+                                        open ? 'text-gray-200 dark:text-gray-300 rotate-90' : 'text-gray-300 dark:text-gray-300 ',
+                                        'mr-2 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-300 transition-colors ease-in-out duration-150'
+                                    )}
+                                    viewBox="0 0 20 20"
+                                    aria-hidden="true"
+                                >
+                                    <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
+                                </svg>
+
+                                                </Disclosure.Button>
+                            <Disclosure.Panel className="space-y-1">
+                                {item.children.map((subItem) => (
+                                    <a
+                                        key={subItem.name}
+                                        href={subItem.href}
+                                        className="group w-full flex items-center pl-10 pr-2 py-2 text-sm font-medium text-gray-300 rounded-md hover:text-gray-300 hover:bg-gray-900"
+                                    >
+                                        {subItem.name}
+                                    </a>
+                                ))}
+                            </Disclosure.Panel>
+                                            </>
+                                        )}
+                                    </Disclosure>
+                    )
+
+                                )*/}
                             </nav>
                             <a
                                 title="Professional Works: Company websites, Wix e-commerce and Shopify e-commerce"
@@ -238,7 +324,7 @@ export default function Layout({ children }) {
             </div>
 
             {/* MAIN CONTENT */}
-            <div className="flex main-content flex-col w-0 flex-1 overflow-hidden relative !z-10 shadow-xl">
+            <div className="flex flex-col w-0 flex-1 overflow-hidden relative !z-10 shadow-xl">
                 {/* HEADER */}
                 <div className="relative flex-shrink-0 flex h-16  z-50">
                     <button
