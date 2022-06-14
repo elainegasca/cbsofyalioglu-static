@@ -419,3 +419,21 @@ div.svg-wrap > svg {
     left: 0;
     right: 0;
 }
+
+.border-gradient-card {
+
+  background-clip: content-box, border-box;
+  background-image: linear-gradient(rgb(234, 25, 25), rgb(5, 255, 218)), linear-gradient(to right, rgb(11, 255, 255), rgb(95, 5, 251));
+}
+
+.border-gradient-card:hover {
+  background-image: linear-gradient(black, black), linear-gradient(to right, red, red);
+}
+
+.-sidebar-desktop {
+    background: rgb(13, 27, 41) !important;
+}
+
+.main-content {
+    box-shadow: inset 8px 0px 16px -10px rgba(0, 0, 0, 0.2);
+}
