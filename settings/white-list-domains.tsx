@@ -8,7 +8,7 @@
 //
 export const whitelist: Array<string> = [
     'www.filizguvenlik.com.tr',
-    "fi-homes.com",
+    'fi-homes.com',
     'livicomturkiye.com',
     'livicom.net',
     'alarmsistemleri.org',
@@ -19,10 +19,12 @@ export const whitelist: Array<string> = [
     'www.cbsofyalioglu.com',
     'www.opendigitalgallery.com',
     'monograph.notesnook.com',
-    "desygner.com",
-    "wakelet.com",
-    "app.capacities.io",
-    "trends.google.com"
+    'desygner.com',
+    'wakelet.com',
+    'app.capacities.io',
+    'trends.google.com',
+    'www.progotravel.com',
+    'progotravel.com',
 ]
 
-export const affiliate: Array<string> = ["webflow.grsm.io", "frstre.com", "pixpa.com"];
+export const affiliate: Array<string> = ['webflow.grsm.io', 'frstre.com', 'pixpa.com']
