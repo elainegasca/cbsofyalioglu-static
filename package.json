@@ -13,6 +13,7 @@
         "jsonize": "node data/jsonize.js"
     },
     "dependencies": {
+        "@agney/playground": "^0.8.0",
         "@codesandbox/sandpack-react": "^0.10.1",
         "@headlessui/react": "^1.4.2",
         "@heroicons/react": "^1.0.5",

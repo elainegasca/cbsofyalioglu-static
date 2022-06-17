@@ -11,7 +11,6 @@
     z-index: 10;
 }
 
-
 .post-page > h1 {
     margin-top: 64px;
     margin-bottom: 16px;
@@ -96,7 +95,6 @@
         font-size: 20px;
         line-height: 1.5em;
         width: fit-content;
-
     }
 }
 
@@ -146,8 +144,8 @@
     height: 2px;
     background-image: linear-gradient(
         to right,
-        rgb(255, 0, 179),
-        rgb(172, 0, 86)
+        var(--violet),
+        var(--cyan)
     ); /* linear-gradient(to right rgba(255, 0, 200, 0.6), rgba(140, 0, 255, 0.8)); */
 
     /*
@@ -197,7 +195,7 @@ article li > code {
     overflow-x: scroll;
     padding: 4px !important;
     margin: 16px 0;
-    border: 2px solid #f92195;
+    border: 2px solid #f9219400;
     border-radius: 16px !important;
 }
 
@@ -217,6 +215,7 @@ article li > code {
 .fl-table th {
     text-align: center;
     padding: 16px;
+
 }
 
 .fl-table td {
@@ -243,7 +242,7 @@ html.dark .fl-table {
     color: white;
 }
 html.dark .fl-table thead {
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid var(--cyan);
 }
 html.dark .fl-table tr:nth-child(odd) td {
     background: #222;
@@ -337,7 +336,7 @@ html.dark .fl-table td {
 }
 summary {
     list-style: none;
-    top:8px;
+    top: 8px;
 }
 summary::-webkit-details-marker {
     display: none;
@@ -351,7 +350,7 @@ details summary::before {
 details[open] summary::before {
     font-size: 24px;
     margin-right: 16px;
-    top:16px;
+    top: 16px;
     /* you can style it however you want, use background-image for example */
 }
 details {
@@ -388,7 +387,7 @@ details {
     -webkit-backdrop-filter: blur(40px) saturate(180%);
     background-color: rgba(230, 245, 255, 0.15);
     font-weight: 800;
-    border:1px solid rgba(230, 245, 255, 0.85)
+    border: 1px solid rgba(230, 245, 255, 0.85);
 }
 
 .frontmatter-section-tags a.tag {
@@ -397,11 +396,12 @@ details {
     font-size: 16px;
 }
 .frontmatter-section-tags span.tag {
-    margin:8px;
+    margin: 8px;
     padding: 4px 8px;
 }
 
-a.tag, span.tag {
+a.tag,
+span.tag {
     background-image: none;
     font-weight: 500 !important;
     font-size: 15px !important;
@@ -415,7 +415,8 @@ a.tag, span.tag {
     border-radius: 6px !important;
 }
 @media only screen and (max-width: 640px) {
-    a.tag, span.tag {
+    a.tag,
+    span.tag {
         background-image: none;
         width: fit-content;
         font-weight: 500 !important;

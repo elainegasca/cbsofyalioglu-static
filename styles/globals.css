@@ -78,13 +78,20 @@ a {
 }
 
 pre.mdx-pre {
-    padding: 4px;
+    padding: 6px;
     margin-top: 16px;
     margin-bottom: 16px;
-    border: 2px solid #f92195;
-    border-radius: 16px;
+    /*
+    border: 2px solid var(--violet);
+    */
+    border-radius: 8px;
     box-sizing: border-box !important;
-    max-width: 96% !important;
+    max-width: 120% !important;
+    background-image: linear-gradient(
+        to right,
+        var(--violet),
+        var(--cyan)
+    );
 }
 
 html.dark .blurlay {
