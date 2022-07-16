@@ -28,13 +28,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     //console.log("loading scripts", hasDebounced)
     return (
         <React.Fragment>
-            <Head>
-                <script
-                    async
-                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9259748524746137"
-                    crossOrigin="anonymous"
-                ></script>
-            </Head>
             <Layout>
                 {/*<Head>
                 {hasMounted && <Commander />}

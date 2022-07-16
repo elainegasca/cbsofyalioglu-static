@@ -119,7 +119,6 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
             <article className="relative pt-8 pb-32 flex flex-col items-center px-4">
                 <main className="markdown-content relative post-page min-h-screen w-full max-w-[700px] h-auto pt-4 ml-auto mr-auto flex flex-col !z-10">
                     <hr />
-                    <AdBanner />
                     <MdxProvider source={mdxSource} />
                 </main>
                 <div className="fixed top-40 w-full h-auto hidden">

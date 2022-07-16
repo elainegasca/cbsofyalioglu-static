@@ -1,1 +1,251 @@
-[{"title":"A Review on Staying in Alsancak for Izmir Travels","slug":"a-review-on-staying-in-alsancak-for-izmir-travels","topic":"travel","categories":["travel","post"],"tags":["izmir travel","izmir city center","daily flats in izmir"]},{"title":"SolidJS Setup in AdonisJS","slug":"adonisjs-solidjs","topic":"code","categories":["code","post"],"tags":["adonisjs","solidjs","adonis solidjs"]},{"title":"A Simple AdonisJS 5 and Tailwind Setup","slug":"adonisjs5-tailwind","topic":"code","categories":["code","post"],"tags":["adonisjs 5","adonisjs tailwind"]},{"title":"Canva Pro Ücretsiz","slug":"canva-pro-ucretsiz","topic":"design","categories":["design","post"],"tags":["canva pro","ücretsiz canva pro"]},{"title":"Awesome Content Creation Tools","slug":"content-creation-tools","topic":"productivity","categories":["productivity","design","post","featured"],"tags":["content creation","content development","grammar and punctuation checkers","visual content creation tools","content aggregation tools","infographic tools","graphics design tools","presentation tools"]},{"title":"Django and Modern JS Libraries - Back-end","slug":"django-and-modern-js-libraries-backend","topic":"post","categories":["code","post"],"tags":["django and modern js libraries","django single page application","django graphql"]},{"title":"Django and Modern JS Libraries - React","slug":"django-and-modern-js-libraries-react","topic":"post","categories":["code","post"],"tags":["django and react","react webpack","django react","django react graphql","django and modern js libraries"]},{"title":"Django and Modern JS Libraries - Svelte","slug":"django-and-modern-js-libraries-svelte","topic":"post","categories":["code","featured","post"],"tags":["django and modern js libraries","django svelte graphql","django svelte"]},{"title":"Eposta Bültenleri ve En İyi E-bülten Hazırlama Siteleri","slug":"e-bulten-hazirlama-siteleri","topic":"uretkenlik","categories":["uretkenlik","post"],"tags":["e bulten hazırlama","eposta bülteni","eposta pazarlama","revue alternatifleri","substack alternatifleri"]},{"title":"25+ En İyi Blog Siteleri ve Blog Açacaklara Tavsiyeler [2021]","slug":"en-iyi-blog-siteleri","topic":"blog-acmak","categories":["blog-acmak","post","featured"],"tags":["blogging","blog sitesi açma","blog açmak isteyenlere öneriler","blog yazma siteleri"]},{"title":"Awesome Free Design Resources and Graphic Design Tools","slug":"free-design-resources","topic":"design","categories":["design","post","featured"],"tags":["visual content creation tools","graphic design resources","graphic design generators","prototyping tools","design system tools","css generators","svg generators"]},{"title":"Introduction to WebRTC (Real-Time Communication)","slug":"introduction-to-webrtc","topic":"code","categories":["code","post"],"tags":["webrtc","real-time communication"]},{"title":"Is it Safe to Travel through Istanbul Airport?","slug":"is-it-safe-to-travel-through-istanbul-airport","topic":"post","categories":["travel","post"],"tags":["istanbul airport travel","istanbul airport transportation"]},{"title":"NestJS Tutorial Part I: Basics, Routing, Validation","slug":"nestjs-tutorial-I","topic":"code","categories":["code","post","featured"],"tags":["nestjs basics","nestjs modules","nestjs controllers","nestjs data validations"]},{"title":"Next JS Development within Nx Workspace","slug":"next-js-development-within-nx-workspace","topic":"code","categories":["code","post"],"tags":["nx","nextjs nx","nx next.js","nx framework"]},{"title":"A'dan Z'ye Dijital Not Alma: Yöntem ve Teknikler, Not Alma Uygulaması ...","slug":"not-alma-uygulamasi-ve-teknikleri","topic":"not-alma","categories":["not-alma","üretkenlik","post"],"tags":["not alma","not alma uygulamaları","not alma teknikleri"]},{"title":"Zettelkasten Metodu","slug":"not-tutma-teknikleri-zettelkasten-metodu","topic":"not-alma","categories":["featured","not-alma"],"tags":["not-alma","not alma uygulamaları","zettelkasten"]},{"title":"30+ Notion Şablonları, Kaynakları, Uygulamaları","slug":"notion-sablonlari-ve-ucretsiz-site-olusturmak","topic":"blog-acmak","categories":["blog-acmak","featured","uretkenlik"],"tags":["notion şablonları","not alma uygulamaları","proje yönetim araçları","blog yazma uygulamaları"]},{"title":"Obsidian Not Alma Uygulaması","slug":"obsidian-not-alma-uygulamasi","topic":"not-alma","categories":["not-alma","post"],"tags":["not-alma","obisidan","markdown uygulamalar","personal knowledgebase"]},{"title":"15+ Proje Yönetimi Araçları ve Görev Planlama Yazılımları","slug":"proje-yonetim-uygulamalari","topic":"uretkenlik","categories":["uretkenlik","post"],"tags":["proje uygulamaları","proje yönetim araçları","görev yönetimi araçları","proje takip programı","proje yönetim uygulamaları","üretkenlik uygulamaları"]},{"title":"Python vs JavaScript - Hangi Dil ile Programlamaya Başlamalıyım?","slug":"python-vs-javascript","topic":"programlama","categories":["programlama","post","featured"],"tags":["programlama","python","javascript"]},{"title":"Hosted Confluence with Custom Domain","slug":"self-hosted-confluence","topic":"how-to","categories":["post"],"tags":["atlassian confluence","hosted confluence","confluence with custom domain"]},{"title":"Exploring SolidJS - Reactive Primitives","slug":"solidjs-and-reactive-primitives","topic":"code","categories":["code","featured","post"],"tags":["reactive programming","solidjs"]},{"title":"Exploring SolidJS - Styling and Control Flow","slug":"styling-and-control-flow-in-solidj","topic":"code","categories":["code","post"],"tags":["solidjs","styling solidjs"]},{"title":"Ücretsiz WordPress Blog Açma (2021)","slug":"ucretsiz-wordpress-blog-acma","topic":"blog-acmak","categories":["blog-acmak","post"],"tags":["wordpress","ücretsiz wordpress","ücretsiz blog"]},{"title":"Video Archive","slug":"video-archive","topic":"archive","categories":["archive","post"],"tags":["archived videos","archive"]},{"title":"WordPress Ioncube Hatası | GoDaddy ve Digital Ocean Çözümü","slug":"wordpress-godaddy-ioncube","topic":"programlama","categories":["programlama","post"],"tags":["wordpress ioncube","godaddy ioncube hatası","digital ocean ioncube hatası"]},{"title":"Jamstack Nedir? Monolitik ve Jamstack web siteleri","slug":"wordpress-vs-jamstack","topic":"programlama","categories":["programlama","post"],"tags":["jamstack","jamstack vs monolitik"]},{"title":"TiddlyWiki","slug":"yetenekli-dijital-not-tutma-uygulamasi-tiddlywiki","topic":"not-alma","categories":["not-alma","post"],"tags":["tiddlwiki","not alma uygulamaları"]}]
+[
+  {
+    "title": "A Review on Staying in Alsancak for Izmir Travels",
+    "slug": "a-review-on-staying-in-alsancak-for-izmir-travels",
+    "topic": "travel",
+    "categories": ["travel", "post"],
+    "tags": ["izmir travel", "izmir city center", "daily flats in izmir"]
+  },
+  {
+    "title": "SolidJS Setup in AdonisJS",
+    "slug": "adonisjs-solidjs",
+    "topic": "code",
+    "categories": ["code", "post"],
+    "tags": ["adonisjs", "solidjs", "adonis solidjs"]
+  },
+  {
+    "title": "A Simple AdonisJS 5 and Tailwind Setup",
+    "slug": "adonisjs5-tailwind",
+    "topic": "code",
+    "categories": ["code", "post"],
+    "tags": ["adonisjs 5", "adonisjs tailwind"]
+  },
+  {
+    "title": "Canva Pro Ücretsiz",
+    "slug": "canva-pro-ucretsiz",
+    "topic": "design",
+    "categories": ["design", "post"],
+    "tags": ["canva pro", "ücretsiz canva pro"]
+  },
+  {
+    "title": "Awesome Content Creation Tools",
+    "slug": "content-creation-tools",
+    "topic": "productivity",
+    "categories": ["productivity", "design", "post", "featured"],
+    "tags": [
+      "content creation",
+      "content development",
+      "grammar and punctuation checkers",
+      "visual content creation tools",
+      "content aggregation tools",
+      "infographic tools",
+      "graphics design tools",
+      "presentation tools"
+    ]
+  },
+  {
+    "title": "Django and Modern JS Libraries - Back-end",
+    "slug": "django-and-modern-js-libraries-backend",
+    "topic": "post",
+    "categories": ["code", "post"],
+    "tags": ["django and modern js libraries", "django single page application", "django graphql"]
+  },
+  {
+    "title": "Django and Modern JS Libraries - React",
+    "slug": "django-and-modern-js-libraries-react",
+    "topic": "post",
+    "categories": ["code", "post"],
+    "tags": [
+      "django and react",
+      "react webpack",
+      "django react",
+      "django react graphql",
+      "django and modern js libraries"
+    ]
+  },
+  {
+    "title": "Django and Modern JS Libraries - Svelte",
+    "slug": "django-and-modern-js-libraries-svelte",
+    "topic": "post",
+    "categories": ["code", "featured", "post"],
+    "tags": ["django and modern js libraries", "django svelte graphql", "django svelte"]
+  },
+  {
+    "title": "Eposta Bültenleri ve En İyi E-bülten Hazırlama Siteleri",
+    "slug": "e-bulten-hazirlama-siteleri",
+    "topic": "uretkenlik",
+    "categories": ["uretkenlik", "post"],
+    "tags": [
+      "e bulten hazırlama",
+      "eposta bülteni",
+      "eposta pazarlama",
+      "revue alternatifleri",
+      "substack alternatifleri"
+    ]
+  },
+  {
+    "title": "25+ En İyi Blog Siteleri ve Blog Açacaklara Tavsiyeler [2021]",
+    "slug": "en-iyi-blog-siteleri",
+    "topic": "blog-acmak",
+    "categories": ["blog-acmak", "post", "featured"],
+    "tags": [
+      "blogging",
+      "blog sitesi açma",
+      "blog açmak isteyenlere öneriler",
+      "blog yazma siteleri"
+    ]
+  },
+  {
+    "title": "Awesome Free Design Resources and Graphic Design Tools",
+    "slug": "free-design-resources",
+    "topic": "design",
+    "categories": ["design", "post", "featured"],
+    "tags": [
+      "visual content creation tools",
+      "graphic design resources",
+      "graphic design generators",
+      "prototyping tools",
+      "design system tools",
+      "css generators",
+      "svg generators"
+    ]
+  },
+  {
+    "title": "Introduction to WebRTC (Real-Time Communication)",
+    "slug": "introduction-to-webrtc",
+    "topic": "code",
+    "categories": ["code", "post"],
+    "tags": ["webrtc", "real-time communication"]
+  },
+  {
+    "title": "Is it Safe to Travel through Istanbul Airport?",
+    "slug": "is-it-safe-to-travel-through-istanbul-airport",
+    "topic": "post",
+    "categories": ["travel", "post"],
+    "tags": ["istanbul airport travel", "istanbul airport transportation"]
+  },
+  {
+    "title": "NestJS Tutorial Part I: Basics, Routing, Validation",
+    "slug": "nestjs-tutorial-I",
+    "topic": "code",
+    "categories": ["code", "post", "featured"],
+    "tags": ["nestjs basics", "nestjs modules", "nestjs controllers", "nestjs data validations"]
+  },
+  {
+    "title": "Next JS Development within Nx Workspace",
+    "slug": "next-js-development-within-nx-workspace",
+    "topic": "code",
+    "categories": ["code", "post"],
+    "tags": ["nx", "nextjs nx", "nx next.js", "nx framework"]
+  },
+  {
+    "title": "A'dan Z'ye Dijital Not Alma: Yöntem ve Teknikler, Not Alma Uygulaması ...",
+    "slug": "not-alma-uygulamasi-ve-teknikleri",
+    "topic": "not-alma",
+    "categories": ["not-alma", "üretkenlik", "post"],
+    "tags": ["not alma", "not alma uygulamaları", "not alma teknikleri"]
+  },
+  {
+    "title": "Zettelkasten Metodu",
+    "slug": "not-tutma-teknikleri-zettelkasten-metodu",
+    "topic": "not-alma",
+    "categories": ["featured", "not-alma"],
+    "tags": ["not-alma", "not alma uygulamaları", "zettelkasten"]
+  },
+  {
+    "title": "30+ Notion Şablonları, Kaynakları, Uygulamaları",
+    "slug": "notion-sablonlari-ve-ucretsiz-site-olusturmak",
+    "topic": "blog-acmak",
+    "categories": ["blog-acmak", "featured", "uretkenlik"],
+    "tags": [
+      "notion şablonları",
+      "not alma uygulamaları",
+      "proje yönetim araçları",
+      "blog yazma uygulamaları"
+    ]
+  },
+  {
+    "title": "Obsidian Not Alma Uygulaması",
+    "slug": "obsidian-not-alma-uygulamasi",
+    "topic": "not-alma",
+    "categories": ["not-alma", "post"],
+    "tags": ["not-alma", "obisidan", "markdown uygulamalar", "personal knowledgebase"]
+  },
+  {
+    "title": "15+ Proje Yönetimi Araçları ve Görev Planlama Yazılımları",
+    "slug": "proje-yonetim-uygulamalari",
+    "topic": "uretkenlik",
+    "categories": ["uretkenlik", "post"],
+    "tags": [
+      "proje uygulamaları",
+      "proje yönetim araçları",
+      "görev yönetimi araçları",
+      "proje takip programı",
+      "proje yönetim uygulamaları",
+      "üretkenlik uygulamaları"
+    ]
+  },
+  {
+    "title": "Python vs JavaScript - Hangi Dil ile Programlamaya Başlamalıyım?",
+    "slug": "python-vs-javascript",
+    "topic": "programlama",
+    "categories": ["programlama", "post", "featured"],
+    "tags": ["programlama", "python", "javascript"]
+  },
+  {
+    "title": "Hosted Confluence with Custom Domain",
+    "slug": "self-hosted-confluence",
+    "topic": "how-to",
+    "categories": ["post"],
+    "tags": ["atlassian confluence", "hosted confluence", "confluence with custom domain"]
+  },
+  {
+    "title": "Exploring SolidJS - Reactive Primitives",
+    "slug": "solidjs-and-reactive-primitives",
+    "topic": "code",
+    "categories": ["code", "featured", "post"],
+    "tags": ["reactive programming", "solidjs"]
+  },
+  {
+    "title": "Exploring SolidJS - Styling and Control Flow",
+    "slug": "styling-and-control-flow-in-solidj",
+    "topic": "code",
+    "categories": ["code", "post"],
+    "tags": ["solidjs", "styling solidjs"]
+  },
+  {
+    "title": "Ücretsiz WordPress Blog Açma (2021)",
+    "slug": "ucretsiz-wordpress-blog-acma",
+    "topic": "blog-acmak",
+    "categories": ["blog-acmak", "post"],
+    "tags": ["wordpress", "ücretsiz wordpress", "ücretsiz blog"]
+  },
+  {
+    "title": "Video Archive",
+    "slug": "video-archive",
+    "topic": "archive",
+    "categories": ["archive", "post"],
+    "tags": ["archived videos", "archive"]
+  },
+  {
+    "title": "WordPress Ioncube Hatası | GoDaddy ve Digital Ocean Çözümü",
+    "slug": "wordpress-godaddy-ioncube",
+    "topic": "programlama",
+    "categories": ["programlama", "post"],
+    "tags": ["wordpress ioncube", "godaddy ioncube hatası", "digital ocean ioncube hatası"]
+  },
+  {
+    "title": "Jamstack Nedir? Monolitik ve Jamstack web siteleri",
+    "slug": "wordpress-vs-jamstack",
+    "topic": "programlama",
+    "categories": ["programlama", "post"],
+    "tags": ["jamstack", "jamstack vs monolitik"]
+  },
+  {
+    "title": "TiddlyWiki",
+    "slug": "yetenekli-dijital-not-tutma-uygulamasi-tiddlywiki",
+    "topic": "not-alma",
+    "categories": ["not-alma", "post"],
+    "tags": ["tiddlwiki", "not alma uygulamaları"]
+  }
+]
