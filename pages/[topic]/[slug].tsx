@@ -17,25 +17,37 @@ import {
     ThreeColorsBlob,
     TealPinkBlob,
     HeroPattern,
-    VerticleBlob
+    VerticleBlob,
 } from '../../components/Svg'
-import { useScript } from "../../lib/hooks"
-import { ArticleSeo, MetaTags, RichData, ListItemCard, ScrollTopSimpleButton } from "../../components"
-import { site } from "../../settings"
-import AdBanner from "../../components/adbanner"
-import { PostHeader } from "../../components/styled"
+import { useScript } from '../../lib/hooks'
+import {
+    ArticleSeo,
+    MetaTags,
+    RichData,
+    ListItemCard,
+    ScrollTopSimpleButton,
+} from '../../components'
+import { site } from '../../settings'
+import AdBanner from '../../components/adbanner'
+import { PostHeader } from '../../components/styled'
 
 const MdxProvider = dynamic(() => import('../../components/mdx/mdx-provider'))
-const ScrollTopButton = dynamic(() => import("../../components/button"))
+const ScrollTopButton = dynamic(() => import('../../components/button'))
 
 const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
     const router = useRouter()
     const canonical = frontMatter.canonical || site.website + router.asPath
 
-    const colors = ["bg-yellow-900 text-yellow-500", " bg-green-900 text-green-500", "bg-indigo-900 text-indigo-500", "bg-indigo-900 text-indigo-500", "bg-purple-900 text-purple-500"]
+    const colors = [
+        'bg-yellow-900 text-yellow-500',
+        ' bg-green-900 text-green-500',
+        'bg-indigo-900 text-indigo-500',
+        'bg-indigo-900 text-indigo-500',
+        'bg-purple-900 text-purple-500',
+    ]
 
     const categories = [...new Set([topic, ...frontMatter.categories])]
-    const categoriesWoutPost = categories.filter(cat => (cat !== "post") && (cat !== "featured"))
+    const categoriesWoutPost = categories.filter((cat) => cat !== 'post' && cat !== 'featured')
     const tags = frontMatter.tags
     const keywords = frontMatter.keywords
     //const keywords = frontMatter.keywords
@@ -80,7 +92,6 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
             </div>
         </header>
     ))
-
 
     return (
         <>
@@ -223,12 +234,11 @@ export const getStaticProps = async ({ params: { slug, topic } }) => {
     // This will be a correct filename rather than user-defined slug
     let allPostsFrontMatters = []
     let relatedPosts = []
-    let currentPostSlug;
-    let currentPost;
-
+    let currentPostSlug
+    let currentPost
 
     // Read all frontMatter data and store them
-    fs.readdirSync(path.join("posts")).forEach(filename => {
+    fs.readdirSync(path.join('posts')).forEach((filename) => {
         const markdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
         const { data: frontMatter } = matter(markdownWithMeta)
         allPostsFrontMatters.push(frontMatter)
@@ -249,7 +259,7 @@ export const getStaticProps = async ({ params: { slug, topic } }) => {
 
         // All possible topics including the categories
         const categories = frontMatter.categories || []
-        const postTopics = [frontMatter.topic ?? "post", ...categories].filter(Boolean)
+        const postTopics = [frontMatter.topic ?? 'post', ...categories].filter(Boolean)
 
         // if the topic prefix and slug are matches then terminate iteration
         if (postTopics.includes(topic) && postSlug === slug) {
@@ -259,16 +269,18 @@ export const getStaticProps = async ({ params: { slug, topic } }) => {
         }
     }
     if (!currentPostSlug) {
-        throw new Error(`The post with a given slug couldn't be found!: (slug: ${slug}, topic${topic})`,)
+        throw new Error(
+            `The post with a given slug couldn't be found!: (slug: ${slug}, topic${topic})`
+        )
     }
     //console.log("current", currentPostSlug)
-    const markdownWithMeta = fs.readFileSync(path.join('posts', currentPostSlug + ".mdx"), 'utf-8')
+    const markdownWithMeta = fs.readFileSync(path.join('posts', currentPostSlug + '.mdx'), 'utf-8')
     const { data: frontMatter, content } = matter(markdownWithMeta)
 
     // Find related posts
     if (frontMatter.related && frontMatter.related.length > 0) {
         const relatedSlugs = frontMatter.related
-        relatedPosts = allPostsFrontMatters.filter(postFrontMatter => {
+        relatedPosts = allPostsFrontMatters.filter((postFrontMatter) => {
             if (relatedSlugs.includes(postFrontMatter.slug)) {
                 return postFrontMatter
             }
@@ -283,17 +295,16 @@ export const getStaticProps = async ({ params: { slug, topic } }) => {
             slug,
             topic,
             mdxSource,
-            relatedPosts
-        }
+            relatedPosts,
+        },
     }
 }
-
 
 export const getStaticPaths = async () => {
     const files = fs.readdirSync(path.join('posts'))
     //console.log("[topic]/[slug].tsx - filenames: ", files)
     const paths = []
-    files.forEach(filename => {
+    files.forEach((filename) => {
         // The location of the .mdx file
         const markdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
 
@@ -302,22 +313,21 @@ export const getStaticPaths = async () => {
         //console.log("[slug] data", frontMatter)
         // The slug will be user defined in the frontmatter
         // Otherwise use default slug obtained from filename
-        const slug = frontMatter.slug || filename.replace('.mdx', '')  // Default slug
+        const slug = frontMatter.slug || filename.replace('.mdx', '') // Default slug
 
         const categories = frontMatter.categories || []
-        const possibleTopics = [frontMatter.topic ?? "post", ...categories].filter(Boolean)
+        const possibleTopics = [frontMatter.topic ?? 'post', ...categories].filter(Boolean)
 
         // Both topic and categories are selected
         const topics = [...new Set(possibleTopics)]
         //console.log("possibleTopics (unique): ", topics)
-        topics.forEach(t => paths.push({ params: { slug, topic: t } }))
-
+        topics.forEach((t) => paths.push({ params: { slug, topic: t } }))
     })
     //console.info("[topic]/[slug].tsx", paths)
 
     return {
         paths,
-        fallback: false
+        fallback: false,
     }
 }
 

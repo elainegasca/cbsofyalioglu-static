@@ -1,5 +1,5 @@
 import { WebmeisterGradientLogo } from '../components/logo'
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import Script from 'next/script'
 import { Dialog, Menu, Transition, Disclosure } from '@headlessui/react'
 import Footer from './footer'
@@ -26,6 +26,7 @@ import {
     Tooltip,
 } from '../components/styled'
 import { Commander } from '../components'
+import Icon from 'supercons'
 
 const userNavigation = [
     { name: 'Your Profile', href: '#' },
@@ -38,7 +39,7 @@ function classNames(...classes) {
 }
 
 // @ts-nocheck
-export default function Layout({ children }) {
+export default function Layout({ openCommander, closeCommander, children }) {
     const router = useRouter()
     const hasMounted = useHasMounted()
     const shouldLoadScripts = useDebounce(hasMounted, 5000)
@@ -47,6 +48,18 @@ export default function Layout({ children }) {
     const navigation = navLinks.map((navlink) =>
         navlink.href === router.asPath ? { ...navlink, current: true } : navlink
     )
+    const handleKeyDown = (e) => {
+        console.log('eeee', e.keyCode)
+        if (e.keyCode === 75 && e.metaKey) {
+            if (!open) {
+                openCommander()
+            } else closeCommander()
+        }
+    }
+    useEffect(() => {
+        document.addEventListener('onkeydown', handleKeyDown)
+        return document.removeEventListener('onkeydown', handleKeyDown)
+    })
     return (
         <div
             className="h-auto min-h-screen flex !overflow-x-hidden relative z-10 !bg-transparent !max-w-[100vw]"
@@ -78,8 +91,6 @@ export default function Layout({ children }) {
                 <div id="main-layout"></div>
                 <PurplePinkBlob />
                 <ThreeColorsBlob />
-                <TealBlob />
-                <TealPinkBlob />
             </div>
             {/* SIDEBAR MOBILE */}
             <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -171,6 +182,13 @@ export default function Layout({ children }) {
                                             )
                                         )}
                                     </Accordion>
+                                    <button
+                                        onClick={openCommander}
+                                        className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 justify-between"
+                                    >
+                                        Search
+                                        <Icon glyph="search" size={24} />
+                                    </button>
                                 </nav>
                             </div>
                             <div className="ml-4 mb-4">
@@ -212,6 +230,21 @@ export default function Layout({ children }) {
                         {/* SIDEBAR MAIN */}
                         <div className="flex-1 fixed pl-4 flex-grow top-16 flex flex-col justify-between overflow-y-auto w-60 h-[90vh]">
                             <nav className="flex-1 px-2 py-4 bg-transparent flex-grow h-full space-y-1">
+                                <button
+                                    onClick={openCommander}
+                                    className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 justify-between"
+                                >
+                                    Search
+                                    <kbd className="font-sans font-semibold dark:text-slate-500">
+                                        <abbr
+                                            title="Command"
+                                            className="no-underline text-slate-300 dark:text-slate-500"
+                                        >
+                                            ⌘
+                                        </abbr>
+                                        K
+                                    </kbd>
+                                </button>
                                 <Accordion type="single" collapsible>
                                     {navigation.map((item, i) =>
                                         item.children ? (
@@ -411,8 +444,8 @@ export default function Layout({ children }) {
                 </div>
 
                 {/* MAIN */}
-                <main className="flex-1 relative overflow-y-auto overflow-x-hidden focus:outline-none mt-4 sm:-mt-16 z-10 flex-col items-center w-full">
-                    <div className="py-0 z-50 mx-auto max-w-[1200px]">{children}</div>
+                <main className="will-lock flex-1 relative overflow-y-auto overflow-x-hidden focus:outline-none mt-4 sm:-mt-16 z-10 flex-col items-center w-full">
+                    <div className="py-0 z-50 mx-auto max-w-[1200px] will-lock">{children}</div>
                 </main>
 
                 {/* FOOTER */}

@@ -29,6 +29,7 @@
         "@radix-ui/react-separator": "^0.1.4",
         "@radix-ui/react-tooltip": "^0.1.7",
         "@stitches/react": "^1.2.7",
+        "cmdk": "^0.1.20",
         "dayjs": "^1.10.7",
         "jotai": "^1.4.8",
         "lax.js": "^2.0.3",
@@ -36,12 +37,14 @@
         "luxy.js": "^0.1.0",
         "next": "12.0.3",
         "next-seo": "^4.28.1",
-        "react": "17.0.2",
+        "react": "^18.2.0",
         "react-command-palette": "^0.16.2",
-        "react-dom": "17.0.2",
+        "react-dom": "^18.2.0",
         "react-live": "^2.3.0",
-        "react-medium-image-zoom": "^4.3.5",
-        "sharp": "^0.29.3"
+        "react-medium-image-zoom": "^5.1.2",
+        "rolly.js": "^0.4.0",
+        "sharp": "^0.29.3",
+        "supercons": "^0.0.1"
     },
     "devDependencies": {
         "@babel/plugin-proposal-object-rest-spread": "^7.16.0",

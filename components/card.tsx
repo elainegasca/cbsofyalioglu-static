@@ -4,6 +4,7 @@ import Link from 'next/link'
 type CardProps = {
     title: string
     description?: string
+    className?: string
     link: string
     cover?: string
     excerpt?: string
@@ -18,7 +19,12 @@ type CardProps = {
 }
 export function CardEnlarge(props: CardProps) {
     return (
-        <div key={props.link} className="card-enlarge grid grid-cols-1 mt-4">
+        <div
+            key={props.link}
+            className="card-enlarge grid grid-cols-1 mt-4"
+            data-scene
+            data-speed="0.2"
+        >
             <div className="glass-card-card flex flex-col sm:flex-row p-[2px] items-stretch rounded-lg overflow-hidden !min-h-[160px] border border-solid border-[rgba(255,255,255,0.2)]">
                 <a
                     rel={props.nofollow ? 'nofollow noopener' : 'noopener'}
@@ -121,7 +127,9 @@ export function ListItemCard(props: CardProps) {
     return (
         <li
             title={props.title}
-            className="group h-40 md:h-64 xl:h-52 flex flex-col  rounded-lg shadow-lg overflow-hidden relative mt-4"
+            className={`group h-40 md:h-64 xl:h-52 flex flex-col  rounded-lg shadow-lg overflow-hidden relative mt-4${
+                props.className ? ` ${props.className}` : ''
+            }`}
         >
             <Image
                 layout="fill"
@@ -150,7 +158,7 @@ export function ListItemCard(props: CardProps) {
                 )}
             </div>
             <Link href={`/${props.topic}/${props.slug}`}>
-                <a title={props.title}  className="group absolute top-0 left-0 right-0 bottom-0" />
+                <a title={props.title} className="group absolute top-0 left-0 right-0 bottom-0" />
             </Link>
         </li>
     )

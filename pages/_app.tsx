@@ -1,17 +1,19 @@
 // @ts-nocheck
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useCallback, useMemo } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Script from 'next/script'
-import { MantineProvider, Button } from '@mantine/core';
+import { MantineProvider, Button } from '@mantine/core'
 
 import '../styles/tailwind.css'
 import '../styles/globals.css'
+import '../node_modules/rolly.js/css/style.css'
+
 import type { AppProps } from 'next/app'
 import Layout from '../layout/layout'
 //import { site } from "../settings"
 //import { MetaTags } from "../components/next-seo"
-import { useHasMounted, useDebounce } from "../lib/hooks"
+import { useHasMounted, useDebounce } from '../lib/hooks'
 //import { CssBaseline } from '@nextui-org/react';
 
 // export type Status = 'idle' | 'loading' | 'ready' | 'error'
@@ -20,15 +22,21 @@ import { useHasMounted, useDebounce } from "../lib/hooks"
 //export function reportWebVitals(metric) {
 //    //console.log(metric)
 //}
-import { Commander } from "../components"
+import { Commander } from '../components'
+import jsondata from '../data/posts-metadata.json'
 
 function MyApp({ Component, pageProps }: AppProps) {
     const hasMounted = useHasMounted()
     //const hasDebounced = useDebounce(hasMounted, 5000)
     //console.log("loading scripts", hasDebounced)
+    const [open, setOpen] = useState(false)
+    const closeCommander = useCallback(() => setOpen(false), [])
+    const openCommander = useCallback(() => setOpen(true), [])
+    const memoizedData = useMemo(() => jsondata, [])
+
     return (
         <React.Fragment>
-            <Layout>
+            <Layout openCommander={openCommander} closeCommander={closeCommander}>
                 {/*<Head>
                 {hasMounted && <Commander />}
 
@@ -68,11 +76,13 @@ function MyApp({ Component, pageProps }: AppProps) {
                         `}
                 </Script>
 
-                <Component {...pageProps} />
+                <Commander data={memoizedData} open={open} closeHandler={closeCommander} />
+                <ContentComponent Element={Component} props={pageProps} />
             </Layout>
 
             {/* MESH GRADIENTS */}
         </React.Fragment>
     )
 }
+const ContentComponent = React.memo(({ Element, props }) => <Element {...props} />)
 export default MyApp

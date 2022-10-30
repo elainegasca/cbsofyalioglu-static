@@ -87,11 +87,7 @@ pre.mdx-pre {
     border-radius: 8px;
     box-sizing: border-box !important;
     max-width: 120% !important;
-    background-image: linear-gradient(
-        to right,
-        var(--violet),
-        var(--cyan)
-    );
+    background-image: linear-gradient(to right, var(--violet), var(--cyan));
 }
 
 html.dark .blurlay {
@@ -425,4 +421,15 @@ div.svg-wrap > svg {
     bottom: 0;
     left: 0;
     right: 0;
+}
+[cmdk-list] {
+    min-height: 300px;
+    height: var(--cmdk-list-height);
+    max-height: 500px;
+    transition: height 100ms ease;
+}
+.lock-scroll,
+.lock-scroll .will-lock {
+    max-height: 100vh !important;
+    overflow: hidden !important;
 }
