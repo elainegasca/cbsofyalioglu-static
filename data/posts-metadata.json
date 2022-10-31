@@ -1,14 +1,5 @@
 [
   {
-    "title": "A Review on Staying in Alsancak for Izmir Travels",
-    "slug": "a-review-on-staying-in-alsancak-for-izmir-travels",
-    "topic": "travel",
-    "categories": ["travel", "post"],
-    "tags": ["izmir travel", "izmir city center", "daily flats in izmir"],
-    "language": "eng",
-    "cover": "/posts/covers/a-review-on-staying-in-alsancak-for-izmir-travels.webp"
-  },
-  {
     "title": "SolidJS Setup in AdonisJS",
     "slug": "adonisjs-solidjs",
     "topic": "code",
@@ -144,15 +135,6 @@
     "tags": ["webrtc", "real-time communication"],
     "language": "eng",
     "cover": "/posts/covers/webrtc.webp"
-  },
-  {
-    "title": "Is it Safe to Travel through Istanbul Airport?",
-    "slug": "is-it-safe-to-travel-through-istanbul-airport",
-    "topic": "post",
-    "categories": ["travel", "post"],
-    "tags": ["istanbul airport travel", "istanbul airport transportation"],
-    "language": "eng",
-    "cover": "/posts/covers/is-it-safe-to-travel-through-istanbul-airport.webp"
   },
   {
     "title": "NestJS Tutorial Part I: Basics, Modules, Controllers",
