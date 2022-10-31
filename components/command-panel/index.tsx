@@ -33,11 +33,7 @@ export function Commander({ data, open, closeHandler }) {
     React.useEffect(() => {
         inputRef?.current?.focus()
     }, [])
-    React.useEffect(() => {
-        if (open) {
-            window.scrollY = window.scrollY
-        }
-    }, [open])
+
     if (!open) return <div></div>
     return (
         <div className="raycast commander" style={{ top: window.scrollY }}>
