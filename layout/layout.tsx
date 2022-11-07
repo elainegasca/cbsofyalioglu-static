@@ -235,15 +235,6 @@ export default function Layout({ openCommander, closeCommander, children }) {
                                     className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 justify-between"
                                 >
                                     Search
-                                    <kbd className="font-sans font-semibold dark:text-slate-500">
-                                        <abbr
-                                            title="Command"
-                                            className="no-underline text-slate-300 dark:text-slate-500"
-                                        >
-                                            ⌘
-                                        </abbr>
-                                        K
-                                    </kbd>
                                 </button>
                                 <Accordion type="single" collapsible>
                                     {navigation.map((item, i) =>
