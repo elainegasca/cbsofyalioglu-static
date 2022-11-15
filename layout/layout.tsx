@@ -89,8 +89,9 @@ export default function Layout({ openCommander, closeCommander, children }) {
 
             <div className="absolute top-0 left-0 right-0 bottom-0 z-0 overflow-hidden">
                 <div id="main-layout"></div>
-                <PurplePinkBlob />
-                <ThreeColorsBlob />
+                <div className='absolute top-0 left-0 right-0 bottom-0 ' id="grad-grad"></div>
+                {/* <PurplePinkBlob />
+                <ThreeColorsBlob /> */}
             </div>
             {/* SIDEBAR MOBILE */}
             <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -213,22 +214,31 @@ export default function Layout({ openCommander, closeCommander, children }) {
             </Transition.Root>
 
             {/* SIDEBAR DESKTOP */}
-            <div className="hidden relative md:flex md:flex-shrink-0 dark:bg-[rgba(0,0,0,0.6)] bg-[rgba(255,255,255,0.1)]  z-10 border-r-2 border-solid border-gray-900">
-                <div className="flex flex-col w-64">
+            <div id="sidebar-desktop" className="hidden relative md:flex md:flex-shrink-0 dark:bg-[rgba(0,0,0,0.6)] bg-[rgba(255,255,255,0.1)]  z-10 border-r-2 border-solid border-gray-900">
+                <div className="flex flex-col w-80">
                     {/* Sidebar component, swap this element with another sidebar if you like */}
                     <div className="flex flex-col h-0 flex-1 fixed top-0 left-0 w-64 bottom-0 max-h-screen">
                         {/* SIDEBAR TOP BANNER*/}
-                        <div className="flex items-center h-16 flex-shrink-0 px-4 bg-transparent justify-between">
+                        <div
+                            title={"cbsofyalioglu"}
+                            className="group w-full flex items-center pl-10 pr-2 mb-4 text-sm  text-gray-300 rounded-md hover:text-white"
+                        >
                             <Link href="/">
-                                <a className="ml-4 relative top-1" title="homepage">
-                                    <WebmeisterGradientLogo className="" />
+                                <a className="relative top-1 uppercase font-bold mt-8 text-sm" title="homepage">
+                                {"can"}<span className="!text-4xl !font-black !leading-[16px] !h-[16px] !text-[#e5ff01]">.</span>
+                                {"burak"}<span className="!text-4xl !font-black !leading-[16px] !h-[16px] !text-[#e5ff01]">.</span>
+                                {"sofyalioglu"}<span className="!text-4xl !font-black !leading-[16px] !h-[16px] !text-[#e5ff01]">.</span>
                                 </a>
                             </Link>
+                        </div>
+                        <div className="flex items-center h-16 flex-shrink-0 px-4 bg-transparent justify-between">
+
+
                             {/* <Toggle /> */}
                         </div>
 
                         {/* SIDEBAR MAIN */}
-                        <div className="flex-1 fixed pl-4 flex-grow top-16 flex flex-col justify-between overflow-y-auto w-60 h-[90vh]">
+                        <div className="flex-1 fixed pl-4 flex-grow top-20 flex flex-col justify-between overflow-y-auto w-80 h-[90vh]">
                             <nav className="flex-1 px-2 py-4 bg-transparent flex-grow h-full space-y-1">
                                 <button
                                     onClick={openCommander}

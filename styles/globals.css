@@ -52,6 +52,7 @@
     --amber-dark: #3f2200;
     --orange: #ff8b3e;
     --orange-dark: #441f04;
+    --neon: #e5ff01;
 }
 html,
 body {
@@ -78,16 +79,16 @@ a {
 }
 
 pre.mdx-pre {
-    padding: 6px;
+    padding: 2px;
     margin-top: 16px;
     margin-bottom: 16px;
     /*
     border: 2px solid var(--violet);
     */
-    border-radius: 8px;
+    border-radius: 6px;
     box-sizing: border-box !important;
     max-width: 120% !important;
-    background-image: linear-gradient(to right, var(--violet), var(--cyan));
+    background: var(--neon);
 }
 
 html.dark .blurlay {
@@ -141,7 +142,7 @@ div#main-layout {
     z-index: 200;
     /*
   */
-    background-color: rgba(0, 0, 0, 0.9) !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
     height: 100%;
     margin: 0 !important;
     top: 0;
@@ -297,30 +298,11 @@ html:not(.dark) .lottie-icon svg g path {
 /*thumb*/
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(40, 40, 40, 0.1);
     border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(
-        0deg,
-        rgb(2.353% 99.608% 85.882%) 0%,
-        rgb(5.809% 95.98% 86.765%) 6.25%,
-        rgb(9.265% 92.353% 87.647%) 12.5%,
-        rgb(12.721% 88.725% 88.529%) 18.75%,
-        rgb(16.176% 85.098% 89.412%) 25%,
-        rgb(19.632% 81.471% 90.294%) 31.25%,
-        rgb(23.088% 77.843% 91.176%) 37.5%,
-        rgb(26.544% 74.216% 92.059%) 43.75%,
-        rgb(30% 70.588% 92.941%) 50%,
-        rgb(33.456% 66.961% 93.824%) 56.25%,
-        rgb(36.912% 63.333% 94.706%) 62.5%,
-        rgb(40.368% 59.706% 95.588%) 68.75%,
-        rgb(43.824% 56.078% 96.471%) 75%,
-        rgb(47.279% 52.451% 97.353%) 81.25%,
-        rgb(50.735% 48.824% 98.235%) 87.5%,
-        rgb(54.191% 45.196% 99.118%) 93.75%,
-        rgb(57.647% 41.569% 100%) 100%
-    );
+    background: rgba(40, 40, 40, 0.9);
 }
 
 *[data-id='tooltip'] {
@@ -432,4 +414,22 @@ div.svg-wrap > svg {
 .lock-scroll .will-lock {
     max-height: 100vh !important;
     overflow: hidden !important;
+}
+#grad-grad {
+    background-color: hsla(1, 0%, 0%, 1);
+    background-image: radial-gradient(at 75% 16%, hsla(240, 100%, 41%, 0.3) 0px, transparent 50%),
+        radial-gradient(at 93% 82%, hsla(274, 100%, 41%, 0.23) 0px, transparent 50%);
+    z-index: -1 !important;
+}
+
+#sidebar-desktop {
+    background-color:rgba(249, 249, 249, 0.2);
+    background-image:
+    radial-gradient(at 87% 16%, hsla(184,100%,66%,0.87) 0px, transparent 50%),
+    radial-gradient(at 93% 82%, hsla(303,100%,60%,0.7) 0px, transparent 50%);
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+#sidebar-desktop > div {
+    box-sizing: content-box;
+    background-color: rgba(0, 0, 0, 1);
 }

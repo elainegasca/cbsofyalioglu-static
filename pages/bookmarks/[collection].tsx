@@ -11,7 +11,7 @@ import { CardEnlarge, CardCover } from "../../components"
 import { MetaTags } from "../../components"
 import { TealBlob } from "../../components/Svg"
 
-export default function BookmarkCollectionPage({ collection, bookmarks }) {
+export default function BookmarkCollectionPage({ collection, bookmarks=null }) {
     const title = `${site.name} | Bookmarks: ${collection.name}`
     const description = collection.description + " The list of digital tools that is curated by me."
     const canonical = `${site.website}/bookmarks/${collection.title}/`
@@ -45,7 +45,7 @@ export default function BookmarkCollectionPage({ collection, bookmarks }) {
                 </div>
                 <hr/>
                 <ul className="grid sm:grid-cols-2 mt-20 lg:grid-cols-2 xl:grid-cols-3  gap-4 md:gap-6 xl:gap-8 !z-10 relative">
-                    {bookmarks.map(bkm => (
+                    {bookmarks?.map(bkm => (
 
                         <CardCover
                             key={bkm.link}
