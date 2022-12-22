@@ -57,7 +57,7 @@ export const PostHeader = ({ title, description, topics, modified }) => (
                     <Box key={index}>
                         <Link href={`/${cat}/`}>
                             <a
-                                className={`tag uppercase  animate-text-lg`}
+                                className={`tag uppercase  animate-text-lg !text-xs`}
                                 title={`See ${cat} posts`}
                             >
                                 {` `}

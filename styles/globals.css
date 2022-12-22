@@ -79,7 +79,7 @@ a {
 }
 
 pre.mdx-pre {
-    padding: 2px;
+    padding: 1px;
     margin-top: 16px;
     margin-bottom: 16px;
     /*
@@ -88,9 +88,11 @@ pre.mdx-pre {
     border-radius: 6px;
     box-sizing: border-box !important;
     max-width: 120% !important;
-    background: var(--neon);
+    background: var(--mint-dark);
 }
+.mantine-ScrollArea-viewport > div {
 
+}
 html.dark .blurlay {
     backdrop-filter: blur(24px) !important;
     background-color: rgba(0, 0, 0, 0.3) !important;
@@ -288,17 +290,20 @@ html:not(.dark) .lottie-icon svg g path {
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 1px !important;
+    position: absolute;
 }
-
+* ::-webkit-scrollbar {
+    width: 1px !important;
+    position: absolute;
+}
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 3px grey;
     border-radius: 16px;
 }
 /*thumb*/
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(40, 40, 40, 0.1);
+    background: rgba(255, 255, 255, 0.946);
     border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -416,20 +421,23 @@ div.svg-wrap > svg {
     overflow: hidden !important;
 }
 #grad-grad {
-    background-color: hsla(1, 0%, 0%, 1);
-    background-image: radial-gradient(at 75% 16%, hsla(240, 100%, 41%, 0.3) 0px, transparent 50%),
-        radial-gradient(at 93% 82%, hsla(274, 100%, 41%, 0.23) 0px, transparent 50%);
-    z-index: -1 !important;
+
 }
 
 #sidebar-desktop {
-    background-color:rgba(249, 249, 249, 0.2);
-    background-image:
-    radial-gradient(at 87% 16%, hsla(184,100%,66%,0.87) 0px, transparent 50%),
-    radial-gradient(at 93% 82%, hsla(303,100%,60%,0.7) 0px, transparent 50%);
+    background-color:rgba(38, 38, 38, 0.8);
     border-right: 1px solid rgba(0, 0, 0, 0.05);
 }
 #sidebar-desktop > div {
     box-sizing: content-box;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(17, 17, 17, 0.9);
+}
+#sidebar-fixed {
+    /* background-image: radial-gradient(at 80% 0%, hsla(249, 87%, 15%, 0.0) 10rem, transparent 100%),
+        radial-gradient(at 20% 92%, hsla(275, 79%, 26%, 0.0) 10rem, transparent 100%); */
+    height: 100vh;
+    width:20rem;
+}
+#layout {
+    background-color: #0e0e0ee4 !important;
 }

@@ -106,7 +106,7 @@ export function CardCover(props: CardProps) {
                     </a>
                 </h3>
 
-                <p className="text-gray-500 mb-2 text-sm">{props.excerpt || props.description}</p>
+                <p className="text-gray-500 mb-2 text-xs">{props.excerpt || props.description}</p>
 
                 <div className="flex justify-start items-end mt-auto">
                     {props.tags?.map((tag) => (

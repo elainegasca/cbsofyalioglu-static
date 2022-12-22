@@ -1,33 +1,33 @@
 h1 {
-  font-family: 'Satoshi-Regular';
+  font-family: 'Satoshi-Variable';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 900 !important;
   font-size: 60px;
   line-height: 84px;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.07em;
   text-indent: 0px;
   text-shadow: 1px 1px 1px rgba(211, 129, 129, 0.05);
   text-rendering: geometricPrecision;
 }
 
 h2 {
-  font-family: 'Satoshi-Regular';
+  font-family: 'Satoshi-Variable';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 900 !important;
   font-size: 44px;
   line-height: 60px;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.05em;
   text-indent: 0px;
   text-rendering: geometricPrecision;
 }
 
 h3 {
-  font-family: 'Satoshi-Regular';
+  font-family: 'Satoshi-Variable';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 900;
   font-size: 32px;
   line-height: 44px;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.05em;
   text-indent: 0px;
   text-rendering: geometricPrecision;
 }

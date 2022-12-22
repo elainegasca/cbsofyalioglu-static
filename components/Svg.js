@@ -27,9 +27,9 @@ export function TealBlob({className=""}) {
       viewBox="0 0 1538 877"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`blur-blob blur-teal ${className}`}
+      className={`blur-blob blur-teal z-0 ${className}`}
     >
-      <g clipPath="url(#clip0_65_6)" opacity="0.1">
+      <g clipPath="url(#clip0_65_6)" opacity="0.2">
         <g filter="url(#filter0_f_65_6)">
           <path
             d="M1354 396.454C1345.81 528.828 1088.73 634.832 774.448 632.976C463.386 631.138 210.898 522.146 211 389.868C211.041 334.628 254.413 283.699 327.451 242.885C366.418 226.351 428.926 232.893 514.974 262.513C644.045 306.942 714.727 402.335 945.212 399.721C1175.7 397.108 1239.47 348.767 1354 396.454Z"

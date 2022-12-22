@@ -53,7 +53,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
     //const keywords = frontMatter.keywords
     //console.log("categories", "rendered")
     const ArticleHead = React.memo(() => (
-        <header className="w-full max-w-[760px] h-auto pt-20 ml-auto mr-auto relative flex flex-col items-center">
+        <header className="w-full max-w-[760px] h-auto pt-0 ml-auto mr-auto relative flex flex-col items-center">
             {/*<h1 className="text-gray-800 animate-text-md text-5xl lg:text-7xl  text-center mb-4 md:mb-2 mt-8 sm:mt-0">{frontMatter.title}</h1>
             <span className="my-2 text-xs  animate-text-lg !dark:text-gray-200 !text-gray-500">UPDATED: <time dateTime={frontMatter.modified}>{frontMatter.modified}</time></span>
     */}
@@ -84,7 +84,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
                 {tags?.map((tag) => (
                     <span
                         key={'article-header-tag-' + tag}
-                        className="animate-text-4xl inline-flex mx-1 mt-2 justify-center items-center  rounded-md border-gray-50 border px-2 py-1 text-xs font-medium dark:text-gray-300 text-gray-800"
+                        className="animate-text-4xl inline-flex mx-1 mt-2 justify-center items-center  rounded-md border-gray-50 border px-2 py-1 !text-xs font-medium dark:text-gray-300 text-gray-800"
                     >
                         #{tag}
                     </span>

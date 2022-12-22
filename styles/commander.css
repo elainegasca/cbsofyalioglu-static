@@ -129,7 +129,7 @@ a {
     height: 100vh;
     z-index: 10000;
     display: flex;
-    position: fixed;
+    position: absolute;
     flex-direction: column;
     align-items: center;
     justify-content: center;

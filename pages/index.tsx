@@ -177,8 +177,8 @@ export function HeroDark() {
                             <h1 className="animate-text-xs text-5xl md:text-6xl lg:text-7xl xl:text-7xl max-w-8xl xl:leading-tight dark:text-gray-50 bg-clip-text z-10 ">
                                 <span>Design</span> & <span>Development</span>
                             </h1>
-                            <p className="animate-text-lg text-sm sm:text-xl opacity-80  uppercase mt-4">
-                                by Can Burak Sofyalıoğlu
+                            <p className="animate-text-lg text-sm sm:text-xl opacity-80  mt-4">
+                                Personal blog on design and development.
                             </p>
                             {/*<p className="animate-text-lg text-xl opacity-80 my-10 ">
                                 Hi, I'm Can. I'm an engineer and focusing on web development and e-commerce.

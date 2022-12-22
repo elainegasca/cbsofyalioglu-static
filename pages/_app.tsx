@@ -29,14 +29,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     const hasMounted = useHasMounted()
     //const hasDebounced = useDebounce(hasMounted, 5000)
     //console.log("loading scripts", hasDebounced)
-    const [open, setOpen] = useState(false)
-    const closeCommander = useCallback(() => setOpen(false), [])
-    const openCommander = useCallback(() => setOpen(true), [])
-    const memoizedData = useMemo(() => jsondata, [])
+
 
     return (
         <React.Fragment>
-            <Layout openCommander={openCommander} closeCommander={closeCommander}>
+            <Layout>
                 {/*<Head>
                 {hasMounted && <Commander />}
 
@@ -76,7 +73,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                         `}
                 </Script>
 
-                <Commander data={memoizedData} open={open} closeHandler={closeCommander} />
+
                 <ContentComponent Element={Component} props={pageProps} />
             </Layout>
 

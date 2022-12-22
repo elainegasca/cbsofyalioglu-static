@@ -31,7 +31,7 @@ export default function BookmarkCollectionPage({ collection, bookmarks=null }) {
                     cover={site.cover}
                 />
             </Head>
-            <section className="relative pt-20 pb-60 flex flex-col items-center px-4 sm:px-12 md:px-16 lg:px-24 xl:px-32">
+            <section className="relative pt-0 pb-60 flex flex-col items-center px-4 sm:px-12 md:px-16 lg:px-24 xl:px-32">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center">
                         <p className="text-base font-bold text-indigo-600 tracking-wide uppercase">BOOKMARKS</p>
