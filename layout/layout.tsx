@@ -78,7 +78,7 @@ const CommanderEl = () => {
 const _Commander = () => {
     const hasMounted = useHasMounted()
 
-    const [open, setOpen] = useState(true)
+    const [open, setOpen] = useState(false)
     const [show, setShow] = useState(false)
     const closeCommander = useCallback(() => setOpen(false), [])
     const openCommander = useCallback(() => setOpen(true), [])
@@ -99,7 +99,7 @@ const _Commander = () => {
 
     useEffect(() => {
         if (hasMounted) {
-            setShow(true)
+            setShow(false)
         }
     },[hasMounted])
     return show ? <Commander data={memoizedData} open={open} closeHandler={closeCommander} /> : <div></div>
