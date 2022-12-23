@@ -15,4 +15,17 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
             marginX: (value) => ({ marginLeft: value, marginRight: value }),
         },
     })
+
+globalCss({
+    "@font-face": {
+        fontFamily: "Satoshi-Variable",
+        fontWeight: 400,
+        fontDisplay: "swap",
+        src:
+            "url(../public/fonts/Satoshi-Variable.woff2) format('woff2')"
+    },
+    body: {
+        margin: 0
+    }
+});
 export { violet, indigo, purple, blackA, mauve } from '@radix-ui/colors'

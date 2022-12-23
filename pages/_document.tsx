@@ -1,10 +1,12 @@
 // @ts-nocheck
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { getCssText } from '../styles/stitches.config'
+import { getCssText, css } from '../styles/stitches.config'
 import Script from 'next/script'
 
 class MyDocument extends Document {
+
     render() {
+
         return (
             <Html lang="en" className="dark">
                 <Head>

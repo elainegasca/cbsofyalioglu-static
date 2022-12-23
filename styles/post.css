@@ -48,7 +48,7 @@
 .post-page li {
     margin-top: 12px;
     margin-bottom: 8px;
-    margin-left: 36px;
+    margin-left: 16px;
     font-size: 18px;
     line-height: 1.9em;
     text-align: left;
@@ -80,6 +80,8 @@
         font-size: 15px;
         list-style-position: inside;
         width: fit-content;
+        white-space: normal;
+        margin-left: 12px;
     }
 
     .post-page h2 {
@@ -335,21 +337,21 @@ html.dark .fl-table td {
 }
 summary {
     list-style: none;
-    top: 8px;
+    top: 0px;
 }
 summary::-webkit-details-marker {
     display: none;
 }
 details summary::before {
     color: green;
-    font-size: 24px;
-    margin-right: 16px;
+    font-size: 20px;
+    margin-right: 8px;
     /* you can style it however you want, use background-image for example */
 }
 details[open] summary::before {
     font-size: 24px;
-    margin-right: 16px;
-    top: 16px;
+    margin-right: 8px;
+    top: 8px;
     /* you can style it however you want, use background-image for example */
 }
 details {
@@ -390,7 +392,8 @@ details {
 }
 
 .frontmatter-section-tags a.tag {
-    padding: 8px 16px;
+    margin-top:16px;
+    padding: 2px 8px;
     border-radius: 6px;
     font-size: 14px;
 }
@@ -405,7 +408,7 @@ span.tag {
     font-weight: 500 !important;
     font-size: 11px !important;
     margin-right: 8px !important;
-    line-height: 15px;
+    line-height: 1.5;
     vertical-align: baseline;
     letter-spacing: normal;
     word-spacing: 0px;
@@ -422,7 +425,7 @@ span.tag {
         font-size: 12px !important;
         text-transform: uppercase !important;
         margin-right: 4px !important;
-        line-height: 15px;
+        line-height: 1.5;
         vertical-align: baseline;
         letter-spacing: normal;
         margin: 0px;
@@ -438,43 +441,36 @@ a.tag:hover {
 .frontmatter-section-tags .tag-box:nth-child(1) a,
 .frontmatter-section-tag span.tag:nth-child(1) {
     color: #f66290;
-    border: 1px solid #f66290;
     background-color: #471a2e;
 }
 .frontmatter-section-tags .tag-box:nth-child(2) a,
 .frontmatter-section-tags span.tag:nth-child(2) {
     color: #f65cb6;
-    border: 1px solid #f65cb6;
     background-color: #451b37;
 }
 .frontmatter-section-tags .tag-box:nth-child(3) a,
 .frontmatter-section-tags span.tag:nth-child(3) {
     color: #bf7af0;
-    border: 1px solid #bf7af0;
     background-color: #3a1e48;
 }
 .frontmatter-section-tags .tag-box:nth-child(4) a,
 .frontmatter-section-tags span.tag:nth-child(4) {
     color: #9e8cfc;
-    border: 1px solid #9e8cfc;
     background-color: #2c2150;
 }
 .frontmatter-section-tags .tag-box:nth-child(5) a,
 .frontmatter-section-tags span.tag:nth-child(5) {
     color: #00c1d7;
-    border: 1px solid #00c1d7;
     background-color: #08303b;
 }
 
 .frontmatter-section-tags .tag-box:nth-child(6) a,
 .frontmatter-section-tags span.tag:nth-child(6) {
     color: #efc001;
-    border: 1px solid #efc001;
     background-color: #352900;
 }
 .frontmatter-section-tags .tag-box:nth-child(7) a,
 .frontmatter-section-tags span.tag:nth-child(7) {
     color: #ff8b3e;
-    border: 1px solid #ff8b3e;
     background-color: #441f04;
 }
