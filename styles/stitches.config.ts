@@ -21,8 +21,8 @@ globalCss({
         fontFamily: "Satoshi-Variable",
         fontWeight: 400,
         fontDisplay: "swap",
-        src:
-            "url(../public/fonts/Satoshi-Variable.woff2) format('woff2')"
+        src: "url('Satoshi-Variable.woff1')",
+        src: "local(../public/fonts/Satoshi-Variable.woff2) format('woff2')"
     },
     body: {
         margin: 0
