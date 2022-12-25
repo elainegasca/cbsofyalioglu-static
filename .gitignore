@@ -76,3 +76,4 @@ typings/
 .fusebox/
 
 .vercel
+.DS_Store
