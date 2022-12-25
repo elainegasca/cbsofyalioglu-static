@@ -208,7 +208,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
             <aside className="relative pt-20 pb-10 flex flex-col items-center px-12 overflow-x-hidden">
                 <h2 className="w-full max-w-[760px] mb-6 !text-left">
                     {frontMatter.language === 'tr'
-                        ? 'İlginizi çekebilir'
+                        ? 'Diğer blog yazıları'
                         : 'Other posts you may be interested'}
                 </h2>
                 <ul className="grid sm:grid-cols-2 lg:grid-cols-2  gap-4 md:gap-6 xl:gap-8 w-full max-w-[760px]">

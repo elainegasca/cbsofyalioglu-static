@@ -140,7 +140,7 @@ export function ListItemCard(props: CardProps) {
                 className="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-700 z-0"
             />
 
-            <div className="bg-[rgba(0,0,0,0.6)] hover:blur-md absolute inset-0 pointer-events-none"></div>
+            <div className="bg-[rgba(0,0,0,0.5)] hover:blur-md absolute inset-0 pointer-events-none"></div>
 
             <div className="relative p-4 mt-auto">
                 {props.date && <span className="block !text-gray-200 text-sm">{props.date}</span>}

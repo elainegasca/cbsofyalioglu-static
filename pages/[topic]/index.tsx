@@ -36,7 +36,7 @@ function CategoryPage({ posts, topic, slug, language }) {
                 />
             </Head>
             <div className="min-h-screen mb-40">
-                <div className=" py-6 sm:py-8 lg:py-12">
+                <div className="">
                     <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
                         {/* Text */}
                         <div className="mt-0 mb-10 md:mb-16">
