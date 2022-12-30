@@ -31,7 +31,7 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                     cover={site.cover}
                 />
             </Head>
-            <main className="content-section main z-20 px-4 pt-6 sm:pt-8 md:pt-6 ">
+            <main className="content-section main z-20 px-4">
                 <div className="">
                     <div className="max-w-screen-2xl px-4 md:px-8 pb-40">
                         <HeroDark />

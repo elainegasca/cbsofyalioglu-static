@@ -44,7 +44,7 @@ export default function BookmarkCollectionPage({ collection, bookmarks=null }) {
                     </div>
                 </div>
                 <hr/>
-                <ul className="grid sm:grid-cols-2 mt-20 lg:grid-cols-2 xl:grid-cols-3  gap-4 md:gap-6 xl:gap-8 !z-10 relative">
+                <ul className="grid sm:grid-cols-1 mt-20 lg:grid-cols-1 xl:grid-cols-1  gap-4 md:gap-6 xl:gap-8 !z-10 relative">
                     {bookmarks?.map(bkm => (
 
                         <CardCover

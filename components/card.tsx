@@ -80,23 +80,24 @@ export function CardCover(props: CardProps) {
     return (
         <li
             key={props.link}
-            className="flex flex-col frost-blur border rounded-lg overflow-hidden glass-card-card z-10"
+            className="flex flex-col md:flex-row frost-blur border rounded-lg overflow-hidden glass-card-card z-10  h-40 p-1"
         >
+            <div className="absolute flex md:none md:hidden top-0 left-0 right-0 bottom-0 w-full h-40" style={{background:"rgba(0,0,0,0.55)", backdropFilter:"blur(4px)", zIndex:10}} />
             <a
                 href={props.link}
                 rel={props.nofollow ? 'nofollow noopener' : 'noopener'}
-                className="group h-32 md:h-32 lg:h-36 block  overflow-hidden relative"
+                className="group bottom-0 top-0 left-0 right-0 md:relative h-auto md:h-[152px] md:w-60 w-full block  overflow-hidden rounded-md"
             >
                 <img
                     src={props.cover}
                     loading="lazy"
                     alt="Photo by Minh Pham"
-                    className="!min-w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-500"
+                    className="!min-w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-500 z-0"
                 />
             </a>
 
-            <div className="flex flex-col flex-1 p-4 sm:p-4 !pb-2">
-                <h3 className="text-gray-800 text-xl font-semibold mb-2">
+            <div className="flex flex-col flex-1 h-auto md:h-[152px] !bg-[rgba(0,0,0,0.5)] md:bg-transparent">
+                <h3 className="text-gray-800 text-xl font-semibold ml-4 p-2 mt-2 z-10">
                     <a
                         href={props.link}
                         rel={props.nofollow ? 'nofollow noopener' : 'noopener'}
@@ -106,13 +107,14 @@ export function CardCover(props: CardProps) {
                     </a>
                 </h3>
 
-                <p className="text-gray-500 mb-2 text-xs">{props.excerpt || props.description}</p>
+                <p className="text-gray-400 font-medium  text-xs ml-4 p-2 z-10">{props.excerpt || props.description}</p>
 
-                <div className="flex justify-start items-end mt-auto">
+                <div className="flex justify-start mt-auto ml-4 p-2 flex-wrap">
                     {props.tags?.map((tag) => (
                         <span
                             key={tag}
-                            className="text-gray-300 text-xs border rounded-md  px-2 py-1 mr-2 mt-2 overflow-ellipsis"
+                            style={{ color: "#00c1d7", backgroundColor:"#08303b", backdropFilter:"saturate(180%)", borderRadius:16}}
+                            className="px-2 mr-2 z-10 overflow-ellipsis relative bottom-2 text-sm whitespace-nowrap mt-1"
                         >
                             {tag}
                         </span>

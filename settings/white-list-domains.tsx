@@ -25,6 +25,8 @@ export const whitelist: Array<string> = [
     'trends.google.com',
     'www.progotravel.com',
     'progotravel.com',
+    'www.collecteurs.com',
+    'collecteurs.com',
 ]
 
 export const affiliate: Array<string> = ['webflow.grsm.io', 'frstre.com', 'pixpa.com']

@@ -28,6 +28,7 @@ import {
 import { Commander } from '../components'
 import Icon from 'supercons'
 import jsondata from '../data/posts-metadata.json'
+import { SegmentedControl } from '@mantine/core';
 
 const userNavigation = [
     { name: 'Your Profile', href: '#' },
@@ -159,7 +160,7 @@ const _SidebarDesktop = ({ openCommander }) => (
                     className="group w-full flex items-center pl-10 pr-2 mb-4 text-sm  text-gray-300 rounded-md hover:text-white"
                 >
                     <Link href="/">
-                        <a className="relative top-1 uppercase font-bold text-sm" title="homepage">
+                        <a className="relative top-2 uppercase font-bold text-sm" title="homepage">
                             {"can "}
                             {"burak "}
                             {"sofyalioglu"}<span className="!text-4xl !font-black !leading-[16px] !h-[16px] !text-[#e5ff01]">.</span>
@@ -181,6 +182,7 @@ const _SidebarDesktop = ({ openCommander }) => (
                         </button> */}
                         <AccordionSection />
                     </nav>
+                    <div>
                     <a
                         title="Professional Works: Company websites, Wix e-commerce and Shopify e-commerce"
                         href={'https://webmeister.org'}
@@ -192,6 +194,7 @@ const _SidebarDesktop = ({ openCommander }) => (
                     >
                         Portfolio ↗
                     </a>
+                    </div>
                 </div>
             </div>
         </div>

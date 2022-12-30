@@ -1,6 +1,8 @@
 // @ts-nocheck
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { getCssText, css } from '../styles/stitches.config'
+//import { getCssText, css } from '../styles/stitches.config'
+import {getCssText } from '@canburaks/stitches-theme'
+
 import Script from 'next/script'
 
 class MyDocument extends Document {
