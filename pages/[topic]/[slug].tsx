@@ -164,6 +164,8 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
                             topic={rp.topic}
                             slug={rp.slug}
                             cover={rp.cover}
+                            descriptiopn={rp.description}
+
                         />
                     ))}
                 </ul>

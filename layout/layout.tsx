@@ -159,13 +159,14 @@ const _SidebarDesktop = ({ openCommander }) => (
                 {/* SIDEBAR TOP BANNER*/}
                 <div
                     title={"cbsofyalioglu"}
-                    className="group w-full flex items-center pl-10 pr-2 mb-4 text-sm  text-gray-300 rounded-md hover:text-white"
+                    className="group w-full flex items-center pl-10 pr-2 mb-4 text-lg  text-gray-300 rounded-md hover:text-white"
                 >
                     <Link href="/">
-                        <a className="relative top-2 uppercase font-bold text-sm" title="homepage">
-                            {"can "}
+                        <a className="relative top-2 uppercase font-black text-lg" title="homepage">
+                            {/* {"can "}
                             {"burak "}
-                            {"sofyalioglu"}<span className="!text-4xl !font-black !leading-[16px] !h-[16px] !text-[#e5ff01]">.</span>
+                            {"sofyalioglu"} */}
+                            cbs<span className="!text-4xl !font-black !leading-[16px] !h-[16px] !text-[#e5ff01]">.</span>
                         </a>
                     </Link>
                 </div>
