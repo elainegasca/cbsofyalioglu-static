@@ -29,7 +29,7 @@ import { Commander } from '../components'
 import Icon from 'supercons'
 import jsondata from '../data/posts-metadata.json'
 import { SegmentedControl } from '@mantine/core';
-
+import {motion} from 'framer-motion'
 const userNavigation = [
     { name: 'Your Profile', href: '#' },
     { name: 'Settings', href: '#' },
@@ -41,7 +41,7 @@ function classNames(...classes) {
 }
 
 // @ts-nocheck
-export default function Layout({ openCommander, closeCommander, children }) {
+export default function Layout({ openCommander, closeCommander, x,y, children }) {
     const hasMounted = useHasMounted()
     const shouldLoadScripts = useDebounce(hasMounted, 5000)
     //console.log("loading scripts", shouldLoadScripts)
@@ -66,6 +66,7 @@ export default function Layout({ openCommander, closeCommander, children }) {
             <SidebarMobile sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
             <SidebarDesktop openCommander={openCommander} />
+            {/* <motion.div id="mouse-tracker" style={{x, y, zIndex:1000}}></motion.div> */}
 
             {/* MAIN CONTENT */}
             <MainContent children={children} setSidebarOpen={setSidebarOpener} />
@@ -150,8 +151,9 @@ const _Accordion = () => {
 const AccordionSection = React.memo(_Accordion)
 
 const _SidebarDesktop = ({ openCommander }) => (
-    < div id="sidebar-desktop" className="hidden relative md:flex md:flex-shrink-0 dark:bg-[rgba(0,0,0,0.6)] bg-[rgba(255,255,255,0.1)]  z-10 border-r-2 border-solid border-gray-900" >
+    < div id="sidebar-desktop" className="hidden relative md:flex md:flex-shrink-0  z-10 border-r-2 border-solid border-gray-900" >
         <div className="flex flex-col w-80">
+            <div className="sidebar-layer"></div>
             {/* Sidebar component, swap this element with another sidebar if you like */}
             <div id="sidebar-fixed" className="flex flex-col h-0 flex-1 fixed top-16 left-0 w-64 bottom-0 max-h-screen">
                 {/* SIDEBAR TOP BANNER*/}

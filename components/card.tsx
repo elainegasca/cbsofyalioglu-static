@@ -125,7 +125,7 @@ export function CardCover(props: CardProps) {
     )
 }
 
-export function ListItemCard(props: CardProps) {
+export function _ListItemCard(props: CardProps) {
     return (
         <li
             title={props.title}
@@ -155,6 +155,46 @@ export function ListItemCard(props: CardProps) {
                 </Link>
                 {props.description && (
                     <p className="!text-white text-base font-regular transition duration-100 mb-2 relative">
+                        {props.description}
+                    </p>
+                )}
+            </div>
+            <Link href={`/${props.topic}/${props.slug}`}>
+                <a title={props.title} className="group absolute top-0 left-0 right-0 bottom-0" />
+            </Link>
+        </li>
+    )
+}
+export function ListItemCard(props: CardProps) {
+    return (
+        <li
+            title={props.title}
+            className={`group h-44 md:h-44 xl:h-44 flex flex-col  rounded-lg shadow-lg overflow-hidden relative mt-1 ${
+                props.className ? ` ${props.className}` : ''
+            }`}
+        >
+            <Image
+                layout="fill"
+                sizes="30vw"
+                loading="lazy"
+                src={props.thumbnail || props.cover || '/img/placeholder.webp'}
+                alt={(props.keywords && props.keywords[0]) || props.title}
+                className="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-700 z-0"
+            />
+
+            <div className="bg-[rgba(10,10,10,0.4)] group-hover:bg-[rgba(0,0,0,0.7)] transition-colors ease-linear duration-400 backdrop-blur-0 group-hover:backdrop-blur-lg absolute inset-0 pointer-events-none border-[rgba(255,255,255,0.3)] shadow-md border-solid rounded-lg border"></div>
+
+            <div className="relative p-4 flex flex-col justify-end group">
+                {props.date && <span className="block !text-gray-200 text-sm">{props.date}</span>}
+                <Link href={`/${props.topic}/${props.slug}`}>
+                    <a title={props.title} className="group">
+                        <h3 className="!text-white text-lg font-semibold transition duration-500 mb-2 z-10 relative translate-y-20 group-hover:translate-y-0">
+                            {props.title}
+                        </h3>
+                    </a>
+                </Link>
+                {props.description && (
+                    <p className="!text-white text-base font-regular transition  relative opacity-0 group-hover:opacity-100 translate-y-20 group-hover:translate-y-0 duration-500 ease-linear">
                         {props.description}
                     </p>
                 )}

@@ -133,61 +133,6 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
                     <MdxProvider source={mdxSource} />
                 </main>
                 <div className="fixed top-40 w-full h-auto hidden">
-                    <svg
-                        width="1775"
-                        height="844"
-                        viewBox="0 0 1775 844"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="blur-blob absolute bottom-4 left-0 right-0 w-full"
-                    >
-                        <g clipPath="url(#clip0_15:2)">
-                            <g filter="url(#filter0_f_15:2)">
-                                <path
-                                    d="M1577.29 448.171C1547.54 498.49 1394.27 531.977 1234.95 522.967C1075.63 513.956 970.598 465.86 1000.35 415.541C1030.1 365.222 1151.47 406.178 1310.79 415.188C1470.11 424.198 1607.04 397.851 1577.29 448.171Z"
-                                    fill="#EB0078"
-                                />
-                                <ellipse
-                                    rx="331.517"
-                                    ry="73.5057"
-                                    transform="matrix(0.993596 0.112989 -0.568853 0.822439 694.831 443.011)"
-                                    fill="#32A9FF"
-                                />
-                                <ellipse
-                                    rx="331.517"
-                                    ry="73.5057"
-                                    transform="matrix(0.993596 0.112989 -0.568853 0.822439 865.164 448.191)"
-                                    fill="#5B08D5"
-                                />
-                            </g>
-                        </g>
-                        <defs>
-                            <filter
-                                id="filter0_f_15:2"
-                                x="12.7568"
-                                y="21.8836"
-                                width="1918.62"
-                                height="852.548"
-                                filterUnits="userSpaceOnUse"
-                                colorInterpolationFilters="sRGB"
-                            >
-                                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                                <feBlend
-                                    mode="normal"
-                                    in="SourceGraphic"
-                                    in2="BackgroundImageFix"
-                                    result="shape"
-                                />
-                                <feGaussianBlur
-                                    stdDeviation="175"
-                                    result="effect1_foregroundBlur_15:2"
-                                />
-                            </filter>
-                            <clipPath id="clip0_15:2">
-                                <rect width="1775" height="844" fill="white" />
-                            </clipPath>
-                        </defs>
-                    </svg>
                 </div>
 
                 <div className="flex flex-wrap justify-center !max-w-6xl  mt-4 pt-8">
@@ -211,7 +156,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
                         ? 'Diğer blog yazıları'
                         : 'Other posts you may be interested'}
                 </h2>
-                <ul className="grid sm:grid-cols-2 lg:grid-cols-2  gap-4 md:gap-6 xl:gap-8 w-full max-w-[760px]">
+                <ul className="grid sm:grid-cols-2 lg:grid-cols-2  gap-2 md:gap-3 xl:gap-4 w-full max-w-[760px] pt-4">
                     {relatedPosts.map((rp) => (
                         <ListItemCard
                             key={'article-featured-post-' + rp.slug}

@@ -87,7 +87,7 @@ export default function Blog({ posts }) {
                             }
                         />
                     </ul>
-                    <hr/>
+                    <hr />
                     {/* Article */}
                     <ul className="grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6 xl:gap-8">
                         {sortedPosts.map((post) => (
@@ -98,6 +98,8 @@ export default function Blog({ posts }) {
                                 slug={post.frontMatter.slug}
                                 topic={post.frontMatter.topic}
                                 key={"tr-" + post.frontMatter.slug}
+                                description={post.frontMatter.description}
+
                             />
                         ))}
                     </ul>

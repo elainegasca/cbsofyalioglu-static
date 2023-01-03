@@ -24,16 +24,34 @@ import { useHasMounted, useDebounce } from '../lib/hooks'
 //}
 import { Commander } from '../components'
 import jsondata from '../data/posts-metadata.json'
+import { motion, animate, useSpring, useTranform, useMotionValue } from 'framer-motion'
 
 function MyApp({ Component, pageProps }: AppProps) {
     const hasMounted = useHasMounted()
     //const hasDebounced = useDebounce(hasMounted, 5000)
     //console.log("loading scripts", hasDebounced)
+    const mouseX = useMotionValue(0)
+    const mouseY = useMotionValue(0)
+    const x = useSpring(mouseX, { stiffness: 1000, damping: 10 })
+    const y = useSpring(mouseY, { stiffness: 1000, damping: 10 })
 
+
+    React.useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            // animate mouse x and y
+            animate(mouseX, e.clientX);
+            animate(mouseY, e.clientY);
+        };
+        //const setY = (e) => _y.set(e.clientY)
+        window.addEventListener('mousemove', handleMouseMove)
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove)
+        }
+    }, [])
 
     return (
         <React.Fragment>
-            <Layout>
+            <Layout x={mouseX} y={mouseY}>
                 {/*<Head>
                 {hasMounted && <Commander />}
 
@@ -72,7 +90,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                             gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
                         `}
                 </Script>
-
 
                 <ContentComponent Element={Component} props={pageProps} />
             </Layout>

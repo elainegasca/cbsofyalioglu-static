@@ -66,6 +66,8 @@ export default function BlogTr({ posts }) {
                                     slug={post.frontMatter.slug}
                                     topic={post.frontMatter.topic}
                                     key={"eng-" + post.frontMatter.slug}
+                                    description={post.frontMatter.description}
+
                                 />
                             ))}
                         </ul>

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This field contains information about your page. It is usually around two sentences long."
+    />
+    <meta name="keywords" content="Unify Framework" />
+    <meta name="author" content="Unify" />
+    <title>Unify - My First Webpage</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="img/favicon/site.webmanifest" />
+  </head>
+
+  <body>
+    <header>
+      <div class="section-10" id="info">
+        <div class="header-info">
+          <i data-feather="github"></i>
+          <p class="s-body">
+            Welcome to the framework coders love.
+            <a class="white" href="#">Read More</a>
+          </p>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <ul class="nav__links">
+          <li>
+            <a class="logo" href="/"><img src="img/logo.svg" alt="logo" /></a>
+          </li>
+          <li data-expand="products" class="nav--link">Browse</li>
+          <li data-expand="use-cases" class="nav--link">Community</li>
+          <li class="nav-cta">
+            <button class="btn-medium" type="button">Figma</button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="tip"></div>
+      <section class="header__expandMenu">
+        <div class="menu__container">
+          <div id="products">
+            <div class="sub__menu">
+              <h3 class="title">PRODUCTS</h3>
+              <ul class="subMenu__items">
+                <li class="subMenu--item">
+                  <img class="nav-icon" src="img/nav-icon-1.svg" alt="icon" />
+                  <span class="label__container">
+                    <div class="label">
+                      Unify Framework
+                      <img
+                        class="right--arrow"
+                        src="img/nav-icon-arrow.svg"
+                        alt="arrow"
+                      />
+                    </div>
+                    <div class="label--desc">Minimal CSS Framework</div>
+                  </span>
+                </li>
+                <li class="subMenu--item">
+                  <img class="nav-icon" src="img/nav-icon-2.svg" alt="icon" />
+                  <span class="label__container">
+                    <div class="label">
+                      Page Builder
+                      <div class="tag-neutral">Soon</div>
+                      <img
+                        class="right--arrow"
+                        src="img/nav-icon-arrow.svg"
+                        alt="arrow"
+                      />
+                    </div>
+                    <div class="label--desc">Unify HTML Editor</div>
+                  </span>
+                </li>
+                <li class="subMenu--item">
+                  <img class="nav-icon" src="img/nav-icon-3.svg" alt="icon" />
+                  <span class="label__container">
+                    <div class="label">
+                      Unify CMS
+                      <div class="tag-neutral">Soon</div>
+                      <img
+                        class="right--arrow"
+                        src="img/nav-icon-arrow.svg"
+                        alt="arrow"
+                      />
+                    </div>
+                    <div class="label--desc">Free & Simple CMS</div>
+                  </span>
+                </li>
+                <li class="subMenu--item">
+                  <img class="nav-icon" src="img/nav-icon-4.svg" alt="icon" />
+                  <span class="label__container">
+                    <div class="label">
+                      Pricing
+                      <img
+                        class="right--arrow"
+                        src="img/nav-icon-arrow.svg"
+                        alt="arrow"
+                      />
+                    </div>
+                    <div class="label--desc">Find Your Plan</div>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="sub__menu">
+              <h3 class="title">DESIGNERS</h3>
+              <ul class="subMenu__items">
+                <li class="subMenu--item">
+                  <img class="nav-icon" src="img/nav-icon-5.svg" alt="icon" />
+                  <span class="label__container">
+                    <div class="label">
+                      Figma Design
+                      <div class="tag-neutral">Soon</div>
+                      <img
+                        class="right--arrow"
+                        src="img/nav-icon-arrow.svg"
+                        alt="arrow"
+                      />
+                    </div>
+                    <div class="label--desc">Free Design System</div>
+                  </span>
+                </li>
+                <li class="subMenu--item">
+                  <img class="nav-icon" src="img/nav-icon-6.svg" alt="icon" />
+                  <span class="label__container">
+                    <div class="label">
+                      Templates
+                      <div class="tag-neutral">Soon</div>
+                      <img
+                        class="right--arrow"
+                        src="img/nav-icon-arrow.svg"
+                        alt="arrow"
+                      />
+                    </div>
+                    <div class="label--desc">Premium Designs</div>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="sub__menu">
+              <h3 class="title">DEVELOPERS</h3>
+              <ul class="subMenu__items">
+                <li class="subMenu--item">
+                  <img class="nav-icon" src="img/nav-icon-7.svg" alt="icon" />
+                  <span class="label__container">
+                    <div class="label">
+                      Unify Installation
+                      <img
+                        class="right--arrow"
+                        src="img/nav-icon-arrow.svg"
+                        alt="arrow"
+                      />
+                    </div>
+                    <div class="label--desc">How to Install</div>
+                  </span>
+                </li>
+                <li class="subMenu--item">
+                  <img class="nav-icon" src="img/nav-icon-8.svg" alt="icon" />
+                  <span class="label__container">
+                    <div class="label">
+                      Documentation
+                      <img
+                        class="right--arrow"
+                        src="img/nav-icon-arrow.svg"
+                        alt="arrow"
+                      />
+                    </div>
+                    <div class="label--desc">Unify API and Docs</div>
+                  </span>
+                </li>
+                <li class="subMenu--item">
+                  <img class="nav-icon" src="img/nav-icon-9.svg" alt="icon" />
+                  <span class="label__container">
+                    <div class="label">
+                      Changelog
+                      <img
+                        class="right--arrow"
+                        src="img/nav-icon-arrow.svg"
+                        alt="arrow"
+                      />
+                    </div>
+                    <div class="label--desc">Latest Updates</div>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="use-cases">
+            <ul class="subMenu__items">
+              <li class="subMenu--item">
+                <img class="nav-icon" src="img/nav-icon-10.svg" alt="icon" />
+                <span class="label__container">
+                  <div class="label">
+                    Help Center
+                    <img
+                      class="right--arrow"
+                      src="img/nav-icon-arrow.svg"
+                      alt="arrow"
+                    />
+                  </div>
+                  <div class="label--desc">How can we help you today?</div>
+                </span>
+              </li>
+              <li class="subMenu--item">
+                <img class="nav-icon" src="img/nav-icon-11.svg" alt="icon" />
+                <span class="label__container">
+                  <div class="label">
+                    Blog
+                    <img
+                      class="right--arrow"
+                      src="img/nav-icon-arrow.svg"
+                      alt="arrow"
+                    />
+                  </div>
+                  <div class="label--desc">Want to get our latest news?</div>
+                </span>
+              </li>
+              <li class="subMenu--item">
+                <img class="nav-icon" src="img/nav-icon-12.svg" alt="icon" />
+                <span class="label__container">
+                  <div class="label">
+                    Unify Experts
+                    <img
+                      class="right--arrow"
+                      src="img/nav-icon-arrow.svg"
+                      alt="arrow"
+                    />
+                  </div>
+                  <div class="label--desc">
+                    Find a partner to help with your project
+                  </div>
+                </span>
+              </li>
+              <li class="subMenu--item">
+                <img class="nav-icon" src="img/nav-icon-13.svg" alt="icon" />
+                <span class="label__container">
+                  <div class="label">
+                    Support
+                    <img
+                      class="right--arrow"
+                      src="img/nav-icon-arrow.svg"
+                      alt="arrow"
+                    />
+                  </div>
+                  <div class="label--desc">
+                    24/7 help from our support staff
+                  </div>
+                </span>
+              </li>
+              <li class="subMenu--item">
+                <img class="nav-icon" src="img/nav-icon-14.svg" alt="icon" />
+                <span class="label__container">
+                  <div class="label">
+                    Forum
+                    <div class="tag-neutral">Soon</div>
+                    <img
+                      class="right--arrow"
+                      src="img/nav-icon-arrow.svg"
+                      alt="arrow"
+                    />
+                  </div>
+                  <div class="label--desc">Connect with our community</div>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero">
+        <div class="container">
+          <article class="text-align-center">
+            <div class="display1 white">
+              Welcome to <span>Unify CSS</span> free and modern framework
+            </div>
+            <p class="mb-70">
+              Create a beautiful and professional website - no code or design
+              experience is needed.
+            </p>
+            <a class="button" href="https://unifyframework.gumroad.com/l/bbhjw"
+              >Free Download</a
+            >
+            <p class="s-body">(1.5kb minified & gzipped)</p>
+          </article>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="intro" id="intro">
+        <div class="container">
+          <div class="grid">
+            <img src="img/intro.svg" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="cards" id="cards">
+        <div class="container">
+          <h1 class="text-align-center mt-70 mb-70">
+            The easier way to build your app or website
+          </h1>
+          <div class="grid">
+            <article class="text-align-left">
+              <img src="img/card-1.svg" alt="" />
+              <h5>Modern components</h5>
+              <p>
+                Stay on trend with the latest design styles, with regular free
+                updates.
+              </p>
+            </article>
+            <article class="text-align-left">
+              <img src="img/card-2.svg" alt="" />
+              <h5>Mode light & dark</h5>
+              <p>
+                Shipped with different beautiful color themes, enabled according
+                to the user preference.
+              </p>
+            </article>
+            <article class="text-align-left">
+              <img src="img/card-3.svg" alt="" />
+              <h5>New elements</h5>
+              <p>
+                Shapes and elements without dependencies, package manager,
+                external files or libraries.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="logos" id="logos">
+        <div class="container mt-100 mb-70">
+          <img src="img/logo-1.svg" alt="" />
+          <img src="img/logo-2.svg" alt="" />
+          <img src="img/logo-3.svg" alt="" />
+          <img src="img/logo-4.svg" alt="" />
+        </div>
+        <hr />
+      </section>
+
+      <section class="about mt-100" id="about">
+        <div class="container">
+          <div class="grid-rounded-gradient">
+            <article class="text-align-left">
+              <img src="img/about.svg" alt="" />
+            </article>
+            <article class="text-align-left">
+              <h2>
+                A set of modern, responsive CSS components that you can use in
+                your web project.
+              </h2>
+              <p>
+                Using a CSS framework can save time and effort by providing a
+                solid foundation for building a website, and can help ensure
+                that the resulting website is consistent and
+                professional-looking.
+              </p>
+              <button class="mt-30" type="button">Learn More</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="items" id="items">
+        <div class="container">
+          <div class="grid-padding-50">
+            <article class="text-align-left">
+              <img class="icon-40" src="img/item-icon-1.svg" alt="" />
+              <h5>Pixel-perfect design</h5>
+              <p>
+                Unify comes with a premium HTML website and a free Figma design
+                to help you from scratch or template.
+              </p>
+            </article>
+            <article class="text-align-left">
+              <img class="icon-40" src="img/item-icon-2.svg" alt="" />
+              <h5>Native HTML elements</h5>
+              <p>
+                Unify framework comes with handful of powerful modules, that is
+                easy to setup, customize and really fun to use.
+              </p>
+            </article>
+            <article class="text-align-left">
+              <img class="icon-40" src="img/item-icon-3.svg" alt="" />
+              <h5>Create responsive layouts</h5>
+              <p>
+                Unify is a 100% responsive design, built with HTML, CSS, and JS.
+                The code is simple to understand and easy to change.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials mt-50" id="testimonials">
+        <div class="container">
+          <div class="grid-rounded-dark bg-dark-gradient">
+            <div class="grid-one-half">
+              <div class="text-align-center">
+                <h2 class="neutral-100">
+                  What people are saying about us. Client testimonials and
+                  reviews
+                </h2>
+                <p class="neutral-300">
+                  Our customers share their experiences. Check out our reviews
+                  and testimonials section to see what our customers are saying.
+                </p>
+              </div>
+            </div>
+            <div class="grid">
+              <article class="text-align-center card-rounded">
+                <img class="avatar-100" src="img/avatar-1.jpg" alt="" />
+                <p>
+                  "I've never used a framework that has combined speed,
+                  efficiency, and security."
+                </p>
+                <div class="m-title mb-10 mt-30">Stella Smith</div>
+                <div class="s-body neutral-600">San Francisco Inc.</div>
+              </article>
+              <article class="text-align-center card-rounded">
+                <img class="avatar-100" src="img/avatar-2.jpg" alt="" />
+                <p>
+                  "Excellent tool. I am extremely impressed with its
+                  functionality and ease of use".
+                </p>
+                <div class="m-title mb-10 mt-30">Ernest Smith</div>
+                <div class="s-body neutral-600">San Francisco Inc.</div>
+              </article>
+              <article class="text-align-center card-rounded">
+                <img class="avatar-100" src="img/avatar-3.jpg" alt="" />
+                <p>
+                  "The interface and code are clean and intuitive, and I love
+                  the ability to easily create".
+                </p>
+                <div class="m-title mb-10 mt-30">Monica Smith</div>
+                <div class="s-body neutral-600">San Francisco Inc.</div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta mt-100 mb-100" id="subscribe">
+        <div class="container">
+          <div class="grid-three-fourths">
+            <div class="text-align-center">
+              <div class="display5">
+                Stay updated on our latest products and services launches
+              </div>
+              <p class="l-body">
+                Subscribe to our newsletter and stay updated on the latest
+                developments!
+              </p>
+            </div>
+          </div>
+
+          <form class="mt-70 rounded">
+            <div class="grid-form-subscribe">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email address"
+                required
+              />
+              <button type="button">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="pricing" id="pricing">
+        <div class="container">
+          <div class="grid-rounded-pricing">
+            <div class="grid-one-half">
+              <div class="text-align-center">
+                <h2>
+                  We've got a plan that's perfect for your next project or
+                  agency
+                </h2>
+                <p>
+                  Become an Unify Exclusive Member and get access to the
+                  complete library. You can start using components instantly.
+                </p>
+              </div>
+            </div>
+            <div class="grid">
+              <article class="text-align-left card-pricing-rounded shadow">
+                <h5>Freelancer</h5>
+                <div class="tag mb-10">FREE</div>
+                <div class="display4">$0</div>
+                <p class="s-body mb-30">
+                  Use by you for a personal project, in a single end product for
+                  which end users are not charged.
+                  <a href="inner-terms.html">Learn more.</a>
+                </p>
+                <hr />
+                <ul class="item-checked">
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i>Access to
+                    <strong>basic</strong> features
+                  </li>
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i
+                    ><strong>50+ basic</strong> components
+                  </li>
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i
+                    ><strong>Free</strong> website template
+                  </li>
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i>Up to
+                    <strong>1 individual user</strong>
+                  </li>
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i
+                    ><strong>Basic</strong> chat support
+                  </li>
+                </ul>
+                <div class="text-align-center mt-30">
+                  <a class="button btn-medium" href="https://unifyframework.gumroad.com/l/bbhjw"
+              >Try for Free</a
+                </div>
+              </article>
+              <article class="text-align-left card-pricing-rounded shadow">
+                <h5>Agency</h5>
+                <div class="tag mb-10">50% OFF</div>
+                <div class="display4">
+                  $99
+                  <span
+                    class="neutral-200"
+                    style="text-decoration: line-through"
+                    >$199</span
+                  >
+                </div>
+                <p class="s-body mb-30">
+                  Use by you or one client, in a single end product for which
+                  end users can be charged.
+                  <a href="inner-terms.html">Learn more.</a>
+                </p>
+                <hr />
+                <ul class="item-checked">
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i>Access to
+                    <strong>premium</strong> features
+                  </li>
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i
+                    ><strong>100+ premium</strong> components
+                  </li>
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i
+                    ><strong>1 premium</strong> license
+                  </li>
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i>Up to
+                    <strong>5 individual users</strong>
+                  </li>
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i
+                    ><strong>Priority</strong> chat support
+                  </li>
+                </ul>
+                <div class="text-align-center mt-30">
+                  <a class="button btn-medium" href="https://unifyframework.gumroad.com/l/bbhjw"
+              >Add to Cart</a
+                </div>
+              </article>
+              <article class="text-align-left card-pricing-rounded shadow">
+                <h5>Enterprise</h5>
+                <div class="tag mb-10">Recommended</div>
+                <div class="display4">
+                  $299 <span class="xl-title neutral-200">/ year</span>
+                </div>
+                <p class="s-body mb-30">
+                  Use by you or unlimited clients, in multiple end products for
+                  which users can be charged.
+                  <a href="mailto:support@unify.so">Contact us</a>.
+                </p>
+                <hr />
+                <ul class="item-checked">
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i>Access to
+                    <strong>premium</strong> features
+                  </li>
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i
+                    ><strong>900+ premium</strong> components
+                  </li>
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i
+                    ><strong>Get all</strong> premium templates
+                  </li>
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i>Up to
+                    <strong>20 individual users</strong>
+                  </li>
+                  <li class="m-body">
+                    <i class="left-icon" data-feather="check"></i
+                    ><strong>Priority</strong> chat support
+                  </li>
+                </ul>
+                <div class="text-align-center mt-30">
+                  <a class="button btn-medium" href="mailto:suport@unify.so">Contact Sales</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="grid-padding-top-50">
+            <article class="text-align-center">
+              <i class="center-icon" data-feather="help-circle"></i>
+              <p>
+                If you have questions about the product or licensing please
+                check the <a href="#faq">FAQ section</a>
+              </p>
+            </article>
+            <article class="text-align-center">
+              <i class="center-icon" data-feather="lock"></i>
+              <p>
+                Secure 128-bit SSL Encrypted payments powered by
+                <a href="https://help.gumroad.com" target="_blank"
+                  >Gumroad's Support</a
+                >
+              </p>
+            </article>
+            <article class="text-align-center">
+              <i class="center-icon" data-feather="alert-triangle"></i>
+              <p>
+                The standard VAT rate may be charged, following the law of your
+                country
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="next" id="next">
+        <div class="container">
+          <hr />
+          <h1 class="text-align-center mt-70 mb-70">
+            What's next. Have a look at our in-progress products
+          </h1>
+
+          <div class="grid">
+            <article class="square-rounded-bg-img text-align-center">
+              <div class="content">
+                <div class="xxl-title">Unify Framework Templates</div>
+                <p>
+                  Unify comes with a premium HTML website and a free Figma
+                  design to help you from scratch.
+                </p>
+                <a href="">Find Out More</a>
+              </div>
+            </article>
+          </div>
+          <div class="grid-double mt-40">
+            <article class="square-rounded text-align-center">
+              <div class="content">
+                <div class="xxl-title">Unify Page Builder</div>
+                <p>
+                  Effortlessly create professional-looking websites with our
+                  intuitive drag-and-drop page builder.
+                </p>
+                <p class="m-body purple-400">Coming Soon</p>
+              </div>
+              <img src="img/next-2.jpg" alt="" />
+            </article>
+            <article class="square-rounded text-align-center">
+              <div class="content">
+                <div class="xxl-title">Unify CMS Editor</div>
+                <p>
+                  Revolutionize your web-building experience with our CMS. No
+                  code experience is needed.
+                </p>
+                <p class="m-body purple-400">Coming Soon</p>
+              </div>
+              <img src="img/next-3.jpg" alt="" />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq mb-100" id="faq">
+        <div class="container">
+          <hr />
+          <div class="grid-split">
+            <h1 class="text-align-left mt-70 mb-70">
+              Frequently asked questions
+            </h1>
+            <a class="button" href="mailto:support@unify.so">Contact Us</a>
+          </div>
+          <div class="grid-double">
+            <article class="text-align-left">
+              <h5>What is a Framework CSS?</h5>
+              <p>
+                A CSS framework is a pre-prepared library or set of standardized
+                files that can be used as the basis for building web designs.
+                CSS frameworks are designed to provide a consistent and
+                structured approach to styling webs and apps.
+              </p>
+            </article>
+            <article class="text-align-left">
+              <h5>What are the requirements when I purchase a license?</h5>
+              <p>
+                We don't require any attributions. Precisely, you don't need to
+                credit Unify or linking back to us if you use any template for
+                your commercial or client projects.
+              </p>
+            </article>
+            <article class="text-align-left">
+              <h5>Can I host, redistribute or resell a template?</h5>
+              <p>
+                No, you cannot host, redistribute, or resell any template from
+                our libraries. For more information about our license, please
+                have a look at our list of
+                <a href="inner-terms.html"> Rights and Prohibitions</a>, or
+                contact us directly if you've questions.
+              </p>
+            </article>
+            <article class="text-align-left">
+              <h5>Can I use the free templates for my personal project?</h5>
+              <p>
+                Yes, you can use the free templates in your personal project.
+                Use by you for a personal project, in a single end product for
+                which end users are not charged.
+                <a href="inner-terms.html"> Read More</a>.
+              </p>
+            </article>
+            <article class="text-align-left">
+              <h5>Am I allowed to modify the item that I purchased?</h5>
+              <p>
+                Yes, you can customize our items to fit the needs of your end
+                product, but you must to purchase a premium license first. Use
+                by you or one client, in a single end product for which end
+                users can be charged. <a href="inner-terms.html"> Read More</a>.
+              </p>
+            </article>
+            <article class="text-align-left">
+              <h5>If I'm not happy with my purchase, can I get a refund?</h5>
+              <p>
+                Due to the nature of our digital goods, refunds are issued on a
+                very discretionary basis! If you would like to learn more about
+                our refund policy please have a look at our list of
+                <a href="inner-terms.html">Acceptable Reasons For Refund</a>.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="download mb-100" id="download">
+        <div class="container">
+          <div class="bg-rounded-gradient-10">
+            <div class="grid-split">
+              <h3 class="text-align-left white">
+                Create your amazing digital product now
+              </h3>
+              <a class="button" href="https://unifyframework.gumroad.com/l/bbhjw"
+              > Download<i class="right-icon" data-feather="arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="grid-quadruple mb-100">
+          <div class="footer-info">
+            <div class="logo">
+              <img src="img/logo-unify.svg" alt="" />
+            </div>
+            <p class="s-body neutral-500">
+              Unify is a modern framework. We offer clear HTML
+              <span class="text-code-red red-400">tags</span> without classes
+              and also unique design for
+              <span class="text-code cobalt-300">.classes</span> style.
+            </p>
+            <div class="footer-social mt-30">
+              <a href="#"><i class="left-icon" data-feather="instagram"></i></a>
+              <a href="#"><i class="left-icon" data-feather="twitter"></i></a>
+              <a href="#"><i class="left-icon" data-feather="youtube"></i></a>
+              <a href="#"><i class="left-icon" data-feather="github"></i></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <p class="s-title uppercase">Company</p>
+            <ul>
+              <li><a href="#">About Unify</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Experts</a></li>
+              <li><a href="#">News</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <p class="s-title uppercase">Products</p>
+            <ul>
+              <li><a href="#">Framework</a></li>
+              <li><a href="#">Page Builder</a></li>
+              <li><a href="#">CMS Editor</a></li>
+              <li><a href="#">Designers</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <p class="s-title uppercase">Support</p>
+            <ul>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="mailto:support@unify.so">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="grid">
+          <p class="text-align-center s-body">
+            © 2023 Unify CSS. Unify.so. Unify LLC. All rights reserved.
+            <a href="inner-privacy.html"> Privacy Policy.</a>
+            <a href="inner-terms.html">Terms & License.</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

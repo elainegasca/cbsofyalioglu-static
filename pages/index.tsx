@@ -14,8 +14,11 @@ import matter from 'gray-matter'
 import decorativePatterns from '../public/img/decorative/background-patterns.png'
 import { WebmeisterGradientLogo } from '../components/logo'
 import { LinkIcon } from '../components'
+import { motion, useSpring, useTranform, useMotionValue } from 'framer-motion'
 
-function Home({ featuredPosts, turkishPosts, englishPosts }) {
+function Home({ featuredPosts, turkishPosts, englishPosts, x, y }) {
+
+
     return (
         <>
             <Head>
@@ -46,7 +49,7 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                                 Some of the blog posts that are written in Turkish and English.
                             </p>
                         </div>
-                        <ul className="grid sm:grid-cols-1 lg:grid-cols-2  gap-4 md:gap-6 xl:gap-8 animate-text-3xl">
+                        <ul className="grid sm:grid-cols-1 lg:grid-cols-2  gap-2 animate-text-3xl mb-1">
                             <ListItemCard
                                 title={'Blog Siteleri'}
                                 cover={'/posts/covers/blog-yazma-siteleri.webp'}
@@ -67,10 +70,11 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                             />
                         </ul>
 
-                        <ul className="grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6 xl:gap-8 animate-text-4xl">
+                        <ul className="grid sm:grid-cols-2 lg:grid-cols-3  gap-2">
                             {featuredPosts.map((post, index) => (
                                 <ListItemCard
                                     title={post.frontMatter.title}
+                                    description={post.frontMatter.description}
                                     cover={post.frontMatter.cover}
                                     keywords={post.frontMatter.keywords}
                                     slug={post.frontMatter.slug}
@@ -107,9 +111,11 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                             <p className="max-w-screen-md text-gray-500 md:text-lg text-left"></p>
                         </div>
 
-                        <ul className="grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6 xl:gap-8">
+                        <ul className="grid sm:grid-cols-2 lg:grid-cols-3  gap-2">
                             {englishPosts.map((post) => (
                                 <ListItemCard
+                                    description={post.frontMatter.description}
+
                                     title={post.frontMatter.title}
                                     cover={post.frontMatter.cover}
                                     keywords={post.frontMatter.keywords}
@@ -150,6 +156,7 @@ function Home({ featuredPosts, turkishPosts, englishPosts }) {
                         <ul className="grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6 xl:gap-8">
                             {turkishPosts.map((post) => (
                                 <ListItemCard
+                                    description={post.frontMatter.description}
                                     title={post.frontMatter.title}
                                     cover={post.frontMatter.cover}
                                     keywords={post.frontMatter.keywords}
