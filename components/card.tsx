@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import {motion} from 'framer-motion'
 
 type CardProps = {
     title: string
@@ -182,23 +183,23 @@ export function ListItemCard(props: CardProps) {
                 className="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-700 z-0"
             />
 
-            <div className="bg-[rgba(10,10,10,0.4)] group-hover:bg-[rgba(0,0,0,0.7)] transition-colors ease-linear duration-400 backdrop-blur-0 group-hover:backdrop-blur-lg absolute inset-0 pointer-events-none border-[rgba(255,255,255,0.3)] shadow-md border-solid rounded-lg border"></div>
+            <motion.div className="bg-[rgba(10,10,10,0.4)] group-hover:bg-[rgba(0,0,0,0.8)] transition-colors ease-linear duration-400 backdrop-blur-0 group-hover:backdrop-blur-lg absolute inset-0 pointer-events-none border-[rgba(255,255,255,0.3)] shadow-md border-solid rounded-lg border"></motion.div>
 
-            <div className="relative p-4 flex flex-col justify-end group">
+            <motion.div className="relative p-4 flex flex-col justify-end group">
                 {props.date && <span className="block !text-gray-200 text-sm">{props.date}</span>}
                 <Link href={`/${props.topic}/${props.slug}`}>
-                    <a title={props.title} className="group">
-                        <h3 className="!text-white text-lg font-semibold transition duration-500 mb-2 z-10 relative translate-y-20 group-hover:translate-y-0">
+                    <motion.a title={props.title} className="group">
+                        <motion.h3 className="!text-white text-lg font-semibold transition duration-500 mb-2 z-10 relative translate-y-20 group-hover:translate-y-0">
                             {props.title}
-                        </h3>
-                    </a>
+                        </motion.h3>
+                    </motion.a>
                 </Link>
                 {props.description && (
-                    <p className="!text-white text-base font-regular transition  relative opacity-0 group-hover:opacity-100 translate-y-20 group-hover:translate-y-0 duration-500 ease-linear">
+                    <motion.p className="!text-white text-base font-regular transition  relative opacity-0 group-hover:opacity-100 translate-y-20 group-hover:translate-y-0 duration-500 ease-linear">
                         {props.description}
-                    </p>
+                    </motion.p>
                 )}
-            </div>
+            </motion.div>
             <Link href={`/${props.topic}/${props.slug}`}>
                 <a title={props.title} className="group absolute top-0 left-0 right-0 bottom-0" />
             </Link>
