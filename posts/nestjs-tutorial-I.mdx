@@ -23,16 +23,17 @@ keywords:
     - 'nestjs introduction'
     - 'nestjs for starters'
     - 'nestjs basics'
-    - "controllers in nestjs"
-    - "modules in nestjs"
-    - "data validation in nestjs"
-    - "data transfer object in nestjs"
-    - "dto in nestjs"
+    - 'controllers in nestjs'
+    - 'modules in nestjs'
+    - 'data validation in nestjs'
+    - 'data transfer object in nestjs'
+    - 'dto in nestjs'
 related:
     - 'nestjs-tutorial-II'
     - 'solidjs-and-reactive-primitives'
     - 'free-design-resources'
     - 'content-creation-tools'
+    - 'django-and-modern-js-libraries-svelte'
 proficiencyLevel: 'Beginner'
 ---
 
@@ -42,22 +43,18 @@ I'm currently learning Nest.JS framework and because I organized my notes very w
 
 I'm planning to make a boilerplate app with throughout this Nest.JS tutorial. The app will cover a simple authentication.
 
-
 In this part, I'm going to try to explain basics of Nest and its basic concepts.
 
 Since understanding NestJS requires some software development concepts, I will try to explain those concepts also:
-- Decorators
-- Dependency Inversion Principle
-- Dependency Injection
-- Inversion of Control
 
-
+-   Decorators
+-   Dependency Inversion Principle
+-   Dependency Injection
+-   Inversion of Control
 
 ## Introduction
 
 For the demonstration purposes, let's look some basics of NestJS. You don't need to do anything rightnow until the next sextion. (We are going to create a Nest.js project with the CLI in the next section)
-
-
 
 ### A) TypeScript Configurations in NestJS
 
@@ -76,7 +73,7 @@ NestJS is heavily uses decorators which is a [feature of TypeScript](https://www
 
 ### B) NestJS Components
 
-| NestJS   | Description                                                  |
+| NestJS       | Description                                                  |
 | ------------ | ------------------------------------------------------------ |
 | Pipe         | Data validation in requests                                  |
 | Guard        | User authentication                                          |
@@ -86,8 +83,6 @@ NestJS is heavily uses decorators which is a [feature of TypeScript](https://www
 | Repository   | Database access                                              |
 | Filters      | Handles errors that occur during request handling            |
 | Interceptors | Adds extra logic to incoming requests or outcoming responses |
-
-
 
 ### C) Creating a project with the CLI
 
@@ -108,6 +103,7 @@ cd nest-tutorial
 # start development server
 npm run start:dev
 ```
+
 You can visit `http://localhost:3000` on your browser. You'll see that our app is running.
 
 ### D) Creating a project manually
@@ -129,7 +125,6 @@ Let's look what are those for:
 | reflect-metadata         | It is for using decorators.                                                                                                     |
 | typescript               | The package is required for using the superset of JavaScript. It is required since we are going to write our app in TypeScript. |
 
-
 ### E) The Basic App Structure
 
 After installation, we will see the default file structure and simple explanations taken from [the official document](https://docs.nestjs.com/first-steps).
@@ -144,21 +139,21 @@ After installation, we will see the default file structure and simple explanatio
 | app.service.ts         | A basic service with a single method.                                                                             |     |
 | main.ts                | The entry file of the application which uses the core function NestFactory to create a Nest application instance. |     |
 
-<br/>
-
+<br />
 
 ---
+
 ---
 
 # 1) NestJS Tutorial
 
 ## 1) Platform/Server
+
 Nest aims to be a platform-agnostic framework. It works with any NodeJS server. However, out-of-the-box, it supports Express and Fastify.
 
 Those platform-specific configurations and the most general NestJS configurations can be done with the app's entry point.
 
 Let's look `main.ts` file which is the entry point of the app.
-
 
 <ImageZoom
     src="/posts/nestjs/entrypoint.webp"
@@ -167,26 +162,20 @@ Let's look `main.ts` file which is the entry point of the app.
     alt="The entrypoint of Nest app"
 />
 
-A Nest application can be created with the `NestFactory`'s `create` method which returns an app object that fulfills the  [INestApplication](https://github.com/nestjs/nest/blob/master/packages/common/interfaces/nest-application.interface.ts) interface.
+A Nest application can be created with the `NestFactory`'s `create` method which returns an app object that fulfills the [INestApplication](https://github.com/nestjs/nest/blob/master/packages/common/interfaces/nest-application.interface.ts) interface.
 
 Later on, we will use some of the methods of the returned app object such as `GlobalGuards`, `GlobalPipes`, `GlobalInterceptors`, etc...
 
 By default, NestJS uses Express as its default Node server. You can use [Fastify with NestJS](https://docs.nestjs.com/techniques/performance) as well as other Node servers.
 
-<br/>
+<br />
 
-<hr/>
+<hr />
 
-<ImageZoom
-    src="/posts/nestjs/modules.webp"
-    width="1400"
-    height="350"
-    alt="Modules in NestJS"
-/>
-
-
+<ImageZoom src="/posts/nestjs/modules.webp" width="1400" height="350" alt="Modules in NestJS" />
 
 ## 2) Modules in NestJS
+
 In Nest.js, every app has at least one module. Modules encapsulate closely related code components together. It is strongly suggested to use modules for organizing your code. By doing that, you can easily scale your code.
 
 A module is a class annotated with a `@Module()` decorator. In other words, we use `@Module()` decorator with an object, in order to make a class a module.
@@ -199,25 +188,25 @@ A module is a class annotated with a `@Module()` decorator. In other words, we u
 />
 
 ### A) The Root module
+
 When you create a Nest app with the CLI, the root module of your app will be in `app.module.ts` file.
 
 ```ts
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { Module } from '@nestjs/common'
+import { AppController } from './app.controller'
+import { AppService } from './app.service'
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+    imports: [],
+    controllers: [AppController],
+    providers: [AppService],
 })
 export class AppModule {}
 ```
 
-<hr/>
+<hr />
 
-
-<br/>
+<br />
 
 <ImageZoom
     src="/posts/nestjs/decorators.webp"
@@ -226,19 +215,19 @@ export class AppModule {}
     alt="Decorators in NestJS"
 />
 
-
-
 ### B) What is a decorator?
+
 Decorator is a concept that related with [Decorator pattern](https://en.wikipedia.org/wiki/Decorator_pattern) which is a design pattern in object-oriented programming.
 
 Decorators are functions that let you attach new behaviors to objects by placing these objects inside a special wrapper.
 
 Decorators are currently "stage 2 proposal" for JavaScript. However, TypeScript supports using decorators. You can use 5 types of decorators in TypeScript:
-- Property Decorators
-- Method Decorators
-- Accessor Decorators
-- Parameter Decorators and
-- Class Decorators, like we use in modules.
+
+-   Property Decorators
+-   Method Decorators
+-   Accessor Decorators
+-   Parameter Decorators and
+-   Class Decorators, like we use in modules.
 
 <ImageZoom
     src="/posts/nestjs/class-decorator.avif"
@@ -250,24 +239,19 @@ Decorators are currently "stage 2 proposal" for JavaScript. However, TypeScript 
 A class decorator is applied to the constructor of a class. It can observe, modify or replace a class definition.
 Also, it should be noted that a class decorator can not be used in a TypeScript declaration file.
 
-<br/>
+<br />
 
 For the details, you can check [Decorators in TypeScript](https://www.typescriptlang.org/docs/handbook/decorators.html)
-
 
 You can also read this excellent article: [A complete guide to TypeScript Decorators](https://saul-mirone.github.io/a-complete-guide-to-typescript-decorator/)
 
 Let's back to the modules.
 
-
-<hr/>
-
+<hr />
 
 ### C) Properties of the Module object
 
-
 I said that a module decorator takes a single object. The properties of the object describe the module.
-
 
 | Property    | Description                                                                                                                                                                                          |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -276,26 +260,22 @@ I said that a module decorator takes a single object. The properties of the obje
 | imports     | the list of imported modules that export the providers which are required in this module                                                                                                             |
 | exports     | the subset of providers that are provided by this module and should be available in other modules which import this module. You can use either the provider itself or just its token (provide value) |
 
-
-
-
-
-
-
-
 ### D) Notes on Modules
 
 Some important things about the modules in NestJS:
-- Modules use singleton design pattern. Therefore we can share the instance of any service provider between modules.
-- Every module is automatically a shared module. Once created it can be reused by any module.
-- We need to import its module first when we need to use any provider.
-- Any module imported to another module also can be exported from.
-- Because providers aren't registered in global scope, importing a specific module many times can be tedious. You can go around this problem by adding `@Global`decorator to a module (except [lazy-loaded modules](https://docs.nestjs.com/fundamentals/lazy-loading-modules)).
+
+-   Modules use singleton design pattern. Therefore we can share the instance of any service provider between modules.
+-   Every module is automatically a shared module. Once created it can be reused by any module.
+-   We need to import its module first when we need to use any provider.
+-   Any module imported to another module also can be exported from.
+-   Because providers aren't registered in global scope, importing a specific module many times can be tedious. You can go around this problem by adding `@Global`decorator to a module (except [lazy-loaded modules](https://docs.nestjs.com/fundamentals/lazy-loading-modules)).
 
 ### E) Create a new module with the CLI
+
 Let's create a new module that will be responsible for the users of our app. If your Nest.JS app is running, you can stop it by pressing `CMD/CTRL + C`.
 
 In your terminal, execute the commands below:
+
 ```bash
 nest generate module users
 ```
@@ -303,18 +283,15 @@ nest generate module users
 This will create `users` folder under `src` directory. Under this directory, you'll see `users.module.ts` file.
 
 ```ts
-import { Module } from '@nestjs/common';
+import { Module } from '@nestjs/common'
 
 @Module({})
 export class UsersModule {}
 ```
 
-
-
 The module file is empty now. Let's fill it with some code components.
 
-<hr/>
-
+<hr />
 
 <ImageZoom
     src="/posts/nestjs/controllers.webp"
@@ -323,14 +300,15 @@ The module file is empty now. Let's fill it with some code components.
     alt="Controllers in NestJS"
 />
 
-
 ## 3) Controllers in NestJS
+
 I previously said that a controller is responsible for routing a request to a specific function. Controllers are connected our app through a module.
 
-There is a better way to create controller and resources than what we will do. Since this is a *tutorial about NestJS*, I am going to do many tasks manually.
-Otherwise,  you can [quickly create a CRUD API](https://docs.nestjs.com/recipes/crud-generator#crud-generator).
+There is a better way to create controller and resources than what we will do. Since this is a _tutorial about NestJS_, I am going to do many tasks manually.
+Otherwise, you can [quickly create a CRUD API](https://docs.nestjs.com/recipes/crud-generator#crud-generator).
 
 ### A) Creating a controller
+
 Let's create a controller.
 
 ```bash
@@ -340,24 +318,23 @@ nest generate controller users/users --flat
 When you execute the command above, two new files will be generated: `users.controller.ts` and `users.controller.spec.ts`. The latter one is for test purposes and thus we can skip it now.
 
 ```ts
-import { Controller} from '@nestjs/common';
+import { Controller } from '@nestjs/common'
 
 @Controller('users')
 export class UsersController {}
 ```
-
 
 ### B) Notes on controllers
 
 Also, please check the `users.module.ts` file. You can see that the new controller is automatically appended to its module.
 
 ```ts
-import { Module } from '@nestjs/common';
-import { UsersController } from './users.controller';
+import { Module } from '@nestjs/common'
+import { UsersController } from './users.controller'
 
 @Module({
-  controllers: [UsersController],
-  imports: []
+    controllers: [UsersController],
+    imports: [],
 })
 export class UsersModule {}
 ```
@@ -369,45 +346,46 @@ There are some things to be highlighted:
 3. The controller is automatically appended to the module
 4. The text in the controller decorator, which is "users" in our case, prefixes the routes under the controller. In other words, all the routes under this controller will start with `users` such as `/users/:id`.
 
-<br/>
+<br />
 
 ### C) Adding routes to the controller
+
 We created a very basic controller.
-We need to add routes with the corresponding HTTP request. We should specify HTTP requests with decorators.  `@Get()`,  `@Post()`,  `@Put()`  `@Delete()`,  `@Patch()`, `@Options()`,  `@Head()`, `@All()`.
+We need to add routes with the corresponding HTTP request. We should specify HTTP requests with decorators. `@Get()`, `@Post()`, `@Put()` `@Delete()`, `@Patch()`, `@Options()`, `@Head()`, `@All()`.
 
 <br />
 
 Let's create a CRUD API.
 
 ```ts
-import { Controller, Get, Post, Delete, Patch } from '@nestjs/common';
+import { Controller, Get, Post, Delete, Patch } from '@nestjs/common'
 
 @Controller('users')
 export class UsersController {
-  @Get()
-  getAllUsers() {
-    // we will fill it soon
-  }
+    @Get()
+    getAllUsers() {
+        // we will fill it soon
+    }
 
-  @Post()
-  createUser() {
-    // we will fill it soon
-  }
+    @Post()
+    createUser() {
+        // we will fill it soon
+    }
 
-  @Get('/:id')
-  getUser(id: number) {
-    // we will fill it soon
-  }
+    @Get('/:id')
+    getUser(id: number) {
+        // we will fill it soon
+    }
 
-  @Patch('/:id')
-  updateUser() {
-    // we will fill it soon
-  }
+    @Patch('/:id')
+    updateUser() {
+        // we will fill it soon
+    }
 
-  @Delete('/:id')
-  removeUser() {
-    // we will fill it soon
-  }
+    @Delete('/:id')
+    removeUser() {
+        // we will fill it soon
+    }
 }
 ```
 
@@ -419,10 +397,9 @@ export class UsersController {
 | Patch   | updateUser  | "/users/:id" |
 | Delete  | removeUser  | "/users/:id" |
 
-<br/>
+<br />
 
-<hr/>
-
+<hr />
 
 ### D) REST API Client
 
@@ -435,16 +412,16 @@ To check our routes, there are several ways. You can use your favorite REST API 
     alt="Thunder Client NestJS Routes"
 />
 
-
 For the detailed instructions, you can visit: [NestJS Controllers - Routing](https://docs.nestjs.com/controllers#routing).
 
-<br/>
+<br />
 
 Since a controller method will be responsible only for routing, we need to create a service that will handle the business logic of our app.
 
-<br/>
+<br />
 
 ### E) Request, Response, Status, Body, Query, and Parameters
+
 To get HTTP request and response objects and their properties like body, query, parameters, you can use their decorators: `@Req`,`@Res`
 
 You should also import underlying server type library if you need to take the advantage. [(See the details)](https://docs.nestjs.com/controllers#request-object)
@@ -452,7 +429,7 @@ You should also import underlying server type library if you need to take the ad
 | Decorator               | Platform Object                 |
 | ----------------------- | ------------------------------- |
 | @Request(), @Req()      | req                             |
-| @Response(), @Res()*    | res                             |
+| @Response(), @Res()\*   | res                             |
 | @Next()                 | next                            |
 | @Session()              | req.session                     |
 | @Param(key?: string)    | req.params / req.params[key]    |
@@ -462,7 +439,7 @@ You should also import underlying server type library if you need to take the ad
 | @Ip()                   | req.ip                          |
 | @HostParam()            | req.hosts                       |
 
-<br/>
+<br />
 
 There are also other method decorators for your usage.
 
@@ -472,43 +449,50 @@ There are also other method decorators for your usage.
 | @Redirect(url?: string, statusCode?: number) | Redirect a response to a given URL with a given HTTP code |
 |                                              |                                                           |
 
-<br/>
+<br />
 
 #### Dynamic Routes and Query Variables
+
 In some cases, we will require dynamic routes, for instance, the `getUser` route. You can obtain a dynamic `id` value with a special parameter decorator `@Param().` You can optionally pass the dynamic parameter name to get its dynamic value; otherwise, you will get an object.
 It should be noted that if you don't decorate the method with a dynamic route (with a colon and a parameter name) like `:id` you can't obtain the value.
 
-<br/>
+<br />
 
 The same workflow is also valid for query strings in your route, except we use the `@Query()` decorator.
-
 
 Let's change your controller's `getUser` method by first importing `Param` and `Query` decorators from `@nestjs/common` library.
 After import, I'll assign route parameter to `params` and query string to `qs` by decorating them.
 
-For demonstration purposes, I can send a get request to the route:  `http://localhost:3000/users/5?order=asc`.
+For demonstration purposes, I can send a get request to the route: `http://localhost:3000/users/5?order=asc`.
 
 ```ts
-import { Controller, Get, Post, Delete, Patch,
-    Param, Query // <----------------- import
- } from '@nestjs/common';
+import {
+    Controller,
+    Get,
+    Post,
+    Delete,
+    Patch,
+    Param,
+    Query, // <----------------- import
+} from '@nestjs/common'
 
 @Controller('users')
 export class UsersController {
-
-
-  @Get('/:id')
-  getUser(@Param() params, @Query() qs) {
-    console.log('params:', params);
-    console.log("query string:", qs)
-  }
+    @Get('/:id')
+    getUser(@Param() params, @Query() qs) {
+        console.log('params:', params)
+        console.log('query string:', qs)
+    }
 }
 ```
+
 You'll see the logs below on your termina:
+
 ```bash
 params: { id: '5' }
 query string: { order: 'asc' }
 ```
+
 <ImageZoom
     src="/posts/nestjs/headers-query-param.webp"
     width="1400"
@@ -516,24 +500,31 @@ query string: { order: 'asc' }
     alt="Extracting Body and Headers in Nest.js"
 />
 
-<br/>
+<br />
 
 It is better to demonstrate a PUT request. In order to that, send a PUT request to `http://localhost:3000/users` with the JSON payload `{"email":"example@example.com" }`.
 I'll import `Body` and `Headers` decorator from `@nestjs/common` and change `createUser` method.
+
 ```ts
-import { Controller, Get, Post, Delete, Patch, Param, Query,
-	Body, Headers // <----------------- import
- } from '@nestjs/common';
+import {
+    Controller,
+    Get,
+    Post,
+    Delete,
+    Patch,
+    Param,
+    Query,
+    Body,
+    Headers, // <----------------- import
+} from '@nestjs/common'
 
 @Controller('users')
 export class UsersController {
-
-
-  @Post()
-  createUser(@Headers() myHeader, @Body() myBody) {
-    console.log('header', myHeader.host);
-    console.log('body', myBody);
-  }
+    @Post()
+    createUser(@Headers() myHeader, @Body() myBody) {
+        console.log('header', myHeader.host)
+        console.log('body', myBody)
+    }
 }
 ```
 
@@ -544,24 +535,13 @@ export class UsersController {
     alt="REST API response in Nest.JS"
 />
 
-
-
 Since a controller method will be responsible only for routing, we need to create a service that will handle the business logic of our app.
 However, are we sure about the validity of requested data?
 Let's be sure about that.
 
+<hr />
 
-<hr/>
-
-
-<ImageZoom
-    src="/posts/nestjs/pipes.webp"
-    width={1400}
-    height={350}
-    alt="Pipes in NestJS"
-/>
-
-
+<ImageZoom src="/posts/nestjs/pipes.webp" width={1400} height={350} alt="Pipes in NestJS" />
 
 ## 4) Pipes (Data Validation )
 
@@ -593,9 +573,9 @@ NestJS provides eight pipes available out-of-the-box, you could also write your 
 
 Now, there are a couple of things to do for setting automatic validation.
 
-- We will register the validation globally;
-- We should define the expected data, which we will call "data transfer object."
-- We should define validation rules and apply all of them to a request handler.
+-   We will register the validation globally;
+-   We should define the expected data, which we will call "data transfer object."
+-   We should define validation rules and apply all of them to a request handler.
 
 ### A) Registering a Global Pipe
 
@@ -604,16 +584,16 @@ To use the ValidationPipe, we need to tell NestJS to use this validation globall
 Open and edit the `main.ts` file accordingly.
 
 ```tsx
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { NestFactory } from '@nestjs/core'
+import { AppModule } from './app.module'
 import { ValidationPipe } from '@nestjs/common' // import this
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  app.useGlobalPipes(new ValidationPipe()); // <------- Add this
-  await app.listen(3000);
+    const app = await NestFactory.create(AppModule)
+    app.useGlobalPipes(new ValidationPipe()) // <------- Add this
+    await app.listen(3000)
 }
-bootstrap();
+bootstrap()
 ```
 
 ### B) Data Transfer Object - dto
@@ -630,99 +610,87 @@ mkdir src/users/dtos
 touch src/users/dtos/create-user.dto.ts
 touch src/users/dtos/update-user.dto.ts
 ```
-<br/>
+
+<br />
 
 We've created three different dto files. Now, we will define those files and ensure the requested data is valid.
 
 ```tsx
 // src/users/dtos/create-user.dto.ts
-import { IsEmail, IsString } from 'class-validator';
+import { IsEmail, IsString } from 'class-validator'
 
 // Whenever we put this class as an input type of a request
 // It automatically expects a name property with string value
 export class CreateUserDto {
-  @IsEmail()
-  email: string;
+    @IsEmail()
+    email: string
 
-  @IsString()
-  password: string;
+    @IsString()
+    password: string
 }
 ```
 
 ```ts
 // src/users/dtos/update-user.dto.ts
-import { IsEmail, IsString, IsOptional } from 'class-validator';
+import { IsEmail, IsString, IsOptional } from 'class-validator'
 
 export class UpdateUserDto {
-  @IsEmail()
-  @IsOptional()
-  email: string;
+    @IsEmail()
+    @IsOptional()
+    email: string
 
-  @IsString()
-  @IsOptional()
-  password: string;
+    @IsString()
+    @IsOptional()
+    password: string
 }
 ```
 
 We decorate dto objects with the decorators imported from `class-validator`.
 
-<br/>
+<br />
 
 The validation classes are ready. When we put those as a type annotation of any request, they will validate incoming requests.
 
 Let's try them. You can update `users.controller.ts` file according to this:
+
 ```tsx
 // src/users/users.controller.ts
-import {
-  Controller,
-  Get,
-  Post,
-  Delete,
-  Patch,
-  Param,
-  Query,
-  Headers,
-  Body,
-} from '@nestjs/common';
-import { CreateUserDto } from './dtos/create-user.dto'; // <-- Import
-import { UpdateUserDto } from './dtos/update-user.dto'; // <-- Import
+import { Controller, Get, Post, Delete, Patch, Param, Query, Headers, Body } from '@nestjs/common'
+import { CreateUserDto } from './dtos/create-user.dto' // <-- Import
+import { UpdateUserDto } from './dtos/update-user.dto' // <-- Import
 
 @Controller('users')
 export class UsersController {
-  @Get()
-  getAllUsers() {}
+    @Get()
+    getAllUsers() {}
 
-  @Post()
-  createUser(@Body() body: CreateUserDto) {} // <-- Use as type annotation
+    @Post()
+    createUser(@Body() body: CreateUserDto) {} // <-- Use as type annotation
 
-  @Get('/:id')
-  getUser(@Param() params) {}
+    @Get('/:id')
+    getUser(@Param() params) {}
 
-  @Patch('/:id')
-  updateUser(@Body() body: UpdateUserDto) {} // <-- Use as type annotation
+    @Patch('/:id')
+    updateUser(@Body() body: UpdateUserDto) {} // <-- Use as type annotation
 
-  @Delete('/:id')
-  removeUser() {}
+    @Delete('/:id')
+    removeUser() {}
 }
-
 ```
 
 It is time to test it. I am going to send a post request to `createUser` route with a missing `password` property.
 
 ```json
 {
-  "statusCode": 400,
-  "message": [
-    "password must be a string"
-  ],
-  "error": "Bad Request"
+    "statusCode": 400,
+    "message": ["password must be a string"],
+    "error": "Bad Request"
 }
 ```
 
 The result will be as expected.
 
-<hr/>
-
+<hr />
 
 I think this is enough for the first post of Nest.JS tutorial. I'm planning to cover providers and interceptors in the next post.
 Thanks for reading.
