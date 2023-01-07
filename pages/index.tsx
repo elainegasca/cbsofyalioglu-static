@@ -40,7 +40,7 @@ function Home({ featuredPosts, turkishPosts, englishPosts, x, y }) {
                         <HeroDark />
 
                         {/* FEATURED */}
-                        <div className="mb-8 animate-text-2xl">
+                        <div className="mb-8">
                             <h2 className="text-gray-800 text-4xl lg:text-5xl text-left mb-4 md:mb-6">
                                 Featured posts
                             </h2>
@@ -49,7 +49,7 @@ function Home({ featuredPosts, turkishPosts, englishPosts, x, y }) {
                                 Some of the blog posts that are written in Turkish and English.
                             </p>
                         </div>
-                        <ul className="grid sm:grid-cols-1 lg:grid-cols-2  gap-2 animate-text-3xl mb-1">
+                        <ul className="grid sm:grid-cols-1 lg:grid-cols-2  gap-2 mb-1">
                             <ListItemCard
                                 title={'Blog Siteleri'}
                                 cover={'/posts/covers/blog-yazma-siteleri.webp'}

@@ -170,7 +170,7 @@ export function ListItemCard(props: CardProps) {
     return (
         <li
             title={props.title}
-            className={`group h-44 md:h-44 xl:h-44 flex flex-col  rounded-lg shadow-lg overflow-hidden relative mt-1 ${
+            className={`group h-44 md:h-44 xl:h-44 flex flex-col  rounded-lg shadow-lg !overflow-hidden relative mt-1 ${
                 props.className ? ` ${props.className}` : ''
             }`}
         >
@@ -180,12 +180,12 @@ export function ListItemCard(props: CardProps) {
                 loading="lazy"
                 src={props.thumbnail || props.cover || '/img/placeholder.webp'}
                 alt={(props.keywords && props.keywords[0]) || props.title}
-                className="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-700 z-0"
+                className="w-full h-full object-cover object-center absolute inset-0 transform transition duration-500 z-0  rounded-lg"
             />
 
-            <motion.div className="bg-[rgba(10,10,10,0.4)] group-hover:bg-[rgba(0,0,0,0.8)] transition-colors ease-linear duration-400 backdrop-blur-0 group-hover:backdrop-blur-lg absolute inset-0 pointer-events-none border-[rgba(255,255,255,0.3)] shadow-md border-solid rounded-lg border"></motion.div>
+            <motion.div className="bg-[rgba(10,10,10,0.4)] group-hover:bg-[rgba(0,0,0,0.8)]  transition-colors ease-linear duration-400 backdrop-blur-0 group-hover:backdrop-blur-lg absolute inset-0 pointer-events-none border-[rgba(255,255,255,0.3)] shadow-md border-solid rounded-lg border"></motion.div>
 
-            <motion.div className="relative p-4 flex flex-col justify-end group">
+            <motion.div className="relative p-4 flex flex-col justify-end group  rounded-lg">
                 {props.date && <span className="block !text-gray-200 text-sm">{props.date}</span>}
                 <Link href={`/${props.topic}/${props.slug}`}>
                     <motion.a title={props.title} className="group">
@@ -195,13 +195,13 @@ export function ListItemCard(props: CardProps) {
                     </motion.a>
                 </Link>
                 {props.description && (
-                    <motion.p className="!text-white text-base font-regular transition  relative opacity-0 group-hover:opacity-100 translate-y-20 group-hover:translate-y-0 duration-500 ease-linear">
+                    <motion.p className="!text-white text-sm font-regular transition  relative opacity-0 group-hover:opacity-100 translate-y-20 group-hover:translate-y-0 duration-500 ease-linear">
                         {props.description}
                     </motion.p>
                 )}
             </motion.div>
             <Link href={`/${props.topic}/${props.slug}`}>
-                <a title={props.title} className="group absolute top-0 left-0 right-0 bottom-0" />
+                <a title={props.title} className="group absolute top-0 left-0 right-0 bottom-0  rounded-lg" />
             </Link>
         </li>
     )
