@@ -115,7 +115,7 @@ p > a.external {
     padding: 2px 8px;
     border-radius: 6px;
     color: #00c1d7;
-    background-color: #08303b;
+    background-color: #06191c;
     filter: saturate(180%);
 }
 h2 > a.external,
@@ -378,13 +378,13 @@ details {
     border-radius: 6px;
     font-size: 14px;
 }
-.frontmatter-section-tags span.tag {
+.frontmatter-section-tags > div > span.tag {
     margin: 8px;
     padding: 4px 8px;
 }
 
-a.tag,
-span.tag {
+.frontmatter-section-tags > div > a.tag,
+.frontmatter-section-tags > div > span.tag {
     background-image: none;
     font-weight: 500 !important;
     font-size: 11px !important;
@@ -398,8 +398,8 @@ span.tag {
     border-radius: 6px !important;
 }
 @media only screen and (max-width: 640px) {
-    a.tag,
-    span.tag {
+    .frontmatter-section-tags > div > a.tag,
+    .frontmatter-section-tags > div > span.tag {
         background-image: none;
         width: fit-content;
         font-weight: 500 !important;
@@ -419,6 +419,7 @@ a.tag:hover {
     text-decoration: none;
     filter: saturate(140%);
 }
+.tag-box {margin-right: 8px;}
 .frontmatter-section-tags .tag-box:nth-child(1) a,
 .frontmatter-section-tag span.tag:nth-child(1) {
     color: #f66290;

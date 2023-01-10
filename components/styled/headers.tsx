@@ -3,6 +3,7 @@ import { styled, violet } from '../../styles/stitches.config'
 import { Separator } from './'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 import Link from 'next/link'
+import {motion, AnimatePresence} from 'framer-motion'
 
 const StyledSeparator = styled(SeparatorPrimitive.Root, {
     'backgroundColor': violet.violet6,
@@ -20,7 +21,7 @@ const Text = styled('p', {
     fontSize: 18,
     lineHeight: '20px',
 })
-const HeaderOne = styled('h1', {
+const HeaderOne = styled(motion.h1, {
     color: 'white',
     fontSize: 36,
     lineHeight: '52px',
@@ -38,11 +39,15 @@ export const TopicHeader = ({ title, description }) => (
     </Box>
 )
 
-export const PostHeader = ({ title, description, topics, modified }) => (
+export const PostHeader = ({ title, description, topics, modified, headerId }) => (
     <Box css={{ width: '100%', maxWidth: 720, margin: '0 15px', padding: '0 8px' }}>
-        <HeaderOne css={{ fontWeight: 500 }} className="animate-text-md">
+    <AnimatePresence>
+        <motion.h1 style={{ fontWeight: 500 }} className="animate-text-md" layoutId={headerId}
+          exit={{ opacity: 0, y: -20 }}
+        >
             {title}
-        </HeaderOne>
+        </motion.h1>
+    </AnimatePresence>
         <Text className="animate-text-lg text-sm mt-4 opacity-70" css={{ fontSize: 16 }}>
             UPDATED: <time dateTime={modified}>{modified}</time>
         </Text>
@@ -55,7 +60,7 @@ export const PostHeader = ({ title, description, topics, modified }) => (
             {topics.map((cat, index) => (
                 <Box key={'article-header-category-' + cat} className="tag-box">
                     <Box key={index}>
-                        <Link href={`/${cat}/`}>
+                        <Link href={`/${cat}/`} legacyBehavior>
                             <a
                                 className={`tag uppercase  animate-text-lg !text-xs`}
                                 title={`See ${cat} posts`}

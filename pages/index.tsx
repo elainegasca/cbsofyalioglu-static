@@ -87,7 +87,7 @@ function Home({ featuredPosts, turkishPosts, englishPosts, x, y }) {
                         {/* ENGLISH */}
                         <div className="mt-16 md:mt-40 mb-8">
                             <h2 className="text-gray-800 text-4xl lg:text-5xl text-left mb-4 md:mb-6">
-                                <Link href="/en/">
+                                <Link href="/en/" legacyBehavior>
                                     <a>
                                         Articles in English{' '}
                                         <svg
@@ -129,7 +129,7 @@ function Home({ featuredPosts, turkishPosts, englishPosts, x, y }) {
                         {/* TURKISH */}
                         <div className="mt-16 md:mt-40 mb-8">
                             <h2 className="text-gray-800 text-4xl lg:text-5xl text-left mb-4 md:mb-6">
-                                <Link href="/tr/">
+                                <Link href="/tr/" legacyBehavior>
                                     <a title="Articles written in Turkish">
                                         Articles in Turkish{' '}
                                         <svg

@@ -112,20 +112,20 @@ Open a new tab in your browser and visit `http://127.0.0.1:3333/`. You'll see a 
 
 I'll install the database and Lucid ORM. I'll choose to use SQLite.
 
-```
+```bash
 # Install Lucid ORM
 npm i @adonisjs/lucid
 ```
 
 After that, let Adonis make database arrangements for you.
 
-```
+```bash
 node ace configure @adonisjs/lucid
 ```
 
 Use `SPACE` to select SQLite, then press `ENTER`.
 
-```
+```bash
 ❯ Select the database driver you want to use …  Press <SPACE> to select
 ◯ SQLite
 ◯ MySQL / MariaDB
@@ -136,7 +136,7 @@ Use `SPACE` to select SQLite, then press `ENTER`.
 
 Choose browser for instructions. A new tab including setup instructions will be automatically open. However, You won't see proper SQLite instructions.
 
-```
+```bash
 ❯ Select where to display instructions · browser
 ```
 
@@ -144,7 +144,7 @@ You can also check [Wave Snippets](https://www.wavesnippets.com/) for this kind 
 
 You'll find SQLite settings in the `config/database.ts` file. I'll change my database filepath.
 
-```
+```bash
 // config/database.ts
 import Env from '@ioc:Adonis/Core/Env'
 import { DatabaseConfig } from '@ioc:Adonis/Lucid/Database'
@@ -175,7 +175,7 @@ export default databaseConfig
 
 Also, don't forget to install the SQLite driver.
 
-```
+```bash
 npm i sqlite3
 ```
 
@@ -184,7 +184,7 @@ Install and create a database file located at `database/db.sqlite`.
 
 ## Creating Models
 
-```
+```bash
 node ace make:model User
 ```
 
@@ -280,7 +280,7 @@ export default class Users extends BaseSchema {
 
 Now, the following command will make the migration:
 
-```
+```bash
 node ace migration:run user
 ```
 
@@ -291,7 +291,7 @@ You can open DB for SQLite app and check if it is true.
 Adonis uses Edge template engine, which I really like.
 First, create a master layout file which is a blueprint of our front-end.
 
-```
+```bash
 # this will create resources/views/layouts/master.edge
 node ace make:view layouts/master
 ```
@@ -299,7 +299,7 @@ node ace make:view layouts/master
 Now, we can add some code to the file. You'll notice that `@!section('content')` part. The `master.edge` file will be used by another template.
 Add the lines below to the `resources/views/layouts/master.edge` file.
 
-```markup
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -309,14 +309,12 @@ Add the lines below to the `resources/views/layouts/master.edge` file.
     <title>Webmeister's Adonis Introduction</title>
     <link rel="shortcut icon" href="/favicon.ico">
 </head>
-<body>
-    <div class="container-fliud">
-        @!section('content')
-    </div>
-
-</body>
+  <body>
+      <div class="container-fliud">
+          @!section('content')
+      </div>
+  </body>
 </html>
-
 ```
 
 Let's create a file that will be used as a route view.

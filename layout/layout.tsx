@@ -29,7 +29,8 @@ import { Commander } from '../components'
 import Icon from 'supercons'
 import jsondata from '../data/posts-metadata.json'
 import { SegmentedControl } from '@mantine/core';
-import {motion} from 'framer-motion'
+import {motion, AnimatePresence} from 'framer-motion'
+
 const userNavigation = [
     { name: 'Your Profile', href: '#' },
     { name: 'Settings', href: '#' },
@@ -120,13 +121,13 @@ const _Accordion = () => {
                         <AccordionTrigger>{item.name}</AccordionTrigger>
                         <AccordionContent>
                             {item.children.map((subItem) => (
-                                <Link
+                                <Link legacyBehavior
                                     key={subItem.name}
                                     href={subItem.href}
                                 >
                                     <a
-                                        title={subItem.name}
                                         className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 "
+                                        title={subItem.name}
                                     >
                                         {subItem.name}
                                     </a>
@@ -135,7 +136,7 @@ const _Accordion = () => {
                         </AccordionContent>
                     </AccordionItem>
                 ) : (
-                    <Link key={item.name} href={item.href}>
+                    <Link legacyBehavior key={item.name} href={item.href}>
                         <a
                             title={item.name}
                             className="group w-full flex items-center pl-5 pr-2 py-2 text-sm  text-gray-300 rounded-md hover:text-white"
@@ -161,7 +162,7 @@ const _SidebarDesktop = ({ openCommander }) => (
                     title={"cbsofyalioglu"}
                     className="group w-full flex items-center pl-10 pr-2 mb-4 text-lg  text-gray-300 rounded-md hover:text-white"
                 >
-                    <Link href="/">
+                    <Link legacyBehavior href="/">
                         <a className="relative top-2 uppercase font-black text-lg" title="homepage">
                             {/* {"can "}
                             {"burak "}
@@ -274,7 +275,7 @@ const SidebarMobile = ({sidebarOpen = false, setSidebarOpen}) => {
                                                 <AccordionTrigger>{item.name}</AccordionTrigger>
                                                 <AccordionContent>
                                                     {item.children.map((subItem) => (
-                                                        <Link
+                                                        <Link legacyBehavior
                                                             key={subItem.name}
                                                             href={subItem.href}
                                                         >
@@ -289,7 +290,7 @@ const SidebarMobile = ({sidebarOpen = false, setSidebarOpen}) => {
                                                 </AccordionContent>
                                             </AccordionItem>
                                         ) : (
-                                            <Link key={item.name} href={item.href}>
+                                            <Link legacyBehavior key={item.name} href={item.href}>
                                                 <a
                                                     title={item.name}
                                                     className="group w-full flex items-center pl-5 pr-2 py-2 text-sm  text-gray-300 rounded-md hover:text-white"

@@ -462,3 +462,18 @@ div.svg-wrap > svg {
     background: radial-gradient(50% 50% at 50% 50%, hsla(0, 0%, 85%, 0.1) 0%, rgba(217, 217, 217, 0) 100%);
     background-blend-mode: overlay; 
 }
+
+
+img::after { 
+	content: "\1F4F7"" Aww snap, the image '" attr(alt) "' is broken"; /* To replace the ALT text */
+	position: absolute;
+	inset: 0; /* To display content in the center of the block */
+	display: grid;
+	place-items: center;
+  font-size: 24px;
+	padding: 20px; background-color: #f1f5ff;
+	z-index: 2;
+  backdrop-filter: blur(100px);
+  box-shadow: inset 16px 28px 64px 10px rgba(36, 36, 36, 0.5),
+              inset -16px 28px 64px 10px rgba(0,0,0,0.5);
+}
