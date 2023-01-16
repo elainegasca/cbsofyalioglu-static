@@ -117,12 +117,12 @@ const _Accordion = () => {
         <Accordion type="single" collapsible>
             {navigation.map((item, i) =>
                 item.children ? (
-                    <AccordionItem value={`item-${i}`} key={`acc-${i}`}>
+                    <AccordionItem value={`item-${i}`} key={`acc-${i}-${item.href}`}>
                         <AccordionTrigger>{item.name}</AccordionTrigger>
                         <AccordionContent>
-                            {item.children.map((subItem) => (
+                            {item.children.map((subItem, i) => (
                                 <Link legacyBehavior
-                                    key={subItem.name}
+                                    key={subItem.name + i}
                                     href={subItem.href}
                                 >
                                     <a

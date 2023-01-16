@@ -295,7 +295,11 @@ html:not(.dark) .lottie-icon svg g path {
     position: absolute;
 }
 * ::-webkit-scrollbar {
-    width: 1px !important;
+    width: 2px !important;
+    position: absolute;
+}
+#sidebar-desktop ::-webkit-scrollbar {
+    width: 0px !important;
     position: absolute;
 }
 ::-webkit-scrollbar-track {

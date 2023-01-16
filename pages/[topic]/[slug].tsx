@@ -33,6 +33,7 @@ const MdxProvider = dynamic(() => import('../../components/mdx/mdx-provider'))
 const ScrollTopButton = dynamic(() => import('../../components/button'))
 import { Dropdown } from "@nextui-org/react";
 import LinkPreview from '../../components/mdx/link-preview'
+import { isEqualObj } from "../../lib/functions";
 
 const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
   const router = useRouter()
@@ -46,7 +47,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
     'bg-purple-900 text-purple-500',
   ]
 
-  const categories = [...new Set([topic, ...frontMatter.categories])]
+  const categories = Array.from(new Set([topic, ...frontMatter.categories]))
   const categoriesWoutPost = categories.filter((cat) => cat !== 'post' && cat !== 'featured')
   const tags = frontMatter.tags
   const keywords = frontMatter.keywords
@@ -92,14 +93,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
     </header>
   ))
 
-  useEffect(() => {
-    const headers2 = Array.from(document.querySelectorAll('h2')).map(el => ({ key: el.getAttribute("id"), name: el.innerText, level: 2 }))
-    const headers3 = Array.from(document.querySelectorAll('h3')).map(el => ({ key: el.getAttribute("id"), name: el.innerText, level: 3 }))
-    const headers4 = Array.from(document.querySelectorAll('h4')).map(el => ({ key: el.getAttribute("id"), name: el.innerText, level: 4 }))
-    const headers = [...headers2, ...headers3, ...headers4].filter(el => Boolean(el.key))
-    console.log("headers", headers)
-    setHs(headers)
-  }, [])
+
 
   return (
     <>
@@ -154,7 +148,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
           ))}
         </div>
         <AnimatePresence>
-          {hs.length > 0 && <Toc headers={hs} />}
+          <Toc  />
         </AnimatePresence>
       </article>
 
@@ -198,13 +192,24 @@ const item = {
 }
 
 
-const Toc = ({ headers }) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [selected, setSelected] = useState(headers[0].key)
-  const myheaders = useMemo(() => headers.map(item => ({ ...item, key: item.key + "-key-toc" })), [headers])
-  console.log("selected", selected, myheaders)
+const Toc = React.memo(() => {
+  const {asPath} = useRouter()
+  const [hs, setHs] = useState([])
+  const [selected, setSelected] = useState(hs.length && hs[0]?.key)
+  const myheaders = useMemo(() => hs?.map(item => ({ ...item, key: item?.key + "-key-toc" })), [hs])
   const goto = (key) => document.getElementById(key.replace("-key-toc", ""))?.scrollIntoView({ behavior: 'smooth' })
-  console.log("selected", selected)
+
+  useEffect(() => {
+    const headers2 = Array.from(document.querySelectorAll('h2')).map(el => ({ key: el.getAttribute("id"), name: el.innerText, level: 2 }))
+    const headers3 = Array.from(document.querySelectorAll('h3')).map(el => ({ key: el.getAttribute("id"), name: el.innerText, level: 3 }))
+    const headers4 = Array.from(document.querySelectorAll('h4')).map(el => ({ key: el.getAttribute("id"), name: el.innerText, level: 4 }))
+    const headers = [...headers2, ...headers3, ...headers4].filter(el => Boolean(el.key))
+    console.log("headers", headers)
+    if (headers.length !== hs.length) {
+      setHs(headers)
+    }
+  }, [hs, asPath])
+
   return (
     <div style={{ position: "fixed", bottom: 32, left: "45%", width: "400px", zIndex: 10 }} id="toc-floating">
       <Dropdown >
@@ -215,7 +220,8 @@ const Toc = ({ headers }) => {
             color: "black",
             backgroundColor: "rgba(255,255,255,0.4)",
             boxShadow: "1px 1px 4px 0px rgba(0,0,0,0.35)",
-            "&:hover": { backgroundColor: "rgba(255,255,255, 0.7)" }
+            "&:hover": { backgroundColor: "rgba(255,255,255, 0.7)" },
+            "&:focus": { backgroundColor: "rgba(255,255,255, 0.7)" }
           }}>
           Table of Contents
         </Dropdown.Button>
@@ -227,7 +233,7 @@ const Toc = ({ headers }) => {
           onAction={goto}
           css={{
 
-            width: "100%", minWidth:400, color: "black",
+            width: "100%", minWidth: 400, color: "black",
             backgroundColor: "rgba(255,255,255,0.5)",
           }}
 
@@ -235,8 +241,10 @@ const Toc = ({ headers }) => {
           {myheaders.map((item) => (
             <Dropdown.Item
               css={{
-                width:"100%",
-                minWidth: "400px", fontSize: 13, padding: 0, margin: 0, 
+                width: "100%",
+                fontWeight: 700,
+                padding:4,
+                minWidth: "400px", fontSize: 13,  margin: 0,
 
               }}
               key={item.key}
@@ -251,7 +259,7 @@ const Toc = ({ headers }) => {
       </Dropdown>
     </div>
   )
-}
+})
 
 export const getStaticProps = async ({ params: { slug, topic } }) => {
   //console.log("cat & slug: ", topic, slug)

@@ -39,3 +39,33 @@ export function extract_text(txt: any): string {
     }
     return innerText
 }
+
+export function isEqualObj(a:Record<any,any>,b:Record<any,any>):boolean{
+    // Create arrays of property names
+    var aProps = Object.getOwnPropertyNames(a);
+    var bProps = Object.getOwnPropertyNames(b);
+
+    // If number of properties is different,
+    // objects are not equivalent
+    if (aProps.length !== bProps.length) {
+        return false;
+    }
+
+    for (var i = 0; i < aProps.length; i++) {
+        var propName:string|undefined = aProps[i];
+
+        // If values of same property are not equal,
+        // objects are not equivalent
+        if (propName && a[propName] !== b[propName]) {
+            return false;
+        }
+        if (propName && Object.prototype.toString.call(a[propName]) === "[object Array]"){
+            if (!isEqualObj(a[propName],b[propName])){
+                return false;
+            }
+        }
+    }
+    // If we made it this far, objects
+    // are considered equivalent
+    return true;
+ }
