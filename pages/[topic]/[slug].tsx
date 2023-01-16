@@ -20,7 +20,6 @@ import {
 } from '../../components/Svg'
 import { useScript } from '../../lib/hooks'
 import {
-  ArticleSeo,
   MetaTags,
   RichData,
   ListItemCard,
@@ -176,7 +175,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
               topic={rp.topic}
               slug={rp.slug}
               cover={rp.cover}
-              descriptiopn={rp.description}
+              description={rp.description}
 
             />
           ))}
