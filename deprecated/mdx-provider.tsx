@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react'
-import Image from 'next/image'
+import Image from "next/image";
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Script from 'next/script'
@@ -17,7 +17,14 @@ import {Video} from "../components/video"
 import { Sandpacker } from '../components/mdx/sandpack'
 
 const ResponsiveImage = props => (
-    <Image alt={props.alt} layout="responsive" {...props} />
+    <Image
+        alt={props.alt}
+        {...props}
+        sizes="100vw"
+        style={{
+            width: "100%",
+            height: "auto"
+        }} />
 )
 function string_to_slug(str) {
     str = str.replace(/^\s+|\s+$/g, ''); // trim

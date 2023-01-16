@@ -1,5 +1,4 @@
-// @ts-nocheck
-import Image from 'next/image'
+import Image from "next/image";
 import Link from 'next/link'
 import Head from 'next/head'
 

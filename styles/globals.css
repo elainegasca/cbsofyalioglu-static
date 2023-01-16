@@ -53,6 +53,8 @@
     --orange: #ff8b3e;
     --orange-dark: #441f04;
     --neon: #e5ff01;
+    --nextui--popoverBackground: rgba(255, 255, 255, 0.6) !important;
+    --nextui-colors-backgroundContrast: rgba(255, 255, 255, 0.6) !important;
 }
 html,
 body {
@@ -91,7 +93,6 @@ pre.mdx-pre {
     background: var(--mint-dark);
 }
 .mantine-ScrollArea-viewport > div {
-
 }
 html.dark .blurlay {
     backdrop-filter: blur(24px) !important;
@@ -421,11 +422,10 @@ div.svg-wrap > svg {
     overflow: hidden !important;
 }
 #grad-grad {
-
 }
 
 #sidebar-desktop {
-    background-color:rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
     box-shadow: 8px 2px 8px 1px rgba(0, 0, 0, 0.05);
     border-right: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -438,10 +438,10 @@ div.svg-wrap > svg {
         radial-gradient(at 20% 92%, hsla(275, 79%, 26%, 0.0) 10rem, transparent 100%); */
 
     height: 100vh;
-    width:20rem;
+    width: 20rem;
 }
 .sidebar-layer {
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     opacity: 0.01;
     min-width: 100%;
     height: 100%;
@@ -455,25 +455,52 @@ div.svg-wrap > svg {
 
 #mouse-tracker {
     position: absolute;
-    width:250px;
-    height:250px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     filter: blur(80px);
-    background: radial-gradient(50% 50% at 50% 50%, hsla(0, 0%, 85%, 0.1) 0%, rgba(217, 217, 217, 0) 100%);
-    background-blend-mode: overlay; 
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        hsla(0, 0%, 85%, 0.1) 0%,
+        rgba(217, 217, 217, 0) 100%
+    );
+    background-blend-mode: overlay;
 }
 
+img::after {
+    content: '\1F4F7'" Aww snap, the image '" attr(alt) "' is broken"; /* To replace the ALT text */
+    position: absolute;
+    inset: 0; /* To display content in the center of the block */
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    padding: 20px;
+    background-color: #f1f5ff;
+    z-index: 2;
+    backdrop-filter: blur(100px);
+    box-shadow: inset 16px 28px 64px 10px rgba(36, 36, 36, 0.5),
+        inset -16px 28px 64px 10px rgba(0, 0, 0, 0.5);
+}
 
-img::after { 
-	content: "\1F4F7"" Aww snap, the image '" attr(alt) "' is broken"; /* To replace the ALT text */
-	position: absolute;
-	inset: 0; /* To display content in the center of the block */
-	display: grid;
-	place-items: center;
-  font-size: 24px;
-	padding: 20px; background-color: #f1f5ff;
-	z-index: 2;
-  backdrop-filter: blur(100px);
-  box-shadow: inset 16px 28px 64px 10px rgba(36, 36, 36, 0.5),
-              inset -16px 28px 64px 10px rgba(0,0,0,0.5);
+.nextui-popover-content, .nextui-popover-content-container {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(40px);
+}
+
+.nextui-dropdown-item {
+    color: black !important;
+}
+:root {
+  --nextui--dropdownMenuWidth: 340px !important;
+}
+
+@media only screen and (max-width: 640px) {
+#toc-floating {
+  left: calc(calc(100% - 400px) / 2) !important;
+}
+}
+@media only screen and (min-width: 640px) {
+#toc-floating {
+  left: calc(calc(calc(100% - 400px) / 2) + 160px) !important;
+}
 }

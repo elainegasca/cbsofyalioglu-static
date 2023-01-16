@@ -25,6 +25,8 @@ import {
     StyledAccordionTrigger,
     AccordionSection
 } from "../styled";
+import LinkPreview from "./link-preview";
+
 
 const CodeHighlighter = dynamic(() => import("./code"));
 const ImageZoom = dynamic(() => import("./image"));
@@ -36,6 +38,7 @@ export default function MdxProvider({
     ...props
 }) {
     const comp = {
+      LinkPreview: () => <LinkPreview />,
         p: (props) => <p>{props.children}</p>,
         h1: (props) => (
             <span className="dark:text-gray-300 text-gray-800 text-4xl lg:text-5xl text-center mt-20 mb-4 md:mb-6">
@@ -62,10 +65,24 @@ export default function MdxProvider({
             </div>
         ),
         img: (props) => (
-            <Image {...props} loading="lazy" layout="responsive" width="1400" height="700" />
+            <Image
+                {...props}
+                loading="lazy"
+                width="1400"
+                height="700"
+                sizes="100vw"
+                style={{
+                    width: "100%",
+                    height: "auto"
+                }} />
         ),
         ImageZoom: (props) => <ImageZoom {...props} />,
-        Image: (props) => <Image {...props} />,
+        Image: (props) => <Image
+            {...props}
+            style={{
+                maxWidth: "100%",
+                height: "auto"
+            }} />,
 
         Hr: () => <Hr />,
 

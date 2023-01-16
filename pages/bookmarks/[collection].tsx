@@ -1,7 +1,7 @@
 // @ts-nocheck
 import fs from "fs"
 import path from "path"
-import Image from 'next/image'
+import Image from "next/image";
 import Head from 'next/head'
 import { useEffect } from 'react'
 import { GetStaticProps } from 'next'

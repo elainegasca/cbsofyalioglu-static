@@ -339,6 +339,7 @@ details {
     margin-top: 24px;
     margin-bottom: 16px;
     transition: all 350ms ease;
+    background-color: transparent !important;
 }
 @media only screen and (max-width: 640px) {
     details summary::before {

@@ -2,10 +2,18 @@
 import React, { useCallback, useState } from 'react'
 import { Controlled as ControlledZoom } from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
-import Image from 'next/image'
+import Image from "next/image";
 
 export const ResponsiveImage = props => (
-    <Image alt={props.alt} layout="responsive" {...props} loading="lazy" />
+    <Image
+        alt={props.alt}
+        {...props}
+        loading="lazy"
+        sizes="100vw"
+        style={{
+            width: "100%",
+            height: "auto"
+        }} />
 )
 
 export default function ImageZoom(props){
@@ -39,7 +47,10 @@ export default function ImageZoom(props){
                 //style={{minHei:1400}}
                 className={myClass}
                 loading="lazy"
-            />
+                style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                }} />
         </ControlledZoom>
-    )
+    );
 }

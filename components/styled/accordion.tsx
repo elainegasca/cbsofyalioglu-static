@@ -105,10 +105,10 @@ const StyledContent = styled(AccordionPrimitive.Content, {
     backgroundColor: "transparent",
 
     '&[data-state="open"]': {
-        animation: `${slideDown} 300ms cubic-bezier(0.87, 0, 0.13, 1) forwards`
+        animation: `${slideDown} 500ms cubic-bezier(0.87, 0, 0.13, 1) forwards`
     },
     '&[data-state="closed"]': {
-        animation: `${slideUp} 300ms cubic-bezier(0.87, 0, 0.13, 1) forwards`
+        animation: `${slideUp} 500ms cubic-bezier(0.87, 0, 0.13, 1) forwards`
     }
 });
 const StyledAccordionContent = styled(AccordionPrimitive.Content, {
@@ -118,10 +118,10 @@ const StyledAccordionContent = styled(AccordionPrimitive.Content, {
     backgroundColor: "transparent",
 
     '&[data-state="open"]': {
-        animation: `${slideDown} 300ms cubic-bezier(0.87, 0, 0.13, 1) forwards`
+        animation: `${slideDown} 500ms cubic-bezier(0.87, 0, 0.13, 1) forwards`
     },
     '&[data-state="closed"]': {
-        animation: `${slideUp} 300ms cubic-bezier(0.87, 0, 0.13, 1) forwards`
+        animation: `${slideUp} 500ms cubic-bezier(0.87, 0, 0.13, 1) forwards`
     }
 });
 const StyledContentText = styled("div", {
@@ -140,12 +140,12 @@ const StyledAccordionParagraph = styled("p", {
 });
 const StyledChevron = styled(ChevronDownIcon, {
     color: "#FEFEFE",
-    transition: "transform 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+    transition: "transform 500ms cubic-bezier(0.87, 0, 0.13, 1)",
     "[data-state=open] &": { transform: "rotate(180deg)" }
 });
 const StyledAccordionChevron = styled(ChevronDownIcon, {
     color: "#91E899",
-    transition: "transform 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+    transition: "transform 500ms cubic-bezier(0.87, 0, 0.13, 1)",
     "[data-state=open] &": { transform: "rotate(180deg)" }
 });
 const StyledAccordionChevronWrapper = styled("div", {

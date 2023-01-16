@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -47,9 +47,7 @@ export function CardEnlarge(props: CardProps) {
           data-tip={props.excerpt}
         >
           <div className="flex flex-col p-0 m-0">
-            <AnimatePresence>
-              <motion.a
-                layoutId={props.slug}
+              <a
                 target="_blank"
                 title={props.title}
                 href={props.link}
@@ -57,8 +55,7 @@ export function CardEnlarge(props: CardProps) {
                 rel={props.nofollow ? 'nofollow noopener' : 'noopener'}
               >
                 <h3 className="text-gray-800 text-xl font-bold mt-2">{props.title}</h3>
-              </motion.a>
-            </AnimatePresence>
+              </a>
             <p className="text-gray-500 text-md mt-2 mb-2 leading-6 overflow-ellipsis overflow-hidden text-sm">
               {props.description || props.excerpt}
             </p>
@@ -137,13 +134,12 @@ export function _ListItemCard(props: CardProps) {
         }`}
     >
       <Image
-        layout="fill"
-        sizes="30vw"
         loading="lazy"
         src={props.thumbnail || props.cover || '/img/placeholder.webp'}
         alt={(props.keywords && props.keywords[0]) || props.title}
         className="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-700 z-0"
-      />
+        fill
+        sizes="30vw" />
 
       <div className="bg-[rgba(0,0,0,0.5)] hover:blur-md absolute inset-0 pointer-events-none"></div>
 
@@ -166,7 +162,7 @@ export function _ListItemCard(props: CardProps) {
         <a title={props.title} className="group absolute top-0 left-0 right-0 bottom-0" />
       </Link>
     </li>
-  )
+  );
 }
 export function ListItemCard(props: CardProps) {
   return (
@@ -194,7 +190,7 @@ export function ListItemCard(props: CardProps) {
         <Link href={`/${props.topic}/${props.slug}`} legacyBehavior>
           <motion.a title={props.title} className="group">
             <AnimatePresence>
-              <motion.h3 exit={{opacity:0}} layoutId={props.slug} className="!text-white text-lg font-semibold transition duration-500 mb-2 z-10 relative translate-y-20 group-hover:translate-y-0">
+              <motion.h3 exit={{opacity:0}} layoutId={props.slug + "-title"} className="!text-white text-lg font-semibold transition duration-500 mb-2 z-10 relative translate-y-20 group-hover:translate-y-0">
                 {props.title}
               </motion.h3>
             </AnimatePresence>

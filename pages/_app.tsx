@@ -14,7 +14,7 @@ import Layout from '../layout/layout'
 //import { site } from "../settings"
 //import { MetaTags } from "../components/next-seo"
 import { useHasMounted, useDebounce } from '../lib/hooks'
-//import { CssBaseline } from '@nextui-org/react';
+import { NextUIProvider } from '@nextui-org/react';
 
 // export type Status = 'idle' | 'loading' | 'ready' | 'error'
 // export type ScriptElt = HTMLScriptElement | null
@@ -27,32 +27,33 @@ import jsondata from '../data/posts-metadata.json'
 import { motion, animate, useSpring, useTranform, useMotionValue } from 'framer-motion'
 
 function MyApp({ Component, pageProps }: AppProps) {
-    const hasMounted = useHasMounted()
-    //const hasDebounced = useDebounce(hasMounted, 5000)
-    //console.log("loading scripts", hasDebounced)
-    const mouseX = useMotionValue(0)
-    const mouseY = useMotionValue(0)
-    const x = useSpring(mouseX, { stiffness: 1000, damping: 10 })
-    const y = useSpring(mouseY, { stiffness: 1000, damping: 10 })
+  const hasMounted = useHasMounted()
+  //const hasDebounced = useDebounce(hasMounted, 5000)
+  //console.log("loading scripts", hasDebounced)
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+  const x = useSpring(mouseX, { stiffness: 1000, damping: 10 })
+  const y = useSpring(mouseY, { stiffness: 1000, damping: 10 })
 
 
-    React.useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-            // animate mouse x and y
-            animate(mouseX, e.clientX);
-            animate(mouseY, e.clientY);
-        };
-        //const setY = (e) => _y.set(e.clientY)
-        window.addEventListener('mousemove', handleMouseMove)
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove)
-        }
-    }, [])
+  React.useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      // animate mouse x and y
+      animate(mouseX, e.clientX);
+      animate(mouseY, e.clientY);
+    };
+    //const setY = (e) => _y.set(e.clientY)
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [])
 
-    return (
-        <React.Fragment>
-            <Layout x={mouseX} y={mouseY}>
-                {/*<Head>
+  return (
+    <React.Fragment>
+      <NextUIProvider>
+        <Layout x={mouseX} y={mouseY}>
+          {/*<Head>
                 {hasMounted && <Commander />}
 
                     <link
@@ -77,26 +78,26 @@ function MyApp({ Component, pageProps }: AppProps) {
                     }
 
                 </Head>*/}
-                <Script
-                    strategy="lazyOnload"
-                    src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-                />
-                <Script id="ga-analytics">
-                    {`
+          <Script
+            strategy="lazyOnload"
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+          />
+          <Script id="ga-analytics">
+            {`
                             window.dataLayer = window.dataLayer || [];
                             function gtag(){dataLayer.push(arguments);}
                             gtag('js', new Date());
 
                             gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
                         `}
-                </Script>
+          </Script>
 
-                <ContentComponent Element={Component} props={pageProps} />
-            </Layout>
-
-            {/* MESH GRADIENTS */}
-        </React.Fragment>
-    )
+          <ContentComponent Element={Component} props={pageProps} />
+        </Layout>
+      </NextUIProvider>
+      {/* MESH GRADIENTS */}
+    </React.Fragment>
+  )
 }
 const ContentComponent = React.memo(({ Element, props }) => <Element {...props} />)
 export default MyApp
