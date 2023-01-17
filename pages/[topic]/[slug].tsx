@@ -132,7 +132,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
       <article className="relative pt-8 pb-32 flex flex-col items-center px-4">
         <main className="markdown-content relative post-page min-h-screen w-full max-w-[700px] h-auto pt-4 ml-auto mr-auto flex flex-col !z-10">
           <hr />
-          <MdxProvider source={mdxSource} />
+          <MdxProvider source={mdxSource} components={undefined} className={undefined} />
         </main>
         <div className="fixed top-40 w-full h-auto hidden">
         </div>
@@ -148,7 +148,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
           ))}
         </div>
         <AnimatePresence>
-          <Toc  />
+          <Toc />
         </AnimatePresence>
       </article>
 
@@ -169,8 +169,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
               topic={rp.topic}
               slug={rp.slug}
               cover={rp.cover}
-              description={rp.description}
-
+              description={rp.description} link={""}
             />
           ))}
         </ul>
@@ -190,25 +189,36 @@ const item = {
   show: { opacity: 1 },
   hide: { opacity: 0 },
 }
-
+type HeaderLinkType = {
+  key: string;
+  name: string;
+  level: number;
+}
 
 const Toc = React.memo(() => {
-  const {asPath} = useRouter()
-  const [hs, setHs] = useState([])
+  const { asPath } = useRouter()
+  const [hs, setHs] = useState<HeaderLinkType[]>([])
   const [selected, setSelected] = useState(hs.length && hs[0]?.key)
   const myheaders = useMemo(() => hs?.map(item => ({ ...item, key: item?.key + "-key-toc" })), [hs])
   const goto = (key) => document.getElementById(key.replace("-key-toc", ""))?.scrollIntoView({ behavior: 'smooth' })
 
-  useEffect(() => {
+  const updateHeaders = () => {
     const headers2 = Array.from(document.querySelectorAll('h2')).map(el => ({ key: el.getAttribute("id"), name: el.innerText, level: 2 }))
     const headers3 = Array.from(document.querySelectorAll('h3')).map(el => ({ key: el.getAttribute("id"), name: el.innerText, level: 3 }))
     const headers4 = Array.from(document.querySelectorAll('h4')).map(el => ({ key: el.getAttribute("id"), name: el.innerText, level: 4 }))
     const headers = [...headers2, ...headers3, ...headers4].filter(el => Boolean(el.key))
     console.log("headers", headers)
+    console.log("asPath", asPath)
     if (headers.length !== hs.length) {
       setHs(headers)
+      document.removeEventListener("scroll", updateHeaders)
     }
-  }, [hs, asPath])
+  }
+
+  useEffect(() => {
+    document.addEventListener("scroll", updateHeaders)
+    return () => document.removeEventListener("scroll", updateHeaders)
+  }, [asPath])
 
   return (
     <div style={{ position: "fixed", bottom: 32, left: "45%", width: "400px", zIndex: 10 }} id="toc-floating">
@@ -243,8 +253,8 @@ const Toc = React.memo(() => {
               css={{
                 width: "100%",
                 fontWeight: 700,
-                padding:4,
-                minWidth: "400px", fontSize: 13,  margin: 0,
+                padding: 4,
+                minWidth: "400px", fontSize: 13, margin: 0,
 
               }}
               key={item.key}
