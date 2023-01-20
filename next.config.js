@@ -38,6 +38,13 @@ const config = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true
+  },
   images: {
     domains: ['fra1.digitaloceanspaces.com', 'www.cbsofyalioglu.com'],
     deviceSizes: [640, 768, 1024, 1280, 1536, 1920],

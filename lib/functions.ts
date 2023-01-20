@@ -69,3 +69,12 @@ export function isEqualObj(a:Record<any,any>,b:Record<any,any>):boolean{
     // are considered equivalent
     return true;
  }
+
+export const canUseDOM = () => {  
+
+	return !!(
+		typeof window !== "undefined" &&  
+		window.document &&  
+		window.document.createElement  
+	);  
+};

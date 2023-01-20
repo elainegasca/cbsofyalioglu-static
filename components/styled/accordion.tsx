@@ -149,7 +149,7 @@ const StyledAccordionChevron = styled(ChevronDownIcon, {
     "[data-state=open] &": { transform: "rotate(180deg)" }
 });
 const StyledAccordionChevronWrapper = styled("div", {
-    padding: 8,
+    padding: 4,
     borderWidth: "1px",
     borderStyle: "solid",
     borderRadius: "100%",
@@ -160,13 +160,19 @@ export const Accordion = StyledAccordion;
 export const AccordionItem = StyledItem;
 export const AccordionTrigger = React.forwardRef(
     (
-        { children, ...props }: { children: any; props?: any },
+        { children, ...props }: { children: any; props?: {color?:string, size?:number} },
         forwardedRef: any
     ) => (
         <StyledHeader>
             <StyledTrigger {...props} ref={forwardedRef}>
                 {children}
-                <StyledChevron aria-hidden />
+                <StyledChevron aria-hidden style={{
+                  color: props.color ? props.color : "FEFEFE",
+                  marginRight:-8,
+                  ...(props.size && {width:`${props.size}px`, height:`${props.size}px`})
+                  }
+                  } 
+                />
             </StyledTrigger>
         </StyledHeader>
     )

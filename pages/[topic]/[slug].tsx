@@ -1,7 +1,7 @@
 import Image from "next/image";
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import React, { useEffect, useState, useMemo } from 'react'
+import React, { useEffect, useState, useMemo, useId } from 'react'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -196,6 +196,7 @@ type HeaderLinkType = {
 }
 
 const Toc = React.memo(() => {
+  const myId = useId()
   const { asPath } = useRouter()
   const [hs, setHs] = useState<HeaderLinkType[]>([])
   const [selected, setSelected] = useState(hs.length && hs[0]?.key)
@@ -224,6 +225,7 @@ const Toc = React.memo(() => {
     <div style={{ position: "fixed", bottom: 32, left: "45%", width: "400px", zIndex: 10 }} id="toc-floating">
       <Dropdown >
         <Dropdown.Button flat
+          id={myId}
           css={{
             tt: "capitalize", width: "400px",
             backdropFilter: "blur(10px)",
