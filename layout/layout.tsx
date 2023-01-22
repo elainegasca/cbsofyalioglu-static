@@ -223,11 +223,10 @@ const _Accordion = () => {
             <AccordionTrigger className="font-black" size={36} color={item.color ? item.color : null}>{item.icon ? <span className='flex items-center py-4 opacity-90 hover:opacity-100 transition-opacity duration-200 ease-linear'><item.icon /> <span className='ml-2 text-2xl' style={{ color: item.color ? item.color : "#ccc" }}>{item.name}</span></span> : item.name}</AccordionTrigger>
             <AccordionContent>
               {item.children.map((subItem, i) => (
-                <Link legacyBehavior
+  
+                  <motion.a
                   key={subItem.name + i}
                   href={subItem.href}
-                >
-                  <motion.a
                     className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium  rounded-md"
                     title={subItem.name}
                     style={{ color: item.color && subItem.current ? item.color : "rgba(200, 200, 200, 0.8)" }}
@@ -235,20 +234,19 @@ const _Accordion = () => {
                   >
                     {subItem.name}
                   </motion.a>
-                </Link>
               ))}
             </AccordionContent>
           </AccordionItem>
         ) : (
-          <Link legacyBehavior key={item.name} href={item.href}>
-            <motion.a
+            <motion.a 
+            key={item.name}
+              href={item.href}
               title={item.name}
               className="group w-full flex items-center pl-5 pr-2 py-4 text-sm  text-gray-300 rounded-md font-black text-3xl"
               style={{ color: item.color ? item.color : "rgba(163, 163, 163, 0.8)" }}
             >
               {item.icon ? <span className='flex items-center opacity-90 hover:opacity-100 ease-linear transition-opacity'><item.icon /> <span className='ml-2 text-2xl' style={{ color: item.color ? item.color : "#ccc" }}>{item.name}</span></span> : item.name}
             </motion.a>
-          </Link>
         )
       )}
     </Accordion>
