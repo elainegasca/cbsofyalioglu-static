@@ -140,7 +140,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
           ))}
         </div>
         <AnimatePresence>
-          <Toc />
+          {/* <Toc /> */}
         </AnimatePresence>
       </article>
 
