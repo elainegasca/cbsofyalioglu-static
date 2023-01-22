@@ -499,9 +499,10 @@ img::after {
 }
 
 @media only screen and (max-width: 640px) {
-#toc-floating {
-  left: calc(calc(100% - 400px) / 2) !important;
-}
+  #toc-floating {
+    left: calc(calc(100% - 400px) / 2) !important;
+    bottom: 0 !important;
+  }
 }
 @media only screen and (min-width: 640px) {
 #toc-floating {

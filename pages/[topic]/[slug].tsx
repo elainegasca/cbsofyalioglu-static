@@ -38,15 +38,17 @@ import { isEqualObj } from "../../lib/functions";
 const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
   const router = useRouter()
   const canonical = frontMatter.canonical || site.website + router.asPath
-  const [hs, setHs] = useState([])
-  const colors = [
-    'bg-yellow-900 text-yellow-500',
-    ' bg-green-900 text-green-500',
-    'bg-indigo-900 text-indigo-500',
-    'bg-indigo-900 text-indigo-500',
-    'bg-purple-900 text-purple-500',
-  ]
-
+  const RichDataEl = useMemo(() => <RichData
+    type="article"
+    articleType={frontMatter.articleType}
+    title={frontMatter.title}
+    canonical={frontMatter.canonical}
+    description={frontMatter.description}
+    date={frontMatter.date}
+    modified={frontMatter.modified}
+    cover={frontMatter.cover}
+    frontMatter={frontMatter}
+  />, [slug])
   const categories = Array.from(new Set([topic, ...frontMatter.categories]))
   const categoriesWoutPost = categories.filter((cat) => cat !== 'post' && cat !== 'featured')
   const tags = frontMatter.tags
@@ -92,7 +94,20 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
       </div>
     </header>
   ))
-
+  const MetaTagsEl = useMemo(() => <MetaTags
+    type="article"
+    title={frontMatter.title}
+    descriptiopn={frontMatter.description}
+    canonical={frontMatter.canonical}
+    topic={frontMatter.topic}
+    tags={frontMatter.tags}
+    keywords={frontMatter.keywords}
+    date={frontMatter.date}
+    modified={frontMatter.modified}
+    cover={frontMatter.cover}
+    monetize={frontMatter.monetize}
+    frontMatter={frontMatter}
+  />, [slug])
 
 
   return (
@@ -102,31 +117,8 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
         <meta name="title" content={frontMatter.title} key="h-title" />
         <meta name="description" content={frontMatter.description} key="h-description" />
         <link rel="canonical" href={frontMatter.canonical} key="h-canonical" />
-        <RichData
-          type="article"
-          articleType={frontMatter.articleType}
-          title={frontMatter.title}
-          canonical={frontMatter.canonical}
-          description={frontMatter.description}
-          date={frontMatter.date}
-          modified={frontMatter.modified}
-          cover={frontMatter.cover}
-          frontMatter={frontMatter}
-        />
-        <MetaTags
-          type="article"
-          title={frontMatter.title}
-          descriptiopn={frontMatter.description}
-          canonical={frontMatter.canonical}
-          topic={frontMatter.topic}
-          tags={frontMatter.tags}
-          keywords={frontMatter.keywords}
-          date={frontMatter.date}
-          modified={frontMatter.modified}
-          cover={frontMatter.cover}
-          monetize={frontMatter.monetize}
-          frontMatter={frontMatter}
-        />
+        {RichDataEl}
+        {MetaTagsEl}
       </Head>
       <ArticleHead />
       <article className="relative pt-8 pb-32 flex flex-col items-center px-4">

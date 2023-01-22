@@ -7,7 +7,6 @@ import { MantineProvider, Button } from '@mantine/core'
 
 import '../styles/tailwind.css'
 import '../styles/globals.css'
-import '../node_modules/rolly.js/css/style.css'
 
 import type { AppProps } from 'next/app'
 import Layout from '../layout/layout'
@@ -51,6 +50,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <React.Fragment>
+    <Head></Head>
       <NextUIProvider>
         <Layout x={mouseX} y={mouseY}>
           {/*<Head>
@@ -91,8 +91,8 @@ function MyApp({ Component, pageProps }: AppProps) {
                             gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
                         `}
           </Script>
-
-          <ContentComponent Element={Component} props={pageProps} />
+          <Component {...pageProps} />
+          {/* <ContentComponent Element={Component} props={pageProps} /> */}
         </Layout>
       </NextUIProvider>
       {/* MESH GRADIENTS */}

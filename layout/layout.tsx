@@ -29,7 +29,6 @@ import {
   Tooltip,
 } from '../components/styled'
 import { Commander } from '../components'
-import Icon from 'supercons'
 import jsondata from '../data/posts-metadata.json'
 import { SegmentedControl } from '@mantine/core';
 import { motion, AnimatePresence } from 'framer-motion'
@@ -73,7 +72,95 @@ export default function Layout({ openCommander, closeCommander, x, y, children }
       {/* <motion.div id="mouse-tracker" style={{x, y, zIndex:1000}}></motion.div> */}
 
       {/* MAIN CONTENT */}
-      <MainContent children={children} setSidebarOpen={setSidebarOpener} />
+
+      <div className="flex flex-col w-0 flex-1 overflow-hidden relative !z-10 shadow-xl">
+        <div className="relative flex-shrink-0 flex h-16  z-50">
+          <button
+            className="px-4 border-r border-gray-200 text-gray-500 bg-gray-800 relative z-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden"
+            onClick={() => setSidebarOpen(true)}
+          >
+            <span className="sr-only">Open sidebar</span>
+            <MenuAlt2Icon className="h-6 w-6" aria-hidden="true" />
+          </button>
+          <div className="flex-1 px-4 flex justify-between relative md:blurlay z-50 bg-gray-900 md:hidden">
+            <div className="flex-1 flex">
+              {/*<form className="w-full flex md:ml-0" action="#" method="GET">
+                                <label htmlFor="search-field" className="sr-only">
+                                    Search
+                                </label>
+                                <div className="relative w-full text-gray-400 focus-within:text-gray-600">
+                                    <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
+                                        <SearchIcon className="h-5 w-5" aria-hidden="true" />
+                                    </div>
+                                    <input
+                                        id="search-field"
+                                        className="block w-full h-full pl-8 pr-3 py-2 border-transparent text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-0 focus:border-transparent sm:text-sm"
+                                        placeholder="Search"
+                                        type="search"
+                                        name="search"
+                                    />
+                                </div>
+                                            </form>*/}
+            </div>
+            <div className="ml-4 items-center md:ml-6 hidden">
+              <Toggle />
+              {/* Profile dropdown */}
+              <Menu as="div" className="ml-3 relative">
+                {({ open }) => (
+                  <>
+                    <div>
+                      <Menu.Button className="max-w-xs bg-transparent flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        {/*<span className="sr-only">Open user menu</span>
+                                                <img
+                                                    className="h-8 w-8 rounded-full"
+                                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                    alt=""
+                                />*/}
+                      </Menu.Button>
+                    </div>
+                    <Transition
+                      show={open}
+                      as={Fragment}
+                      enter="transition ease-out duration-100"
+                      enterFrom="transform opacity-0 scale-95"
+                      enterTo="transform opacity-100 scale-100"
+                      leave="transition ease-in duration-75"
+                      leaveFrom="transform opacity-100 scale-100"
+                      leaveTo="transform opacity-0 scale-95"
+                    >
+                      <Menu.Items
+                        static
+                        className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      >
+                        {userNavigation.map((item) => (
+                          <Menu.Item key={item.name}>
+                            {({ active }) => (
+                              <a
+                                href={item.href}
+                                className={classNames(
+                                  active ? 'bg-gray-100' : '',
+                                  'block px-4 py-2 text-sm text-gray-700'
+                                )}
+                              >
+                                {item.name}
+                              </a>
+                            )}
+                          </Menu.Item>
+                        ))}
+                      </Menu.Items>
+                    </Transition>
+                  </>
+                )}
+              </Menu>
+            </div>
+          </div>
+        </div>
+        {/* MAIN */}
+        <main className="will-lock flex-1 relative overflow-y-auto overflow-x-hidden focus:outline-none mt-4 sm:-mt-16 z-10 flex-col items-center w-full">
+          <div className="py-20 z-50 mx-auto max-w-[1200px] will-lock">{children}</div>
+        </main>
+
+      </div>
       <CommanderEl />
     </div>
   )
@@ -113,6 +200,7 @@ const _Commander = () => {
 
 const _Accordion = () => {
   const router = useRouter()
+
   const navigation = React.useMemo(() => navLinks.map((navlink) => {
     if (navlink.children) {
       const children = navlink.children.map(c => {
@@ -125,7 +213,7 @@ const _Accordion = () => {
       navlink.current = navlink.href === router.asPath
       return navlink
     }
-  }, [router]))
+  }, [router, navLinks]))
   console.log("navigation", navigation)
   return (
     <Accordion type="single" collapsible>
@@ -142,7 +230,7 @@ const _Accordion = () => {
                   <motion.a
                     className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium  rounded-md"
                     title={subItem.name}
-                    style={{color: item.color && subItem.current ? item.color : "rgba(200, 200, 200, 0.8)"}}
+                    style={{ color: item.color && subItem.current ? item.color : "rgba(200, 200, 200, 0.8)" }}
                     whileHover={{ color: item.color ? item.color : "rgba(200, 200, 200, 1)" }}
                   >
                     {subItem.name}
@@ -223,9 +311,21 @@ const SidebarDesktop = React.memo(_SidebarDesktop);
 
 const SidebarMobile = ({ sidebarOpen = false, setSidebarOpen }) => {
   const router = useRouter()
-  const navigation = React.useMemo(() => navLinks.map((navlink) =>
-    navlink.href === router.asPath ? { ...navlink, current: true } : navlink
-  ), [])
+
+  const navigation = React.useMemo(() => navLinks.map((navlink) => {
+    if (navlink.children) {
+      const children = navlink.children.map(c => {
+        return { ...c, current: c.href === router.asPath }
+      })
+      navlink.children = children
+      return navlink
+    }
+    else {
+      navlink.current = navlink.href === router.asPath
+      return navlink
+    }
+  }, [router, navLinks]))
+  useEffect(() => setSidebarOpen(false), [router.asPath])
   return (
     <Transition.Root show={sidebarOpen} as={Fragment}>
       <Dialog
@@ -347,7 +447,7 @@ const SidebarMobile = ({ sidebarOpen = false, setSidebarOpen }) => {
     </Transition.Root>
   )
 }
-const _MainContent = ({ children, setSidebarOpen }) => (
+const MainContent = ({ children, setSidebarOpen }) => (
   <div className="flex flex-col w-0 flex-1 overflow-hidden relative !z-10 shadow-xl">
     <div className="relative flex-shrink-0 flex h-16  z-50">
       <button
@@ -437,7 +537,7 @@ const _MainContent = ({ children, setSidebarOpen }) => (
 
   </div>
 )
-const MainContent = React.memo(_MainContent);
+// const MainContent = React.memo(_MainContent);
 const SVGComponent = props =>
   <svg width="100%" height="100%" id="bg-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_17_60)">

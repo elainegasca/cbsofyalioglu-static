@@ -1,3 +1,0 @@
-{
-  "data" : "This data can be shared accross all routes and can be accessed using 'res.locals.store' in middleware"
-}

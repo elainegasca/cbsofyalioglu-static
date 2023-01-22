@@ -13,10 +13,9 @@
         "jsonize": "node data/jsonize.js"
     },
     "dependencies": {
-        "@agney/playground": "^0.8.0",
         "@beskar-labs/glimpse": "^2.0.8",
         "@canburaks/stitches-theme": "^0.0.4",
-        "@codesandbox/sandpack-react": "^0.10.1",
+        "@emotion/react": "^11.10.5",
         "@headlessui/react": "^1.4.2",
         "@heroicons/react": "^1.0.5",
         "@mantine/core": "^3.2.3",
@@ -34,12 +33,9 @@
         "@radix-ui/react-tooltip": "^0.1.7",
         "@stitches/react": "^1.2.7",
         "cmdk": "^0.1.20",
-        "dayjs": "^1.10.7",
         "framer-motion": "^8.1.3",
         "jotai": "^1.4.8",
-        "lax.js": "^2.0.3",
         "link-preview-js": "^2.1.13",
-        "luxy.js": "^0.1.0",
         "next": "^13.1.1",
         "next-seo": "^4.28.1",
         "react": "^18.2.0",
@@ -47,8 +43,6 @@
         "react-dom": "^18.2.0",
         "react-live": "^2.3.0",
         "react-medium-image-zoom": "^5.1.2",
-        "rolly.js": "^0.4.0",
-        "sharp": "^0.29.3",
         "supercons": "^0.0.1"
     },
     "devDependencies": {
