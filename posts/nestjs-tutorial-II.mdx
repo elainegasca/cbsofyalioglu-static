@@ -98,8 +98,6 @@ We would be better off if we will first cover **dependency injection** because i
 -   High-level modules should not import anything from low-level modules. Both should depend on abstractions (e.g., interfaces).
 -   Abstractions should not depend on details. Details (concrete implementations) should depend on abstractions.
 
-<br />
-
 > One of the goals of these methods is to define the subprogram hierarchy that describes how the high-level modules make calls to the low-level modules.
 
 \- Agile Software Development, Principles, Patterns, and Practices. Robert C. Martin
@@ -132,7 +130,7 @@ It should also be noted that:
 
 One of the way for creating a service provider for the controller is like that:
 
-```ts
+```typescript
 // OPTION I (❌ BAD)
 export class UsersService {
     usersRepo: UsersRepository

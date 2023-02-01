@@ -184,7 +184,7 @@ function Home({ featuredPosts, turkishPosts, englishPosts, x, y }) {
             </div>
 
             <ul className="grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6 xl:gap-8">
-              {turkishPosts.map((post) => (
+              {turkishPosts.filter(p => p?.frontMatter?.canonical !== "https://www.cbsofyalioglu.com/design/canva-pro-ucretsiz/").map((post) => (
                 <li
                   key={'home-featured-tr-' + post.frontMatter.slug}
                   title={post.title}

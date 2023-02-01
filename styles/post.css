@@ -12,20 +12,24 @@
 }
 
 .post-page > h1 {
-    margin-top: 64px;
+    margin-top: 128px;
     margin-bottom: 16px;
+    font-weight: 900 !important;
 }
 .post-page > h2 {
-    margin-top: 48px;
+    margin-top: 96px;
     margin-bottom: 8px;
+    font-weight: 900 !important;
 }
 .post-page > h3 {
-    margin-top: 32px;
+    margin-top: 64px;
     margin-bottom: 8px;
+    font-weight: 900 !important;
 }
 .post-page > h4 {
-    margin-top: 32px;
+    margin-top: 64px;
     margin-bottom: 8px;
+    font-weight: 900 !important;
 }
 .post-page > h5 {
     margin-top: 32px;

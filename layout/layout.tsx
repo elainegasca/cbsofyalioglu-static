@@ -68,7 +68,7 @@ export default function Layout({ openCommander, closeCommander, x, y, children }
       {/* SIDEBAR MOBILE */}
       <SidebarMobile sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-      <SidebarDesktop openCommander={openCommander} />
+      <_SidebarDesktop openCommander={openCommander} />
       {/* <motion.div id="mouse-tracker" style={{x, y, zIndex:1000}}></motion.div> */}
 
       {/* MAIN CONTENT */}
@@ -161,7 +161,6 @@ export default function Layout({ openCommander, closeCommander, x, y, children }
         </main>
 
       </div>
-      <CommanderEl />
     </div>
   )
 }
@@ -281,7 +280,7 @@ const _SidebarDesktop = ({ openCommander }) => (
           <nav className="flex-1 px-2 py-14 bg-transparent flex-grow h-full space-y-1">
             {/* <button
                             onClick={openCommander}
-                            className="group w-full flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 justify-between"
+                            className="group w-full z-50 flex items-center pl-5 pr-2 py-2 text-sm font-medium text-gray-400 rounded-md hover:text-gray-300 justify-between"
                         >
                             Search
                         </button> */}

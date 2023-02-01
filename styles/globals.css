@@ -509,3 +509,10 @@ img::after {
   left: calc(calc(calc(100% - 400px) / 2) + 160px) !important;
 }
 }
+
+blockquote {
+  background-color: var(--dark-background);
+  border-left: 4px solid var(--crimson);
+  border-radius: 0;
+  margin: 64px 0 64px 0
+}
