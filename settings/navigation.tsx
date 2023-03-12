@@ -34,6 +34,7 @@ export const navLinks = [
         color: "#F92C8D",
         children: [
             { name: 'All Posts', href: '/en/' },
+            { name: 'The Ultimate List of Blogging Sites', href: '/blogging/best-blogging-sites' },
             { name: 'NestJS I: Basics, Modules, Controllers', href: '/code/nestjs-tutorial-I/' },
             { name: 'NestJS II: Dependency Injection, IoC, Providers', href: '/code/nestjs-tutorial-II/' },
             { name: 'SolidJS: Reactive Primitives', href: '/code/solidjs-and-reactive-primitives/' },
