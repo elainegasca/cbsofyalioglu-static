@@ -13,6 +13,7 @@ class MyDocument extends Document {
             <Html lang="en" className="dark">
                 <Head>
                     <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
+                    <meta name="yandex-verification" content="f134be4d515f5c4a" />
                 </Head>
                 <body className="bg-gray-50 dark:bg-gray-900">
                     <Main />

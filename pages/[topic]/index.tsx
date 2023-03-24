@@ -53,7 +53,7 @@ function CategoryPage({ posts, topic, slug, language }) {
                                     keywords={post.frontMatter.keywords}
                                     slug={post.frontMatter.slug}
                                     topic={post.frontMatter.topic}
-                                    key={"home-featured-" + post.frontMatter.slug}
+                                    key={"category-home-featured-" + post.frontMatter.slug + index}
                                 />
                             ))}
                         </ul>

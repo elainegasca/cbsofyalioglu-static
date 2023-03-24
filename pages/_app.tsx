@@ -94,7 +94,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
           {/* <ContentComponent Element={Component} props={pageProps} /> */}
         </Layout>
-        <script id="donate-for-turkiye" async="true" src="https://www.donateforturkiye.org/cdn/widget.js?type=three&position=bottom-right"></script>
+        <script id="donate-for-turkiye" async={true} src="https://www.donateforturkiye.org/cdn/widget.js?type=three&position=bottom-right"></script>
       </NextUIProvider>
       {/* MESH GRADIENTS */}
     </React.Fragment>
