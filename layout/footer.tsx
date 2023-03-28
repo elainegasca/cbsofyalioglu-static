@@ -24,9 +24,12 @@ export interface FooterProps {
     social?: SocialType;
 }
 
+
+
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
+
 
 export default function Footer(props: FooterProps) {
     return (
