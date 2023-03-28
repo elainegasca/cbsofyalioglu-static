@@ -24,6 +24,7 @@ export interface FooterProps {
     social?: SocialType;
 }
 
+
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
