@@ -28,6 +28,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
+
 export default function Footer(props: FooterProps) {
     return (
         <footer className="relative py-10  !z-20 px-6 bg-black" >
