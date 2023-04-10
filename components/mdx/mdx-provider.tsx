@@ -26,7 +26,7 @@ import {
     AccordionSection
 } from "../styled";
 import LinkPreview from "./link-preview";
-
+import { Tag, TagList } from "./tag";
 
 const CodeHighlighter = dynamic(() => import("./code"));
 const ImageZoom = dynamic(() => import("./image"));
@@ -79,6 +79,7 @@ export default function MdxProvider({
         ImageZoom: (props) => <ImageZoom {...props} />,
         Image: (props) => <Image
             {...props}
+            loading="lazy"
             style={{
                 maxWidth: "100%",
                 height: "auto"
@@ -100,6 +101,7 @@ export default function MdxProvider({
             React.forwardRef((props) => <StyledAccordionTrigger {...props} />),
         AccordionSection: (props) => <AccordionSection {...props} />,
         ProductCard: (props) => <ProductCard {...props} />,
+        Tag: (props) => <Tag {...props} />,
     }
 
     return <MDXRemote {...source} components={comp} />;
