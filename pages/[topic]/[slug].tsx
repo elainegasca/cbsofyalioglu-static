@@ -69,7 +69,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
       />
 
       {/*<p className="animate-text-xl max-w-screen-md text-gray-500 md:text-lg text-center mx-auto mt-20 sm:mt-8 mb-40 sm:mb-4">{frontMatter.description}</p>*/}
-      <div className="relative h-auto min-h-[250px] sm:min-h-[300px] md:min-h-[400px] w-full overflow-hidden rounded-lg mt-12 mb-4 flex flex-col justify-end">
+      {/* <div className="relative h-auto min-h-[250px] sm:min-h-[300px] md:min-h-[400px] w-full overflow-hidden rounded-lg mt-12 mb-4 flex flex-col justify-end">
         <motion.img
           exit={{ opacity: 0 }}
           id="primary-image"
@@ -81,7 +81,7 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
           alt={(frontMatter.keywords && frontMatter.keywords[0]) || frontMatter.name}
           className="animate-text-2xl w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-200 z-0"
         />
-      </div>
+      </div> */}
       <div className="flex flex-wrap justify-center !max-w-6xl  mb-4 relative z-10 frontmatter-section-tags">
         {tags?.map((tag) => (
           <span
