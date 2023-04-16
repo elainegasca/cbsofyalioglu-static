@@ -4,7 +4,7 @@
 @import './post-specific.css';
 @import './mantine.css';
 @import './fonts.css';
-@import './commander.css';
+/* @import './commander.css'; */
 
 /*
 @import './sidebar.css';
@@ -67,11 +67,13 @@ body {
     background-color: #161617;
     text-decoration-skip-ink: auto;
     scroll-behavior: smooth !important;
+    font-display: swap;
 }
 
 * {
     box-sizing: border-box;
     text-rendering: geometricPrecision;
+    
     -webkit-font-smoothing: subpixel-antialised !important;
 }
 

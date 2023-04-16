@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react"
 import { useCallback } from "react"
 import { RingProgress, Center } from '@mantine/core';
-import { useWindowScroll } from '@mantine/hooks';
 
 export default function ScrollTopButton() {
     const [show, setShow] = useState(false)

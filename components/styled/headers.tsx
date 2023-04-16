@@ -42,7 +42,7 @@ export const TopicHeader = ({ title, description }) => (
 export const PostHeader = ({ title, description, topics, modified, headerId }) => (
     <Box css={{ width: '100%', maxWidth: 720, margin: '0 15px', padding: '0 8px' }}>
         <motion.h1 style={{ fontWeight: 500 }} className="animate-text-md" layoutId={headerId + "-title"}
-          exit={{ opacity: 0, y: -20 }}
+          exit={{ opacity: 0 }}
         >
             {title}
         </motion.h1>

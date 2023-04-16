@@ -29,11 +29,12 @@ import { site } from '../../settings'
 import AdBanner from '../../components/adbanner'
 import { PostHeader } from '../../components/styled'
 import { AnimatePresence, motion } from 'framer-motion'
+import { Dropdown } from "@nextui-org/react";
+
 const MdxProvider = dynamic(() => import('../../components/mdx/mdx-provider'))
 const ScrollTopButton = dynamic(() => import('../../components/button'))
-import { Dropdown } from "@nextui-org/react";
-import LinkPreview from '../../components/mdx/link-preview'
-import { isEqualObj } from "../../lib/functions";
+// import LinkPreview from '../../components/mdx/link-preview'
+// import { isEqualObj } from "../../lib/functions";
 
 const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
   const router = useRouter()
@@ -83,14 +84,14 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
         />
       </div> */}
       <div className="flex flex-wrap justify-center !max-w-6xl  mb-4 relative z-10 frontmatter-section-tags">
-        {tags?.map((tag) => (
+        {/* {tags?.map((tag) => (
           <span
             key={'article-header-tag-' + tag}
             className="animate-text-4xl inline-flex mx-1 mt-2 justify-center items-center  rounded-md border-gray-50 border px-2 py-1 !text-xs font-medium dark:text-gray-300 text-gray-800"
           >
             #{tag}
           </span>
-        ))}
+        ))} */}
       </div>
     </header>
   ))

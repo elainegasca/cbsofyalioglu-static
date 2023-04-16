@@ -91,7 +91,7 @@ export const Tag = (props) => {
         marginRight: "8px",
         marginTop: "8px",
         fontWeight: 500,
-        opacity: 0.75,
+        opacity: 0.85,
         fontSize: '0.875rem',
         ...(props.color && tagColorizer(props.color))
     }
@@ -103,4 +103,4 @@ export const Tag = (props) => {
 }
 
 
-export const TagList = (props) => <div style={{border:"1px solid rgba(255,255,255,0.4)", borderRadius: "0.25rem", padding:"2px"}} {...props} />
+export const TagList = (props) => <div style={{border:"1px solid rgba(255,255,255,0.8)", borderRadius: "0.25rem", padding:"2px"}} {...props} />

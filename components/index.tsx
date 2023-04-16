@@ -5,5 +5,5 @@ export * from "./button"
 export * from "./video"
 export * from "./mdx"
 export * from "./marker"
-export * from "./command-panel"
+// export * from "./command-panel"
 export * from './product-card'

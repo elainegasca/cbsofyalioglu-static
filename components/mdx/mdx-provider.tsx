@@ -2,19 +2,11 @@
 import React from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import Head from "next/head";
-import Script from "next/script";
-import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { Code } from "@mantine/core";
-import { Prism } from "@mantine/prism";
 import { Badge, Mark } from "@mantine/core";
 import { CardEnlarge, Video, Marker, ProductCard } from "../index";
 import { Hr, Anchor, string_to_slug } from "./index";
-import { Separator, CardPost } from "../styled";
+import { CardPost } from "../styled";
 import {
     Accordion,
     AccordionItem,
@@ -38,13 +30,13 @@ export default function MdxProvider({
     ...props
 }) {
     const comp = {
-      LinkPreview: () => <LinkPreview />,
-        p: (props) => <p>{props.children}</p>,
-        h1: (props) => (
-            <span className="dark:text-gray-300 text-gray-800 text-4xl lg:text-5xl text-center mt-20 mb-4 md:mb-6">
-                {props.children}
-            </span>
-        ),
+    //   LinkPreview: () => <LinkPreview />,
+    //     p: (props) => <p>{props.children}</p>,
+    //     h1: (props) => (
+    //         <span className="dark:text-gray-300 text-gray-800 text-4xl lg:text-5xl text-center mt-20 mb-4 md:mb-6">
+    //             {props.children}
+    //         </span>
+    //     ),
         h2: (props) => <h2 id={string_to_slug(props.children)}>{props.children}</h2>,
         h3: (props) => <h3 id={string_to_slug(props.children)}>{props.children}</h3>,
         h4: (props) => <h4 id={string_to_slug(props.children)}>{props.children}</h4>,

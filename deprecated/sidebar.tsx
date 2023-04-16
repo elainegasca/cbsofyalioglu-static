@@ -1,7 +1,7 @@
 // @ts-nocheck
 import * as React from "react";
-import { useRef, useMemo, useState } from "react";
-import { motion, useCycle } from "framer-motion";
+import { useMemo, useState } from "react";
+import { motion } from "framer-motion";
 import { useViewportSize } from '@mantine/hooks';
 import { Toggle } from "../components/toggle";
 const sidebar = {

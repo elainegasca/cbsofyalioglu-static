@@ -24,6 +24,8 @@ import { NextUIProvider } from '@nextui-org/react';
 import { Commander } from '../components'
 import jsondata from '../data/posts-metadata.json'
 import { motion, animate, useSpring, useTranform, useMotionValue } from 'framer-motion'
+import { Partytown } from '@builder.io/partytown/react';
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   const hasMounted = useHasMounted()
@@ -50,7 +52,35 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <React.Fragment>
-    <Head></Head>
+    <Head>
+      <Partytown debug={true} forward={['dataLayer.push']} />
+      <script
+            type="text/partytown"
+            //strategy="lazyOnload"
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+          />
+          <script 
+            type="text/partytown"
+            dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+            `,
+          }}
+          />
+          {/* <script id="ga-analytics" type="text/partytown">
+            {`
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+
+                            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+                        `}
+          </script> */}
+
+    </Head>
       <NextUIProvider>
         <Layout x={mouseX} y={mouseY}>
           {/*<Head>
@@ -78,19 +108,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     }
 
                 </Head>*/}
-          <Script
-            strategy="lazyOnload"
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-          />
-          <Script id="ga-analytics">
-            {`
-                            window.dataLayer = window.dataLayer || [];
-                            function gtag(){dataLayer.push(arguments);}
-                            gtag('js', new Date());
 
-                            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
-                        `}
-          </Script>
           <Component {...pageProps} />
           {/* <ContentComponent Element={Component} props={pageProps} /> */}
         </Layout>
