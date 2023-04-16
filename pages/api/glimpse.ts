@@ -1,5 +1,5 @@
 import type { NextRequest } from 'next/server';
-import glimpse from '@beskar-labs/glimpse/server';
+// import glimpse from '@beskar-labs/glimpse/server';
 
 const headers = {
   'content-type': 'application/json',

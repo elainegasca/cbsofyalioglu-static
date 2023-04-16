@@ -94,6 +94,7 @@ export default function MdxProvider({
         AccordionSection: (props) => <AccordionSection {...props} />,
         ProductCard: (props) => <ProductCard {...props} />,
         Tag: (props) => <Tag {...props} />,
+        TagList: (props) => <TagList {...props} />,
     }
 
     return <MDXRemote {...source} components={comp} />;

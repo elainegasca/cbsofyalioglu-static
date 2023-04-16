@@ -103,4 +103,4 @@ export const Tag = (props) => {
 }
 
 
-export const TagList = (props) => <div style={{border:"1px solid rgba(255,255,255,0.8)", borderRadius: "0.25rem", padding:"2px"}} {...props} />
+export const TagList = (props) => <div style={{borderBottom:"1px solid rgba(255,255,255,0.1)", borderRadius: 0, padding:"6px"}} {...props} />
