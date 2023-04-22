@@ -52,25 +52,20 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <React.Fragment>
-    <Head>
-      <Partytown debug={true} forward={['dataLayer.push']} />
-      <script
-            type="text/partytown"
-            //strategy="lazyOnload"
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-          />
-          <script 
-            type="text/partytown"
-            dangerouslySetInnerHTML={{
+      <Head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-M492EQF9QH"></script>
+        <script
+          dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+
+            gtag('config', 'G-M492EQF9QH');
             `,
           }}
-          />
-          {/* <script id="ga-analytics" type="text/partytown">
+        />
+        {/* <script id="ga-analytics" type="text/partytown">
             {`
                             window.dataLayer = window.dataLayer || [];
                             function gtag(){dataLayer.push(arguments);}
@@ -80,7 +75,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                         `}
           </script> */}
 
-    </Head>
+      </Head>
       <NextUIProvider>
         <Layout x={mouseX} y={mouseY}>
           {/*<Head>
