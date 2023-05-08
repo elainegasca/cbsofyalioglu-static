@@ -1,0 +1,103 @@
+---
+title: "Introducing Popclip to Obsidian workflow."
+description: 'An extension and a plugin for Popclip and Obsidian respectively.'
+date: '2023-05-07'
+modified: '2023-05-07'
+cover: '/posts/popclip-obsidian-plugin.webp'
+slug: 'popclip-obsidian-plugin'
+topic: 'productivity'
+canonical: 'https://www.cbsofyalioglu.com/productivity/popclip-obsidian-plugin/'
+language: 'en'
+categories:
+    - 'post'
+    - 'featured'
+tags:
+    - 'obsidian plugin'
+    - 'popclip extension'
+    - 'obsidian popclip workflow'
+keywords:
+    - 'obsidian plugin'
+    - 'popclip extension'
+    - 'obsidian popclip workflow'
+related:
+  - "best-blogging-sites"
+  - "content-creation-tools"
+  - "free-design-resources"
+  - "generate-income"
+---
+
+![Popclip Obsidian Plugin](/posts/popclip-obsidian-plugin.webp)
+
+I'm introducing the Popclip extension and Obsidian plugin that I've been build in a day. 
+
+I've been using these tools extensively for a while now. I'm a big fan of Popclip and Obsidian. 
+
+I'm using [Popclip](https://apps.apple.com/tr/app/popclip/id445189367) to capture the text from the web and [Obsidian](https://obsidian.md/) to store my notes.
+
+However, capturing text from the web and pasting it to Obsidian is a bit of a hassle. 
+
+There are other tools that I've tried but either they are so expensive  for the value they create, or they are not working as I expected.
+
+## What are the requirements?
+- You need a Popclip app on your MacOS.
+- You need an Obsidian app on your MacOS.
+
+
+## How does it work?
+There are two part of the workflow. 
+- Installing the Popclip extension.
+- Installing the Obsidian plugin. 
+
+Both of those options are open-sourced and available on [Github](https://github.com/canburaks/obsidian-popclip).
+
+
+<BookmarkCard
+    url="https://www.cbsofyalioglu.com/blogging/best-blogging-sites/"
+    image="/posts/best-blogging.webp"
+    title="The List of Best Blogging Platforms"
+    description="The list of best blogging platforms for your creative works. The list includes free and paid platforms."
+/>
+
+
+## Part I: Installing the Popclip extension.
+You can select the text below and your popclip automatically shows the installation option.
+
+![Install Popclip Extension](/video/install-popclip-extension.gif)
+
+
+```YAML
+# PopClip - Obsidian extension, markdown variant 
+name: ObsidianClipper 
+icon: O 
+capture html: true
+options: 
+- identifier: "vault" 
+  label: "Vault name" 
+  type: string
+- identifier: "path"
+  label: "Location"
+  type: string
+javascript: | 
+    const vaultName = encodeURIComponent(popclip.options.vault) 
+    const fileLocation = encodeURIComponent(popclip.options.path)
+    const data = {
+      clipping: popclip.input.markdown,
+      path: fileLocation || undefined,
+    }
+    let clipping = popclip.input.markdown 
+    if (popclip.context.browserUrl.length > 0) { // append markdown source link if available 
+      data["title"] = popclip.context.browserTitle
+      data["source"] = popclip.context.browserUrl
+    } 
+    clipping = encodeURIComponent(JSON.stringify(data))
+    popclip.openUrl(`obsidian://advanced-uri?vault=${vaultName}&daily=true&heading=popclip&data=%0A${clipping}&mode=append`) 
+#end
+```
+
+
+## Part II: Installing the Obsidian plugin.
+I didn't submit the plugin yet. Therefore, you need to install it manually.
+
+
+![Popclip Obsidian Plugin](/video/popclip-obsidian.gif)
+

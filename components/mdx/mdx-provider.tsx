@@ -19,6 +19,7 @@ import {
 } from "../styled";
 import LinkPreview from "./link-preview";
 import { Tag, TagList } from "./tag";
+import { BookmarkCard } from "./bookmark-card";
 
 const CodeHighlighter = dynamic(() => import("./code"));
 const ImageZoom = dynamic(() => import("./image"));
@@ -95,6 +96,7 @@ export default function MdxProvider({
         ProductCard: (props) => <ProductCard {...props} />,
         Tag: (props) => <Tag {...props} />,
         TagList: (props) => <TagList {...props} />,
+        BookmarkCard: (props) => <BookmarkCard {...props} />,
     }
 
     return <MDXRemote {...source} components={comp} />;

@@ -110,7 +110,7 @@ span[content="List of Blogging Sites"] {
     }
 }
 a.internal {
-    margin-top:16px;
+    margin-top:12px;
     padding: 2px 8px;
     border-radius: 6px;
     font-size: 14px;
@@ -118,8 +118,8 @@ a.internal {
     background-color: #08303b;
     filter: saturate(180%);
 }
-p > a.external {
-    margin-top:16px;
+p > a.external, li > a.external {
+    margin-top:12px;
     padding: 2px 8px;
     border-radius: 6px;
     color: #00c1d7;

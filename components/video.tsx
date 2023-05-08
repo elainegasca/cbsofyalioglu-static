@@ -9,6 +9,7 @@ type VideoProps = {
     height?: string | number;
     width?: string | number;
     download?: boolean
+    autoplay?: boolean
 }
 
 
@@ -21,11 +22,11 @@ export function Video(props: VideoProps) {
             <video
                 id={props.src}
                 className="video-js"
-                controls
                 preload={props.preload || "none"}
                 width={props.width || "100%"}
                 height={props.height || "auto"}
                 poster={props.cover}
+                autoPlay={props.autoplay || false}
             >
                 <source src={props.src} type={`video/${vtype}`} />
             </video>
