@@ -25,7 +25,7 @@ span[content="List of Blogging Sites"] {
     margin-bottom: 8px;
     font-weight: 900 !important;
 }
-.post-page > h3 {
+.post-page > h3:not(.bookmark-card-title) {
     margin-top: 64px;
     margin-bottom: 8px;
     font-weight: 900 !important;
@@ -43,7 +43,7 @@ span[content="List of Blogging Sites"] {
     margin-top: 32px;
     margin-bottom: 8px;
 }
-.post-page p {
+.post-page p:not(.bookmark-card-description) {
     margin-top: 18px;
     margin-bottom: 8px;
     font-size: 18px;
@@ -83,10 +83,10 @@ span[content="List of Blogging Sites"] {
 }
 
 @media only screen and (max-width: 640px) {
-    .post-page p {
+    .post-page > p {
         font-size: 15px;
     }
-    .post-page li {
+    .post-page > ul > li {
         font-size: 15px;
         list-style-position: inside;
         width: fit-content;
@@ -94,16 +94,16 @@ span[content="List of Blogging Sites"] {
         margin-left: 12px;
     }
 
-    .post-page h2 {
+    .post-page > h2 {
         font-size: 32px;
         line-height: 1.5em;
     }
-    .post-page h3 {
+    .post-page > h3 {
         font-size: 24px;
         line-height: 1.5em;
         width: fit-content;
     }
-    .post-page h4 {
+    .post-page > h4 {
         font-size: 18px;
         line-height: 1.5em;
         width: fit-content;

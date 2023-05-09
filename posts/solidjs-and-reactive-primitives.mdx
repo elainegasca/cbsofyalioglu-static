@@ -138,6 +138,13 @@ function Counter({ initial }) {
 }
 ```
 
+<BookmarkCard
+    url="https://www.cbsofyalioglu.com/blogging/best-blogging-sites/"
+    image="/posts/best-blogging.webp"
+    title="The List of Best Blogging Platforms"
+    description="The list of best blogging platforms for your creative works. The list includes free and paid platforms."
+/>
+
 #### 1) Component State Access and Update
 
 SolidJS call the state elements as signals. However, I prefer to use state rather than signal. Let's make a Counter component within the App component. Fill the `App.jsx` file as follows:
@@ -304,6 +311,9 @@ const MyComponent = (props) => <div>{props.name}</div>;
 // Here, `props.name` will not update (i.e. is not reactive) as it is destructured into `name`
 const MyComponent = ({ name }) => <div>{name}</div>;
 ```
+
+
+
 
 ### B) Reactive primitives: createEffect
 

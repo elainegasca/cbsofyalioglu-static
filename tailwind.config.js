@@ -11,7 +11,14 @@ module.exports = {
         './layout/**/*.{js,jsx,ts,tsx,md,mdx}',
     ],
     theme: {
-        extend: {},
+        extend: {
+            flexGrow:{
+                2: '2',
+                3: '3',
+                4: '4',
+                5: '5',
+            }
+        },
         colors: {
             textwhite: '#eee',
             primary: '#161617',
