@@ -13,7 +13,7 @@ export const BookmarkCard = ({ title, description, url, image }) => {
                 className="flex flex-col justify-center items-center h-full box-border grow-[1] z-10 relative"
                 style={{  overflow: 'hidden', maxWidth: '30%' }}
             >
-                <img src={image} alt={title} style={{ height: '100%', minWidth: '110%', margin:0, marginLeft:"-5%", marginRight:"-5%", borderRadius:0 }} className='z-10' />
+                <img src={image} alt={title} style={{ height: '100%', minWidth: '110%', margin:0, marginLeft:"-5%", marginRight:"-5%", borderRadius:0, maxHeight:100 }} className='z-10' />
             </div>
             <Link href={url} className='!absolute bottom-0 left-0 right-0 top-0 min-w-full duration-200 transform ease-linear group-hover:bg-[rgba(255,255,255,0.05)] z-10 !m-0'></Link>
         </div>

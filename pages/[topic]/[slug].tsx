@@ -155,9 +155,9 @@ const PostPage = ({ slug, topic, frontMatter, mdxSource, relatedPosts }) => {
             : 'Other posts you may be interested'}
         </h2>
         <ul className="grid sm:grid-cols-2 lg:grid-cols-2  gap-2 md:gap-3 xl:gap-4 w-full max-w-[760px] pt-4">
-          {relatedPosts.map((rp) => (
+          {relatedPosts.map((rp,i) => (
             <ListItemCard
-              key={'article-featured-post-' + rp.slug}
+              key={'article-featured-post-' + rp.slug + i}
               title={rp.title}
               topic={rp.topic}
               slug={rp.slug}

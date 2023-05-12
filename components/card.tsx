@@ -166,9 +166,11 @@ export function _ListItemCard(props: CardProps) {
 }
 export function ListItemCard(props: CardProps) {
   return (
-    <li
+    <motion.li
+      key={props.key}
       title={props.title}
-      className={`group h-44 md:h-44 xl:h-44 flex flex-col  rounded-lg shadow-lg !overflow-hidden relative mt-1 ${props.className ? ` ${props.className}` : ''
+      style={{borderRadius: "0.5rem"}}
+      className={`group h-44 md:h-44 xl:h-44 border-gray-500 border-solid border flex flex-col  duration-300 ease-linear  !overflow-hidden relative mt-1 ${props.className ? ` ${props.className}` : ''
         }`}
     >
       <AnimatePresence>
@@ -179,32 +181,33 @@ export function ListItemCard(props: CardProps) {
         loading="lazy"
         src={props.thumbnail || props.cover || '/img/placeholder.webp'}
         alt={(props.keywords && props.keywords[0]) || props.title}
-        className="w-full h-full object-cover object-center absolute inset-0 transform transition duration-500 z-0  rounded-lg"
+        className="w-full h-full object-cover object-center absolute  transform transition duration-300 z-0"
       />
+      <motion.div style={{background:"black", borderRadius:"0.5rem"}} className="bg-blue-900 opacity-40 group-hover:opacity-80 w-full min-h-full  ease-linear duration-300   absolute  pointer-events-none border-transparent"></motion.div>
       </AnimatePresence>
 
-      <motion.div className="bg-[rgba(10,10,10,0.4)] group-hover:bg-[rgba(0,0,0,0.8)]  transition-colors ease-linear duration-400 backdrop-blur-0 group-hover:backdrop-blur-lg absolute inset-0 pointer-events-none border-[rgba(255,255,255,0.3)] shadow-md border-solid rounded-lg border"></motion.div>
 
-      <motion.div className="relative p-4 flex flex-col justify-end group  rounded-lg">
+      <motion.div className="relative p-4 flex flex-col justify-end group">
+
         {props.date && <span className="block !text-gray-200 text-sm">{props.date}</span>}
         <Link href={`/${props.topic}/${props.slug}`} legacyBehavior>
           <motion.a title={props.title} className="group">
             <AnimatePresence>
-              <motion.h3 exit={{opacity:0}} layoutId={props.slug + "-title"} className="!text-white text-lg font-semibold transition duration-500 mb-2 z-10 relative translate-y-20 group-hover:translate-y-0">
+              <motion.h3 exit={{opacity:0}} layoutId={props.slug + "-title"} className="!text-white text-lg font-semibold transition duration-300 mb-2 z-10 relative translate-y-20 group-hover:translate-y-0">
                 {props.title}
               </motion.h3>
             </AnimatePresence>
           </motion.a>
         </Link>
         {props.description && (
-          <motion.p className="!text-white text-sm font-regular transition  relative opacity-0 group-hover:opacity-100 translate-y-20 group-hover:translate-y-0 duration-500 ease-linear">
+          <motion.p className="!text-white text-sm font-regular transition  relative opacity-0 group-hover:opacity-100 translate-y-20 group-hover:translate-y-0 duration-300 ease-linear">
             {props.description}
           </motion.p>
         )}
       </motion.div>
       <Link href={`/${props.topic}/${props.slug}`} legacyBehavior>
-        <a title={props.title} className="group absolute top-0 left-0 right-0 bottom-0  rounded-lg" />
+        <a title={props.title} className="group absolute top-0 left-0 w-full bottom-0 " />
       </Link>
-    </li>
+    </motion.li>
   )
 }

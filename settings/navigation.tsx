@@ -34,6 +34,7 @@ export const navLinks = [
         color: "#F92C8D",
         children: [
             { name: 'All Posts', href: '/en/' },
+            { name: 'Posts about Blogging', href: '/blogging/' },
             { name: 'Best Blogging Sites', href: '/blogging/best-blogging-sites/' },
             { name: 'Generate Income from Your Blog', href: '/blogging/generate-income/' },
             { name: 'NestJS I: Basics, Modules, Controllers', href: '/code/nestjs-tutorial-I/' },

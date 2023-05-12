@@ -183,7 +183,7 @@ function Home({ featuredPosts, turkishPosts, englishPosts, x, y }) {
               <p className="max-w-screen-md text-gray-500 md:text-lg text-left"></p>
             </div>
 
-            <ul className="grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6 xl:gap-8">
+            <ul className="grid sm:grid-cols-2 lg:grid-cols-3  gap-2">
               {turkishPosts.filter(p => p?.frontMatter?.canonical !== "https://www.cbsofyalioglu.com/design/canva-pro-ucretsiz/").map((post) => (
                 <li
                   key={'home-featured-tr-' + post.frontMatter.slug}
@@ -433,14 +433,14 @@ export const getStaticProps = async () => {
       const bd = new Date(b.frontMatter.date)
       return bd - ad
     })
-    .slice(0, 6)
+    .slice(0, 9)
   const sortedTurkishPosts = turkishPosts
     .sort((a, b) => {
       const ad = new Date(a.frontMatter.date)
       const bd = new Date(b.frontMatter.date)
       return bd - ad
     })
-    .slice(0, 6)
+    .slice(0, 4)
   ///console.log("posts: ", featuredPosts, turkishPosts, englishPosts)
   return {
     props: {

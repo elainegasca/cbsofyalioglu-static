@@ -11,13 +11,15 @@ import { MetaTags } from '../../components'
 import { site } from '../../settings'
 import { TopicHeader } from "../../components/styled"
 import { ListItemCard } from "../../components"
+import { topics } from "../../settings/topics";
+
 
 function CategoryPage({ posts, topic, slug, language }) {
     console.log("Category posts: ", topic, slug, language)
     const isTurkish = language === "tr"
     const canonical = `https://www.cbsofyalioglu.com/${topic}/`
     const title = isTurkish ? `Design &amp; Development | ${topic.toUpperCase()} etiketli yazılar` : `Design &amp; Development | ${topic.toUpperCase()} articles`
-    const description = isTurkish ? `Şu anda ${topic} etiketine sahip makaleleri görüntülüyorsunuz.` : `You are currently viewing articles with the ${topic} tag.`
+    const description = topics[topic] ? topics[topic] : isTurkish ? `Şu anda ${topic} etiketine sahip makaleleri görüntülüyorsunuz.` : `You are currently viewing articles with the ${topic} tag.`
 
     return (
         <>
@@ -38,7 +40,7 @@ function CategoryPage({ posts, topic, slug, language }) {
                 <div className="">
                     <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
                         {/* Text */}
-                        <div className="mt-0 mb-10 md:mb-16">
+                        <div className="mt-16 mb-10 md:mb-16">
                             <TopicHeader
                                 title={topic}
                                 description={description}
@@ -50,6 +52,7 @@ function CategoryPage({ posts, topic, slug, language }) {
                                 <ListItemCard
                                     title={post.frontMatter.title}
                                     cover={post.frontMatter.cover}
+                                    description={post.frontMatter.description}
                                     keywords={post.frontMatter.keywords}
                                     slug={post.frontMatter.slug}
                                     topic={post.frontMatter.topic}
