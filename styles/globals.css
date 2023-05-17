@@ -19,6 +19,7 @@
     --light-bg-transparent: rgba(255, 255, 255, 0.4);
     --dark-bg-transparent: rgba(0, 0, 0, 0.4);
 }
+
 :root {
     --tomato: #f06950;
     --tomato-dark: #471a14;
@@ -58,11 +59,12 @@
     --nextui--popoverBackground: rgba(255, 255, 255, 0.6) !important;
     --nextui-colors-backgroundContrast: rgba(255, 255, 255, 0.6) !important;
 }
+
 html,
 body {
     padding: 0;
     margin: 0;
-    font-family:'Neue Montreal Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    font-family: 'Neue Montreal Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
     position: relative;
     overflow-x: hidden;
@@ -75,7 +77,7 @@ body {
 * {
     box-sizing: border-box;
     text-rendering: geometricPrecision;
-    
+
     -webkit-font-smoothing: subpixel-antialised !important;
 }
 
@@ -96,20 +98,24 @@ pre.mdx-pre {
     max-width: 120% !important;
     background: var(--mint-dark);
 }
-.mantine-ScrollArea-viewport > div {
-}
+
+.mantine-ScrollArea-viewport>div {}
+
 html.dark .blurlay {
     backdrop-filter: blur(24px) !important;
     background-color: rgba(0, 0, 0, 0.3) !important;
 }
+
 html:not(.dark) .blurlay {
     backdrop-filter: blur(24px) !important;
     background-color: rgba(255, 255, 255, 0.3) !important;
 }
+
 html.dark .mobilay {
     backdrop-filter: blur(24px) !important;
     background-color: rgba(59, 0, 153, 0.4) !important;
 }
+
 html:not(.dark) .mobilay {
     backdrop-filter: blur(24px) !important;
     background-color: rgba(255, 255, 255, 0.1) !important;
@@ -118,6 +124,7 @@ html:not(.dark) .mobilay {
 html.dark .bg-trans {
     background: var(--dark-bg-transparent);
 }
+
 html:not(.dark) .bg-trans {
     background: var(--light-bg-transparent);
 }
@@ -126,6 +133,7 @@ html:not(.dark) .bg-trans {
     -webkit-backdrop-filter: blur(40px);
     backdrop-filter: blur(40px);
 }
+
 /* Glassmorphism card effect */
 .glass-card {
     backdrop-filter: blur(18px) saturate(200%);
@@ -134,6 +142,7 @@ html:not(.dark) .bg-trans {
     border-radius: 12px;
     border: 1px solid rgba(209, 213, 219, 0.3);
 }
+
 /* Glassmorphism card effect */
 .glass-card-card {
     backdrop-filter: blur(20px) saturate(200%);
@@ -157,6 +166,7 @@ div#main-layout {
     left: 0;
     right: 0;
 }
+
 /*
 html:not(.dark) #main-layout {
     background-color: rgba(255, 255, 255, 0.3) !important;
@@ -188,14 +198,17 @@ html.dark #main-layout {
         z-index: 0;
         position: fixed !important;
     }
+
     .blur-teal-pink {
         top: 300vh;
         right: -200vw;
     }
+
     .blur-teal {
         top: 100vh;
         right: -25%;
     }
+
     .blur-blob.blur-404 {
         position: relative;
         z-index: -1 !important;
@@ -204,11 +217,13 @@ html.dark #main-layout {
         top: 0vh !important;
     }
 }
+
 .blur-blob {
     position: absolute !important;
     z-index: 0 !important;
     width: 200vw;
 }
+
 .blur-three-colors {
     top: -10vh;
     right: -50vw;
@@ -220,11 +235,13 @@ html.dark #main-layout {
     bottom: 0;
     right: 0;
 }
+
 .blur-teal {
     bottom: 0;
     right: 0;
     width: 100vw !important;
 }
+
 .purple-pink-blob {
     top: -40vh;
     right: -60vw;
@@ -243,6 +260,7 @@ span.project-url {
     font-size: 12px;
     letter-spacing: 0.03em;
 }
+
 html:not(.dark) span {
     font-size: 12px;
 }
@@ -263,30 +281,30 @@ html:not(.dark) span {
 .switch[data-ison='true'] .sun-icon {
     right: -38px;
 }
+
 html.dark .lottie-icon svg g path {
     stroke: rgb(255, 255, 255) !important;
 }
+
 html:not(.dark) .lottie-icon svg g path {
     stroke: rgb(0, 0, 0) !important;
 }
 
 .bg-radial-gradient {
     filter: blur(8px);
-    background-image: linear-gradient(
-        90deg,
-        #ef7646,
-        #fb5b58,
-        #ff3d74,
-        #f92195,
-        #e322bc,
-        #b55ee6,
-        #7680fc,
-        #0096ff,
-        #00b7ff,
-        #00d0f2,
-        #00e3b8,
-        #46ef6f
-    );
+    background-image: linear-gradient(90deg,
+            #ef7646,
+            #fb5b58,
+            #ff3d74,
+            #f92195,
+            #e322bc,
+            #b55ee6,
+            #7680fc,
+            #0096ff,
+            #00b7ff,
+            #00d0f2,
+            #00e3b8,
+            #46ef6f);
     opacity: 0.5;
 }
 
@@ -298,23 +316,28 @@ html:not(.dark) .lottie-icon svg g path {
     width: 1px !important;
     position: absolute;
 }
+
 * ::-webkit-scrollbar {
     width: 2px !important;
     position: absolute;
 }
+
 #sidebar-desktop ::-webkit-scrollbar {
     width: 0px !important;
     position: absolute;
 }
+
 ::-webkit-scrollbar-track {
     border-radius: 16px;
 }
+
 /*thumb*/
 
 ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.946);
     border-radius: 6px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(40, 40, 40, 0.9);
 }
@@ -326,6 +349,7 @@ html:not(.dark) .lottie-icon svg g path {
 .text-shadow {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
+
 .text-shadow-light {
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
@@ -338,12 +362,10 @@ hr {
     border: 0;
     height: 1px;
     position: relative;
-    background-image: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0),
-        rgba(255, 255, 255, 0.75),
-        rgba(255, 255, 255, 0)
-    );
+    background-image: linear-gradient(to right,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0));
 }
 
 .footer-box {
@@ -355,24 +377,18 @@ hr {
     min-width: 100%;
     min-height: 100vh;
     background-repeat: no-repeat;
-    background-image: radial-gradient(
-            circle 800px at 700px 200px,
+    background-image: radial-gradient(circle 800px at 700px 200px,
             var(--colors-purple2),
-            var(---transparent)
-        ),
-        radial-gradient(
-            circle 600px at calc(100% - 300px) 300px,
+            var(---transparent)),
+        radial-gradient(circle 600px at calc(100% - 300px) 300px,
             var(--colors-mint4),
-            var(---transparent)
-        ),
+            var(---transparent)),
         radial-gradient(circle 800px at right center, var(--colors-sky3), var(---transparent)),
         radial-gradient(circle 800px at right bottom, var(--colors-sky1), var(---transparent)),
-        radial-gradient(
-            circle 800px at calc(50% - 600px) calc(100% - 100px),
+        radial-gradient(circle 800px at calc(50% - 600px) calc(100% - 100px),
             var(--colors-pink3),
             var(--colors-pink1),
-            var(---transparent)
-        ) !important;
+            var(---transparent)) !important;
 }
 
 div.svg-wrap {
@@ -382,7 +398,7 @@ div.svg-wrap {
     overflow: visible !important;
 }
 
-div.svg-wrap > svg {
+div.svg-wrap>svg {
     position: absolute;
     width: 100% !important;
     height: 400px;
@@ -391,26 +407,24 @@ div.svg-wrap > svg {
 }
 
 .non-boring {
-    background: linear-gradient(
-        90deg,
-        rgb(40.392% 12.157% 99.608%) 0%,
-        rgb(44.118% 14.608% 96.593%) 6.25%,
-        rgb(47.843% 17.059% 93.578%) 12.5%,
-        rgb(51.569% 19.51% 90.564%) 18.75%,
-        rgb(55.294% 21.961% 87.549%) 25%,
-        rgb(59.02% 24.412% 84.534%) 31.25%,
-        rgb(62.745% 26.863% 81.52%) 37.5%,
-        rgb(66.471% 29.314% 78.505%) 43.75%,
-        rgb(70.196% 31.765% 75.49%) 50%,
-        rgb(73.922% 34.216% 72.475%) 56.25%,
-        rgb(77.647% 36.667% 69.461%) 62.5%,
-        rgb(81.373% 39.118% 66.446%) 68.75%,
-        rgb(85.098% 41.569% 63.431%) 75%,
-        rgb(88.824% 44.02% 60.417%) 81.25%,
-        rgb(92.549% 46.471% 57.402%) 87.5%,
-        rgb(96.275% 48.922% 54.387%) 93.75%,
-        rgb(100% 51.373% 51.373%) 100%
-    );
+    background: linear-gradient(90deg,
+            rgb(40.392% 12.157% 99.608%) 0%,
+            rgb(44.118% 14.608% 96.593%) 6.25%,
+            rgb(47.843% 17.059% 93.578%) 12.5%,
+            rgb(51.569% 19.51% 90.564%) 18.75%,
+            rgb(55.294% 21.961% 87.549%) 25%,
+            rgb(59.02% 24.412% 84.534%) 31.25%,
+            rgb(62.745% 26.863% 81.52%) 37.5%,
+            rgb(66.471% 29.314% 78.505%) 43.75%,
+            rgb(70.196% 31.765% 75.49%) 50%,
+            rgb(73.922% 34.216% 72.475%) 56.25%,
+            rgb(77.647% 36.667% 69.461%) 62.5%,
+            rgb(81.373% 39.118% 66.446%) 68.75%,
+            rgb(85.098% 41.569% 63.431%) 75%,
+            rgb(88.824% 44.02% 60.417%) 81.25%,
+            rgb(92.549% 46.471% 57.402%) 87.5%,
+            rgb(96.275% 48.922% 54.387%) 93.75%,
+            rgb(100% 51.373% 51.373%) 100%);
     height: 100%;
     margin: 0 !important;
     top: 0;
@@ -418,29 +432,33 @@ div.svg-wrap > svg {
     left: 0;
     right: 0;
 }
+
 [cmdk-list] {
     min-height: 300px;
     height: var(--cmdk-list-height);
     max-height: 500px;
     transition: height 100ms ease;
 }
+
 .lock-scroll,
 .lock-scroll .will-lock {
     max-height: 100vh !important;
     overflow: hidden !important;
 }
-#grad-grad {
-}
+
+#grad-grad {}
 
 #sidebar-desktop {
     background-color: rgb(0, 0, 0);
     box-shadow: 8px 2px 8px 1px rgba(0, 0, 0, 0.05);
     border-right: 1px solid rgba(0, 0, 0, 0.05);
 }
-#sidebar-desktop > div {
+
+#sidebar-desktop>div {
     box-sizing: content-box;
     background-color: rgba(8, 8, 8, 0.9);
 }
+
 #sidebar-fixed {
     /* background-image: radial-gradient(at 80% 0%, hsla(249, 87%, 15%, 0.0) 10rem, transparent 100%),
         radial-gradient(at 20% 92%, hsla(275, 79%, 26%, 0.0) 10rem, transparent 100%); */
@@ -448,6 +466,7 @@ div.svg-wrap > svg {
     height: 100vh;
     width: 20rem;
 }
+
 .sidebar-layer {
     background-color: rgb(255, 255, 255);
     opacity: 0.01;
@@ -467,18 +486,18 @@ div.svg-wrap > svg {
     height: 250px;
     border-radius: 50%;
     filter: blur(80px);
-    background: radial-gradient(
-        50% 50% at 50% 50%,
-        hsla(0, 0%, 85%, 0.1) 0%,
-        rgba(217, 217, 217, 0) 100%
-    );
+    background: radial-gradient(50% 50% at 50% 50%,
+            hsla(0, 0%, 85%, 0.1) 0%,
+            rgba(217, 217, 217, 0) 100%);
     background-blend-mode: overlay;
 }
 
 img::after {
-    content: '\1F4F7'" Aww snap, the image '" attr(alt) "' is broken"; /* To replace the ALT text */
+    content: '\1F4F7' " Aww snap, the image '" attr(alt) "' is broken";
+    /* To replace the ALT text */
     position: absolute;
-    inset: 0; /* To display content in the center of the block */
+    inset: 0;
+    /* To display content in the center of the block */
     display: grid;
     place-items: center;
     font-size: 24px;
@@ -490,7 +509,8 @@ img::after {
         inset -16px 28px 64px 10px rgba(0, 0, 0, 0.5);
 }
 
-.nextui-popover-content, .nextui-popover-content-container {
+.nextui-popover-content,
+.nextui-popover-content-container {
     background-color: rgba(255, 255, 255, 0.3) !important;
     backdrop-filter: blur(40px);
 }
@@ -498,29 +518,54 @@ img::after {
 .nextui-dropdown-item {
     color: black !important;
 }
+
 :root {
-  --nextui--dropdownMenuWidth: 340px !important;
+    --nextui--dropdownMenuWidth: 340px !important;
 }
 
 @media only screen and (max-width: 640px) {
-  #toc-floating {
-    left: calc(calc(100% - 400px) / 2) !important;
-    bottom: 0 !important;
-  }
+    #toc-floating {
+        left: calc(calc(100% - 400px) / 2) !important;
+        bottom: 0 !important;
+    }
 }
+
 @media only screen and (min-width: 640px) {
-#toc-floating {
-  left: calc(calc(calc(100% - 400px) / 2) + 160px) !important;
-}
+    #toc-floating {
+        left: calc(calc(calc(100% - 400px) / 2) + 160px) !important;
+    }
 }
 
 blockquote {
-  background-color: var(--dark-background);
-  border-left: 4px solid var(--crimson);
-  border-radius: 0;
-  margin: 64px 0 64px 0
+    background-color: var(--dark-background);
+    border-left: 4px solid var(--crimson);
+    border-radius: 0;
+    margin: 64px 0 64px 0
 }
 
 .topic-description {
     text-decoration: underline;
+}
+
+.conic {
+    background: conic-gradient(white var(--angle),
+            /*initially, this is set to 0deg. */
+            rgba(255, 255, 255, 0.07) 0 90deg,
+            black 90deg 360deg
+            ) !important;
+    animation: 10s animate 10s linear alternate infinite;
+
+}
+
+@keyframes animate {
+    to {
+        --angle: 360deg;
+    }
+}
+
+@property --angle {
+    syntax: "<angle>";
+    /* this can be angle or percentage */
+    initial-value: 0deg;
+    inherits: false;
 }
