@@ -167,7 +167,6 @@ export function _ListItemCard(props: CardProps) {
 export function ListItemCard(props: CardProps) {
   return (
     <motion.li
-      key={props.key}
       title={props.title}
       style={{borderRadius: "0.5rem"}}
       className={`group h-44 md:h-44 xl:h-44 border-gray-500 border-solid border flex flex-col  duration-300 ease-linear  !overflow-hidden relative mt-1 ${props.className ? ` ${props.className}` : ''

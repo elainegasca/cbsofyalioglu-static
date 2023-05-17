@@ -8,7 +8,6 @@ module.exports = {
     '/post*',
     "/archive*",
     '/featured*',
-    '/blogging*',
     '/productivity',
     '/code',
     '/uretkenlik',
@@ -16,7 +15,6 @@ module.exports = {
     '/travel',
     '/design',
     '/how-to',
-    '/blogging/best-blogging-sites/',
     '/post/adonisjs-solidjs',
     '/post/adonisjs-solidjs',
     '/post/adonisjs5-tailwind',
@@ -68,6 +66,9 @@ module.exports = {
     await config.transform(config, '/post/django-and-modern-js-libraries-backend/'),
     await config.transform(config, '/post/django-and-modern-js-libraries-svelte/'),
     await config.transform(config, '/post/django-and-modern-js-libraries-react/'),
+    await config.transform(config, '/blogging/best-blogging-sites/'),
+    await config.transform(config, '/blogging/content-research-tools/'),
+    await config.transform(config, '/blogging/generate-income/')
   ],
   robotsTxtOptions: {
     policies: [

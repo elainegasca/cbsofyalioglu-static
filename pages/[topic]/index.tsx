@@ -56,7 +56,7 @@ function CategoryPage({ posts, topic, slug, language }) {
                                     keywords={post.frontMatter.keywords}
                                     slug={post.frontMatter.slug}
                                     topic={post.frontMatter.topic}
-                                    key={"category-home-featured-" + post.frontMatter.slug + index}
+                                    key={`${post.frontMatter.slug}-${topic}-${index}`}
                                 />
                             ))}
                         </ul>

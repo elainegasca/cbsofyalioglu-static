@@ -55,7 +55,7 @@
 
 
 @font-face {
-  font-family: 'Satoshi-Light';
+  font-family: Satoshi-Light;
   src: url('../public/fonts/Satoshi-Light.woff2') format('woff2');
   font-weight: 300;
   font-display: swap;
@@ -65,7 +65,7 @@
 
 
 @font-face {
-  font-family: 'Satoshi-Regular';
+  font-family: Satoshi-Regular;
   src: url('../public/fonts/Satoshi-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
@@ -75,7 +75,7 @@
 
 
 @font-face {
-  font-family: 'Satoshi-Bold';
+  font-family: Satoshi-Bold;
   src: url('../public/fonts/Satoshi-Bold.woff2') format('woff2');
   font-weight: 700;
   font-display: swap;

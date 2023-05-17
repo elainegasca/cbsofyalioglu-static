@@ -3,7 +3,7 @@ import { styled, violet } from '../../styles/stitches.config'
 import { Separator } from './'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 import Link from 'next/link'
-import {motion, AnimatePresence} from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const StyledSeparator = styled(SeparatorPrimitive.Root, {
     'backgroundColor': violet.violet6,
@@ -32,17 +32,23 @@ export const HeaderThree = styled('h3', {
     lineHeight: '52px',
 })
 export const TopicHeader = ({ title, description }) => (
-    <Box css={{ width: '100%', maxWidth: 720, margin: '0 15px' }}>
+    <Box css={{ width: '100%', margin: '0 15px' }}>
         <HeaderOne css={{ fontWeight: 500 }}>{title}</HeaderOne>
         <Separator css={{ margin: '15px 0' }} />
-        <Text>{description}</Text>
+        <p
+            style={{ lineHeight: 1.8, color: 'white', fontSize: 18 }}
+            dangerouslySetInnerHTML={{ __html: description }}
+        />
     </Box>
 )
 
 export const PostHeader = ({ title, description, topics, modified, headerId }) => (
     <Box css={{ width: '100%', maxWidth: 720, margin: '0 15px', padding: '0 8px' }}>
-        <motion.h1 style={{ fontWeight: 500 }} className="animate-text-md" layoutId={headerId + "-title"}
-          exit={{ opacity: 0 }}
+        <motion.h1
+            style={{ fontWeight: 500 }}
+            className="animate-text-md"
+            layoutId={headerId + '-title'}
+            exit={{ opacity: 0 }}
         >
             {title}
         </motion.h1>

@@ -13,7 +13,7 @@ import Layout from '../layout/layout'
 //import { site } from "../settings"
 //import { MetaTags } from "../components/next-seo"
 import { useHasMounted, useDebounce } from '../lib/hooks'
-import { NextUIProvider } from '@nextui-org/react';
+import { NextUIProvider } from '@nextui-org/react'
 
 // export type Status = 'idle' | 'loading' | 'ready' | 'error'
 // export type ScriptElt = HTMLScriptElement | null
@@ -24,47 +24,48 @@ import { NextUIProvider } from '@nextui-org/react';
 import { Commander } from '../components'
 import jsondata from '../data/posts-metadata.json'
 import { motion, animate, useSpring, useTranform, useMotionValue } from 'framer-motion'
-import { Partytown } from '@builder.io/partytown/react';
-
+import { Partytown } from '@builder.io/partytown/react'
+import { CookieBanner } from '../components/cookie'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const hasMounted = useHasMounted()
-  //const hasDebounced = useDebounce(hasMounted, 5000)
-  //console.log("loading scripts", hasDebounced)
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
-  const x = useSpring(mouseX, { stiffness: 1000, damping: 10 })
-  const y = useSpring(mouseY, { stiffness: 1000, damping: 10 })
+    const hasMounted = useHasMounted()
+    //const hasDebounced = useDebounce(hasMounted, 5000)
+    //console.log("loading scripts", hasDebounced)
+    const mouseX = useMotionValue(0)
+    const mouseY = useMotionValue(0)
+    const x = useSpring(mouseX, { stiffness: 1000, damping: 10 })
+    const y = useSpring(mouseY, { stiffness: 1000, damping: 10 })
 
+    React.useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            // animate mouse x and y
+            animate(mouseX, e.clientX)
+            animate(mouseY, e.clientY)
+        }
+        //const setY = (e) => _y.set(e.clientY)
+        window.addEventListener('mousemove', handleMouseMove)
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove)
+        }
+    }, [])
 
-  React.useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      // animate mouse x and y
-      animate(mouseX, e.clientX);
-      animate(mouseY, e.clientY);
-    };
-    //const setY = (e) => _y.set(e.clientY)
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-    }
-  }, [])
-
-  return (
-    <React.Fragment>
-      <Head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-M492EQF9QH"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-M492EQF9QH');
-            `,
-          }}
-        />
-        {/* <script id="ga-analytics" type="text/partytown">
+    return (
+        <React.Fragment>
+            <Head>
+                <Script
+                    id="ga-analytics"
+                    strategy="afterInteractive"
+                    src="https://www.googletagmanager.com/gtag/js?id=G-M492EQF9QH"
+                    onReady={() => {
+                        window.dataLayer = window.dataLayer || []
+                        function gtag() {
+                            dataLayer.push(arguments)
+                        }
+                        gtag('js', new Date())
+                        gtag('config', 'G-M492EQF9QH')
+                    }}
+                />
+                {/* <script id="ga-analytics" type="text/partytown">
             {`
                             window.dataLayer = window.dataLayer || [];
                             function gtag(){dataLayer.push(arguments);}
@@ -73,11 +74,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                             gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
                         `}
           </script> */}
-
-      </Head>
-      <NextUIProvider>
-        <Layout x={mouseX} y={mouseY}>
-          {/*<Head>
+            </Head>
+            <NextUIProvider>
+                <Layout x={mouseX} y={mouseY}>
+                    {/*<Head>
                 {hasMounted && <Commander />}
 
                     <link
@@ -103,13 +103,13 @@ function MyApp({ Component, pageProps }: AppProps) {
 
                 </Head>*/}
 
-          <Component {...pageProps} />
-          {/* <ContentComponent Element={Component} props={pageProps} /> */}
-        </Layout>
-      </NextUIProvider>
-      {/* MESH GRADIENTS */}
-    </React.Fragment>
-  )
+                    <Component {...pageProps} />
+                    {/* <ContentComponent Element={Component} props={pageProps} /> */}
+                </Layout>
+            </NextUIProvider>
+            {/* MESH GRADIENTS */}
+        </React.Fragment>
+    )
 }
 const ContentComponent = React.memo(({ Element, props }) => <Element {...props} />)
 export default MyApp
