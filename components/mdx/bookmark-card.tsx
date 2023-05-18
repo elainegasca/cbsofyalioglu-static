@@ -14,7 +14,7 @@ export const BookmarkCard = ({ title, description, url, image }) => {
                 <p className='bookmark-card-description text-xs sm:text-sm !mt-0'>{description}</p>
             </div>
             <div
-                className="flex flex-col justify-center items-center h-full box-border flex-grow-[] z-20 relative !max-w-40 border border-solid border-gray-700 rounded-sm overflow-hidden group-hover:border-gray-400"
+                className="flex flex-col justify-center items-center h-full box-border flex-grow-[] z-20 relative !max-w-40 overflow-hidden"
                 style={{  minWidth: "20%", maxWidth:150, minHeight:"100px" }}
             >
                 <Image 
