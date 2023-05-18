@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const imageLoader = ({ src, width, quality }) => {
-    return `${src}?w=${width}&q=${quality || 75}`;
+    return `${src}?w=${width}&q=${quality || 20}`;
   };
 export const BookmarkCard = ({ title, description, url, image }) => {
     return (
@@ -20,7 +20,9 @@ export const BookmarkCard = ({ title, description, url, image }) => {
                 <Image 
                 fill 
                 loader={imageLoader} 
-                src={image} 
+                src={image}
+                priority={false}
+                sizes="(max-width: 768px) 33vw, (max-width: 1200px) 33vw, 150px"
                 alt={title} 
                 //style={{ height: '100%', minWidth: '110%', margin:0, marginLeft:"-5%", marginRight:"-5%", borderRadius:0, maxHeight:100 }} 
                 className='z-10 !rounded-none opacity-80 group-hover:opacity-100 duration-200 transform ease-linear' 
