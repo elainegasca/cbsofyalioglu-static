@@ -51,7 +51,7 @@ function Home({ featuredPosts, turkishPosts, englishPosts, x, y }) {
             </div>
             <ul className="grid sm:grid-cols-1 lg:grid-cols-2  gap-2 mb-1">
               <ListItemCard
-                title={'Blog Siteleri'}
+                title={'En İyi Blog Platformları'}
                 cover={'/posts/covers/blog-yazma-siteleri.webp'}
                 slug={'en-iyi-blog-siteleri/'}
                 topic={'blog-acmak'}
@@ -433,7 +433,7 @@ export const getStaticProps = async () => {
       const bd = new Date(b.frontMatter.date)
       return bd - ad
     })
-    .slice(0, 9)
+    .slice(0, 6)
   const sortedTurkishPosts = turkishPosts
     .sort((a, b) => {
       const ad = new Date(a.frontMatter.date)

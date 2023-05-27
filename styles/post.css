@@ -26,12 +26,12 @@ span[content="List of Blogging Sites"] {
     font-weight: 900 !important;
 }
 .post-page > h3:not(.bookmark-card-title) {
-    margin-top: 64px;
+    margin-top: 48px;
     margin-bottom: 8px;
     font-weight: 900 !important;
 }
 .post-page > h4 {
-    margin-top: 64px;
+    margin-top: 48px;
     margin-bottom: 8px;
     font-weight: 900 !important;
 }

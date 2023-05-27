@@ -52,19 +52,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
         <React.Fragment>
             <Head>
-                <Script
-                    id="ga-analytics"
-                    strategy="afterInteractive"
-                    src="https://www.googletagmanager.com/gtag/js?id=G-M492EQF9QH"
-                    onReady={() => {
-                        window.dataLayer = window.dataLayer || []
-                        function gtag() {
-                            dataLayer.push(arguments)
-                        }
-                        gtag('js', new Date())
-                        gtag('config', 'G-M492EQF9QH')
-                    }}
-                />
+¨ç
                 {/* <script id="ga-analytics" type="text/partytown">
             {`
                             window.dataLayer = window.dataLayer || [];
