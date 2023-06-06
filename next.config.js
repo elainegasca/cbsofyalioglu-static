@@ -46,7 +46,7 @@ const config = {
     ignoreBuildErrors: true
   },
   images: {
-    domains: ['fra1.digitaloceanspaces.com', 'www.cbsofyalioglu.com'],
+    domains: ['fra1.digitaloceanspaces.com', 'www.cbsofyalioglu.com', "static.cbsofyalioglu.com"],
     deviceSizes: [640, 768, 1024, 1280, 1536, 1920],
     minimumCacheTTL: 86400,
   },

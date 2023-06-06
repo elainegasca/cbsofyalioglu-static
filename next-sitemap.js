@@ -49,7 +49,11 @@ module.exports = {
     '/code/django-and-modern-js-libraries-backend/',
     '/code/django-and-modern-js-libraries-react/',
     '/code/django-and-modern-js-libraries-svelte/',
-    "/archive/video-archive/"
+    "/archive/video-archive/",
+    "/design/content-creation-tools/",
+    "/not-alma/en-iyi-blog-siteleri/",
+    "/uretkenlik/en-iyi-blog-siteleri/",
+    "/uretkenlik/obsidian-not-alma-uygulamasi/"
   ],
   // Default transformation function
   transform: async (config, path) => {

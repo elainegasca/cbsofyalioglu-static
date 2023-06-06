@@ -35,7 +35,7 @@ export const navLinks = [
         children: [
             { name: 'All Posts', href: '/en/' },
             { name: 'Posts about Blogging', href: '/blogging/' },
-            { name: 'Best Blogging Sites', href: '/blogging/best-blogging-sites/' },
+            { name: 'List of Blogging Sites', href: '/blogging/best-blogging-sites/' },
             { name: 'Generate Income from Your Blog', href: '/blogging/generate-income/' },
             { name: 'Content Research Tools', href: '/blogging/content-research-tools/' },
             { name: 'NestJS I: Basics, Modules, Controllers', href: '/code/nestjs-tutorial-I/' },
@@ -76,6 +76,7 @@ export const navLinks = [
             { name: 'Not alma uygulamaları', href: '/not-alma/not-alma-uygulamasi-ve-teknikleri/' },
             { name: 'Blog platformları arşivi', href: '/blog-acmak/en-iyi-blog-siteleri/' },
             { name: 'Proje yönetim ve görev takip uygulamaları listesi', href: '/uretkenlik/proje-yonetim-uygulamalari/' },
+            { name: 'Obsidian alma uygulaması', href: '/not-alma/obsidian-not-alma-uygulamasi/' },
             //{ name: 'Design Tools', href: '/bookmarks/design-tools' },
         ],
     },
